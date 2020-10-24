@@ -1,0 +1,23 @@
+{
+	"name": "my-app",
+	"scripts": {
+		"dev": "nuxt"
+	},
+	"dependencies": {
+		"babel-loader": "^8.1.0",
+		"glightbox": "^3.0.5",
+		"gsap": "^3.5.1",
+		"mapbox-gl": "^1.12.0",
+		"nuxt": "^2.14.6",
+		"swiper": "^5.4.5",
+		"vue-awesome-swiper": "^4.1.1"
+	},
+	"devDependencies": {
+		"@nuxtjs/style-resources": "^1.0.0",
+		"node-sass": "^4.14.1",
+		"postcss-smoothscroll-anchor-polyfill": "^2.0.1",
+		"pug": "^3.0.0",
+		"pug-plain-loader": "^1.0.0",
+		"sass-loader": "^10.0.2"
+	}
+}

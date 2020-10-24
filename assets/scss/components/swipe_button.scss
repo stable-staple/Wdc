@@ -1,0 +1,30 @@
+.swipe-button {
+  &:hover:enabled {
+    cursor: pointer;
+  }
+  &:disabled > svg > * {
+    stroke: #808080;
+  }
+  & > svg > * {
+    transition-property: fill, stroke;
+    transition-duration: 180ms, 180ms;
+    fill: transparent;
+    stroke: $primary-color;
+  }
+  &:hover:enabled > svg > * {
+    fill: $primary-color;
+    stroke: #FFFFFF;
+  }
+  &--dark {
+    & > svg > * {
+      stroke: #FFFFFF;
+    }
+    &:hover:enabled > svg > * {
+      fill: #FFFFFF;
+      stroke: $primary-color;
+    }
+  }
+  & + & {
+    margin-left: 4px;
+  }
+}

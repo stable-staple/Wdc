@@ -1,0 +1,16 @@
+[
+  {
+    "name": "services",
+    "path": "/services",
+    "component": "/Users/kirilllazarev/Documents/Wdc/pages/services.vue",
+    "chunkName": "pages/services",
+    "_name": "_2502896e"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/Users/kirilllazarev/Documents/Wdc/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_0b11aff2"
+  }
+]

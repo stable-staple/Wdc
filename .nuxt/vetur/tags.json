@@ -1,0 +1,56 @@
+{
+  "AboutUsSlideshow": {
+    "description": "Auto imported from components/AboutUsSlideshow.vue"
+  },
+  "LazyAboutUsSlideshow": {
+    "description": "Auto imported from components/AboutUsSlideshow.vue"
+  },
+  "DoctorsSlides": {
+    "description": "Auto imported from components/DoctorsSlides.vue"
+  },
+  "LazyDoctorsSlides": {
+    "description": "Auto imported from components/DoctorsSlides.vue"
+  },
+  "Footer": {
+    "description": "Auto imported from components/Footer.vue"
+  },
+  "LazyFooter": {
+    "description": "Auto imported from components/Footer.vue"
+  },
+  "MainSlideshow": {
+    "description": "Auto imported from components/MainSlideshow.vue"
+  },
+  "LazyMainSlideshow": {
+    "description": "Auto imported from components/MainSlideshow.vue"
+  },
+  "Partners": {
+    "description": "Auto imported from components/Partners.vue"
+  },
+  "LazyPartners": {
+    "description": "Auto imported from components/Partners.vue"
+  },
+  "Reviews": {
+    "description": "Auto imported from components/Reviews.vue"
+  },
+  "LazyReviews": {
+    "description": "Auto imported from components/Reviews.vue"
+  },
+  "ServiceCard": {
+    "description": "Auto imported from components/ServiceCard.vue"
+  },
+  "LazyServiceCard": {
+    "description": "Auto imported from components/ServiceCard.vue"
+  },
+  "SpecialOffers": {
+    "description": "Auto imported from components/SpecialOffers.vue"
+  },
+  "LazySpecialOffers": {
+    "description": "Auto imported from components/SpecialOffers.vue"
+  },
+  "Navbar": {
+    "description": "Auto imported from components/navbar.vue"
+  },
+  "LazyNavbar": {
+    "description": "Auto imported from components/navbar.vue"
+  }
+}
