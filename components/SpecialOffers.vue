@@ -1,23 +1,34 @@
 <template lang="pug">
   .special-offers
-    .special-offer
-      h4.card_heading.special-offer__title Акция на импланты
-      p.special-offer__desc.card_desc Прицельный снимок бесплатно
-      a.special-offer__more(href="#").card_desc Подробнее
-      img(src="~assets/img/offers/offers_backdrop1.png" class="special-offer__backdrop")
-      img(src="~assets/img/offers/offers_img1.png" class="special-offer__img")
-    .special-offer
-      h4.card_heading.special-offer__title Акция на удаление зуба
-      p.card_desc.special-offer__desc Компьютерная томография бесплатно
-      a.special-offer__more(href="#").card_desc Подробнее
-      img(src="~assets/img/offers/offers_backdrop2.png" class="special-offer__backdrop")
-      img(src="~assets/img/offers/offers_img2.png" class="special-offer__img")
-    .special-offer
-      h4.card_heading.special-offer__title Акция на удаление зуба
-      p.special-offer__desc.card_desc Компьютерная томография бесплатно
-      a.special-offer__more(href="#").card_desc Подробнее
-      img(src="~assets/img/offers/offers_backdrop1.png" class="special-offer__backdrop")
-      img(src="~assets/img/offers/offers_img1.png" class="special-offer__img")
+    span.special-offers__title Акции
+    .special-offers__controls
+      button.swipe-button.swiper-button--prev
+        svg(width='40' height='40' viewbox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg')
+          circle(cx='20' cy='20' r='19.375' stroke-width='1.25')
+          path(d='M22 25.2856L18 20.1428L22 14.9999' stroke-width='1.82857')
+      button.swipe-button.swiper-button--next
+        svg(width='40' height='40' viewbox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg')
+          circle(cx='20' cy='20' r='19.3' stroke-width='1.4')
+          path(d='M18 15L22 20.1429L18 25.2857' stroke-width='1.8')
+    .special-offers__list
+      .special-offer
+        h4.card_heading.special-offer__title Акция на импланты
+        p.special-offer__desc.card_desc Прицельный снимок бесплатно
+        a.special-offer__more(href="#").card_desc Подробнее
+        img(src="~assets/img/offers/offers_backdrop1.png" class="special-offer__backdrop")
+        img(src="~assets/img/offers/offers_img1.png" class="special-offer__img")
+      .special-offer
+        h4.card_heading.special-offer__title Акция на удаление зуба
+        p.card_desc.special-offer__desc Компьютерная томография бесплатно
+        a.special-offer__more(href="#").card_desc Подробнее
+        img(src="~assets/img/offers/offers_backdrop2.png" class="special-offer__backdrop")
+        img(src="~assets/img/offers/offers_img2.png" class="special-offer__img")
+      .special-offer
+        h4.card_heading.special-offer__title Акция на удаление зуба
+        p.special-offer__desc.card_desc Компьютерная томография бесплатно
+        a.special-offer__more(href="#").card_desc Подробнее
+        img(src="~assets/img/offers/offers_backdrop1.png" class="special-offer__backdrop")
+        img(src="~assets/img/offers/offers_img1.png" class="special-offer__img")
 </template>
 
 <script>
@@ -27,8 +38,26 @@ export default {
 </script>
 
 <style lang="scss">
+  @import "~/assets/scss/components/swipe_button.scss";
+
   .special-offers {
-    padding: 96px 40px;
+    padding: 96px 0;
+
+    &__title {
+      margin: 0;
+      font-family: 'MontserratSemiBold';
+      font-size: 48px;
+      line-height: 48px;
+      font-weight: 600;
+    }
+  }
+
+  .special-offers__controls {
+    float: right;
+  }
+
+  .special-offers__list {
+    padding: 40px;
     display: flex;
     overflow: scroll;
     margin-left: -40px;

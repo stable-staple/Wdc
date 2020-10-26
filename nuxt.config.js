@@ -14,7 +14,7 @@ export default {
     link: [
       { rel: 'stylesheet', href: 'https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' },
       { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css'}
-    ]
+    ] 
   },
   components: true,
   modules: [
@@ -25,5 +25,7 @@ export default {
       '~/assets/scss/variables.scss',
     ]
   },
-  plugins: ['~/plugins/vue-swiper.js']
+  plugins: [
+    { ssr: true, src: '~/plugins/vue-swiper.js' }
+  ]
 }

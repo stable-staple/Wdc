@@ -41,6 +41,12 @@
   "LazyServiceCard": {
     "description": "Auto imported from components/ServiceCard.vue"
   },
+  "ServiceModal": {
+    "description": "Auto imported from components/ServiceModal.vue"
+  },
+  "LazyServiceModal": {
+    "description": "Auto imported from components/ServiceModal.vue"
+  },
   "SpecialOffers": {
     "description": "Auto imported from components/SpecialOffers.vue"
   },

@@ -16,10 +16,6 @@
     SpecialOffers
     hr.full-bleed
     AboutUsSlideshow
-      img(src='static/img/about_us/about_us.jpg' style="display: none;")
-      img(src='static/img/about_us/about_us2.jpg' style="display: none;")
-      img(src='static/img/about_us/about_us3.jpg' style="display: none;")
-      img(src='static/img/about_us/about_us4.jpg' style="display: none;")
     hr.full-bleed
     DoctorsSlides
     hr.full-bleed

@@ -25,18 +25,38 @@
   }
 
   @font-face {
-    font-family: 'LitteraTextMedium';
-    src: url('~assets/fonts/LitteraTextMedium.ttf') format("truetype");
-  }
-
-  @font-face {
     font-family: 'LitteraTextRegular';
     src: url('~assets/fonts/LitteraTextRegular.ttf') format("truetype");
   }
 
   @font-face {
+    font-family: 'LitteraTextMedium';
+    src: url('~assets/fonts/LitteraTextMedium.ttf') format("truetype");
+  }
+
+  @font-face {
     font-family: 'LitteraTextBold';
     src: url('~assets/fonts/LitteraTextBold.ttf') format("truetype");
+  }
+
+  @font-face {
+    font-family: 'MontserratRegular';
+    src: url('~assets/fonts/Montserrat-Regular.ttf') format("truetype");
+  }
+
+  @font-face {
+    font-family: 'MontserratMedium';
+    src: url('~assets/fonts/Montserrat-Medium.ttf') format("truetype");
+  }
+  
+  @font-face {
+    font-family: 'MontserratBold';
+    src: url('~assets/fonts/Montserrat-Bold.ttf') format("truetype");
+  }
+
+  @font-face {
+    font-family: 'MontserratSemiBold';
+    src: url('~assets/fonts/Montserrat-SemiBold.ttf') format("truetype");
   }
 
   button {
@@ -47,7 +67,7 @@
     padding: 0;
   }
 
-  button:focus {
+  button:focus, input:focus {
     outline: 0;
   }
 

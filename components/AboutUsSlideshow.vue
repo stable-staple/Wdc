@@ -14,9 +14,15 @@
             circle(cx='20' cy='20' r='19.3' stroke-width='1.4')
             path(d='M18 15L22 20.1429L18 25.2857' stroke-width='1.8')
     .about-us__img
+      //- Preload image
+      img(src='img/about_us/about_us.jpg' style="display: none;")
+      img(src='img/about_us/about_us2.jpg' style="display: none;")
+      img(src='img/about_us/about_us3.jpg' style="display: none;")
+      img(src='img/about_us/about_us4.jpg' style="display: none;")
       img.about-us__img__inner(
         :src='slides[currentSlide].imgUrl' 
         @click="gallery.settings.startAt = currentSlide; gallery.open();"
+        rel="preload"
       )
       .about-us__img-overlay(:class="{'about-us__img-overlay--scaled': contentTransition}")
 </template>
