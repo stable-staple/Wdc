@@ -17,13 +17,13 @@
           input.services-block__modal__field(type="text" name="name" spellcheck="false" required)
         div(style="display: inline-block;")
           label.services-block__modal__label(for="phone") Телефон
-          input.services-block__modal__field(type="text" name="phone" required)
+          input.services-block__modal__field.margin-right-del(type="text" name="phone" required)
         div(style="display: inline-block;")
           label.services-block__modal__label(for="phone") Дата
           input.services-block__modal__field(type="date" name="date")
         div(style="display: inline-block;")
           label.services-block__modal__label(for="phone") Время
-          input.services-block__modal__field(type="time")
+          input.services-block__modal__field.margin-right-del(type="time")
         input(
           class="services-block__modal__field \
                 services-block__modal__field--full-width"
@@ -41,7 +41,7 @@
     ul.services-list
       li.services-list__elem(
         v-for="service in servicesSection[currentSection].servicesList"
-        @click="modalOpened = true; modalTitle = service.name"
+        @click="modalTitle = service.name; modalOpened = true;"
       )
         span {{ service.name }}
           span(class="service__price") {{ service.price }}
@@ -236,7 +236,7 @@ export default {
   &__field {
     display: block;
     width: 331px;
-    margin: 0 40px 24px 0;
+    margin: 0 80px 24px 0;
     height: 41px;
     padding-bottom: 20px;
     border-style: none none solid none;
@@ -461,5 +461,9 @@ li {
     font-size: 14px;
     color: #FFFFFF;
   }
+}
+
+.margin-right-del {
+  margin-right: -80px;
 }
 </style>

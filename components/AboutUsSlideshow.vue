@@ -22,7 +22,6 @@
       img.about-us__img__inner(
         :src='slides[currentSlide].imgUrl' 
         @click="gallery.settings.startAt = currentSlide; gallery.open();"
-        rel="preload"
       )
       .about-us__img-overlay(:class="{'about-us__img-overlay--scaled': contentTransition}")
 </template>
@@ -50,7 +49,7 @@
           {
             title: "Комфортное лечение",
             desc: "Лечение в нашей клинике проходит быстро и безболезненно. Мы заботимся о том, \
-                      чтобы у наших пациентов оставались только положительные впечатления от приема",
+                  чтобы у наших пациентов оставались только положительные впечатления от приема",
             imgUrl: '/img/about_us/about_us3.jpg'
           },
           {
