@@ -1,4 +1,5 @@
 export default {
+  buildDir: 'nuxt-dist',
   head: {
     title: 'Wdc Dent',
     meta: [
