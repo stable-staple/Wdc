@@ -21,7 +21,7 @@
             rect(x='21.9641' y='0.75' width='1.4' height='30.0003' transform='rotate(45 21.9641 0.75)' fill='#272727')
     .doctors__content(:class="{'doctors__content--hide': hideDoctors}")
       .textgroup
-        h3.textgroup__title.primary_heading Наша работа — ваше здоровье
+        h3.textgroup__title.primary_heading.doctors__content__title Наша работа — ваше здоровье
         p.textgroup__text.card_desc
           | В нашей клинике работают профессионалы своего дела. 
           | Врачи регулярно повышают квалификацию и стажируются для того, 
@@ -67,7 +67,7 @@ export default {
   },
   computed: {
     swiper() {
-      return this.$refs.doctorsSwiper.$swiper
+      return this.$refs.doctorsSwiper.$swiper;
     }
   },
   methods: {
@@ -104,7 +104,7 @@ export default {
     overflow: hidden;
     opacity: 1;
     width: 60%;
-    margin-right: 155px;
+    margin-right: 145px;
     transition-delay: 0s, 0s, 0.35s;
     transition-duration: 0.5s, 0.5s, 0.3s;
     transition-property: width, margin-right, opacity;
@@ -116,6 +116,12 @@ export default {
       transition-delay: 0.3s, 0.3s, 0s;
       transition-duration: 0.5s, 0.5s, 0.3s;
       transition-property: width, margin-right, opacity;
+    }
+
+    &__title {
+      font-family: 'MontserratSemiBold';
+      font-size: 48px;
+      line-height: 52px;
     }
   }
 

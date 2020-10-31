@@ -1,7 +1,7 @@
 export default {
   buildDir: 'nuxt-dist',
   build: {
-    analyze: true,
+    analyze: false,
     analyze: {
       analyzerMode: 'static'
     }
@@ -30,8 +30,13 @@ export default {
   },
   components: true,
   modules: [
-    '@nuxtjs/style-resources'
+    '@nuxtjs/style-resources',
+    '@aceforth/nuxt-optimized-images'
   ],
+  optimizedImages: {
+    optimizeImages: true,
+    optimizeImagesInDev: true
+  },
   styleResources: {
     scss: [
       '~/assets/scss/variables.scss',
