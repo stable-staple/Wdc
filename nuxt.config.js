@@ -1,7 +1,7 @@
 export default {
   buildDir: 'nuxt-dist',
   build: {
-    analyze: true,
+    analyze: false,
     analyze: {
       analyzerMode: 'static'
     }
@@ -50,7 +50,6 @@ export default {
     bundleRenderer: {
       shouldPreload: (file, type) => {
         if (type === 'font') return /.woff2/.test(file)
-        return ['script', 'style'].includes(type)
       }
     }
   }
