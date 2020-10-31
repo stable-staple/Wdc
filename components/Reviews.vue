@@ -34,7 +34,7 @@ export default {
 }
 
 .reviews__content__text {
-  font-family: 'LitteraTextRegular';
+  font-family: 'MontserratRegular';
   font-size: 16px;
   line-height: 24px;
   max-width: 400px;

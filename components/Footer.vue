@@ -113,9 +113,10 @@
   }
 
   .footer__button {
-    -webkit-appearance: button;
-    -moz-appearance: button;
-    appearance: button;
+    display: inline-block;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     text-decoration: none;
     color: initial;
     border: initial;

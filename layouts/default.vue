@@ -23,45 +23,44 @@
   *, *:before, *:after {
     box-sizing: inherit;
   }
-
-  @font-face {
-    font-family: 'LitteraTextRegular';
-    src: url('~assets/fonts/LitteraTextRegular.ttf') format("truetype");
-  }
-
-  @font-face {
-    font-family: 'LitteraTextMedium';
-    src: url('~assets/fonts/LitteraTextMedium.ttf') format("truetype");
-  }
-
-  @font-face {
-    font-family: 'LitteraTextBold';
-    src: url('~assets/fonts/LitteraTextBold.ttf') format("truetype");
-  }
-
+ 
   @font-face {
     font-family: 'MontserratRegular';
-    src: url('~assets/fonts/Montserrat-Regular.ttf') format("truetype");
+    src: url('~assets/fonts/Montserrat-Regular.woff2') format('woff2'),
+         url('~assets/fonts/Montserrat-Regular.woff') format('woff'),
+         url('~assets/fonts/Montserrat-Regular.ttf') format("truetype");
+    font-weight: normal;
+    font-style: normal;
   }
 
   @font-face {
     font-family: 'MontserratMedium';
-    src: url('~assets/fonts/Montserrat-Medium.ttf') format("truetype");
+    src: url('~assets/fonts/Montserrat-Medium.woff2') format('woff2'),
+         url('~assets/fonts/Montserrat-Medium.woff') format('woff'),
+         url('~assets/fonts/Montserrat-Medium.ttf') format("truetype");
+    font-weight: normal;
+    font-style: normal;
   }
   
   @font-face {
     font-family: 'MontserratBold';
-    src: url('~assets/fonts/Montserrat-Bold.ttf') format("truetype");
+    src: url('~assets/fonts/Montserrat-Bold.woff2') format('woff2'),
+         url('~assets/fonts/Montserrat-Bold.woff') format('woff'),
+         url('~assets/fonts/Montserrat-Bold.ttf') format("truetype");
+    font-weight: normal;
+    font-style: normal;
   }
 
   @font-face {
     font-family: 'MontserratSemiBold';
-    src: url('~assets/fonts/Montserrat-SemiBold.ttf') format("truetype");
+    src: url('~assets/fonts/Montserrat-SemiBold.woff2') format('woff2'),
+         url('~assets/fonts/Montserrat-SemiBold.woff') format('woff'),
+         url('~assets/fonts/Montserrat-SemiBold.ttf') format("truetype");
+    font-weight: normal;
+    font-style: normal;
   }
 
   button {
-    -webkit-appearance: none;
-    -moz-appearance: none;
     border: none;
     background: none;
     padding: 0;
@@ -96,28 +95,35 @@
   }
 
   .primary_heading {
-    font-family: 'LitteraTextMedium';
+    font-family: 'MontserratMedium';
     font-size: 56px;
     line-height: 56px;
     font-weight: 500;
   }
 
+  .secondary_heading {
+    font-family: 'MontserratSemiBold';
+    font-size: 48px;
+    line-height: 52px;
+    font-weight: 600;
+  }
+
   .primary_desc {
-    font-family: 'LitteraTextRegular';
+    font-family: 'MontserratRegular';
     font-style: normal;
     font-size: 16px;
     line-height: 24px;
   }
 
   .medium_header {
-    font-family: 'LitteraTextMedium';
+    font-family: 'MontserratMedium';
     font-size: 14px;
     line-height: 14px;
     font-weight: 500;
   }
 
   .card_heading {
-    font-family: 'LitteraTextBold';
+    font-family: 'MontserratBold';
     font-style: normal;
     font-size: 16px;
     line-height: 16px;
@@ -125,7 +131,7 @@
   }
 
   .card_desc {
-    font-family: 'LitteraTextRegular';
+    font-family: 'MontserratRegular';
     font-style: normal;
     font-size: 14px;
     line-height: 14px;

@@ -84,8 +84,8 @@
 
   .nav__appointment-btn {
     display: block;
-    width: 175px;
-    height: 33px;
+    width: 212px;
+    height: 37px;
     background: transparent;
     border-radius: 2px;
     border: 1px solid #FFFFFF;

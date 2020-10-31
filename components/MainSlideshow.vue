@@ -15,11 +15,10 @@
     .main-slideshow__content
       div(class="main-slideshow__textgroup" :class="{'main-slideshow__textgroup--fade': contentTransition}")
         h1(class="primary_heading main-slideshow__title") {{ textSlides[currentTextSlide].title }}
-        p(class="primary_desc main-slideshow__desc") Наша клиника использует импланты проверенных годами компаний
+        p(class="primary_desc main-slideshow__desc") Импланты швейцарского качества для лечения зубов с технологией максимальной приживаемости
         button.button--more.card_desc Подробнее
       .main-slideshow__green-implants
-        img(class="main-slideshow__green-implant--1" src="~assets/img/green_implant1.png") 
-        img(class="main-slideshow__green-implant--2" src="~assets/img/green_implant2.png") 
+        img(class="main-slideshow__green-implants" height="617px" src="~assets/img/green_implants.png") 
       .main-slideshow__swipe-controls
         button(
           class="swipe-button swipe-button--dark swiper-button--prev" @click="prevSlide"
@@ -182,7 +181,6 @@
     z-index: 1;
     position: relative;
     bottom: 60px;
-    overflow: hidden;
     height: 549px;
     align-self: center;
   }
@@ -303,20 +301,8 @@
 
   .main-slideshow__green-implants {
     position: relative;
-    width: 525px;
-  }
-
-  .main-slideshow__green-implant {
-    &--1 {
-      position: absolute;
-      bottom: 0;
-      left: -65px;
-    }
-    &--2 {
-      position: absolute;
-      top: 0;
-      right: -66px;
-    }
+    right: 25px;
+    max-width: 100%;
   }
 
   .main-slideshow__social__link {
@@ -355,10 +341,6 @@
 
     .main-slideshow__content {
       display: block;
-    }
-
-    .main-slideshow__green-implant--1, .main-slideshow__green-implant--2 {
-      position: initial;
     }
 
     .main-slideshow__textgroup > * + * {
