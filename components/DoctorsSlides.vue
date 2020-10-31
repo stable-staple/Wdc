@@ -21,7 +21,7 @@
             rect(x='21.9641' y='0.75' width='1.4' height='30.0003' transform='rotate(45 21.9641 0.75)' fill='#272727')
     .doctors__content(:class="{'doctors__content--hide': hideDoctors}")
       .textgroup
-        h3.textgroup__title.secondary_heading Наша работа — ваше здоровье
+        h3.textgroup__title.primary_heading Наша работа — ваше здоровье
         p.textgroup__text.card_desc
           | В нашей клинике работают профессионалы своего дела. 
           | Врачи регулярно повышают квалификацию и стажируются для того, 

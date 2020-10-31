@@ -2,28 +2,28 @@
   .special-offers
     span.special-offers__title Акции
     .special-offers__controls
-      button.swipe-button.swiper-button--prev
+      button.swipe-button.swiper-button--prev(:disabled="isStart()")
         svg(width='40' height='40' viewbox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg')
           circle(cx='20' cy='20' r='19.375' stroke-width='1.25')
           path(d='M22 25.2856L18 20.1428L22 14.9999' stroke-width='1.82857')
-      button.swipe-button.swiper-button--next
+      button.swipe-button.swiper-button--next(:disabled="isEnd()")
         svg(width='40' height='40' viewbox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg')
           circle(cx='20' cy='20' r='19.3' stroke-width='1.4')
           path(d='M18 15L22 20.1429L18 25.2857' stroke-width='1.8')
-    .special-offers__list
-      .special-offer
+    swiper.special-offers__list(ref="offersSwiper" :options="swiperOptions")
+      swiper-slide.special-offer
         h4.card_heading.special-offer__title Акция на импланты
         p.special-offer__desc.card_desc Прицельный снимок бесплатно
         a.special-offer__more(href="#").card_desc Подробнее
         img(src="~assets/img/offers/offers_backdrop1.png" class="special-offer__backdrop")
         img(src="~assets/img/offers/offers_img1.png" class="special-offer__img")
-      .special-offer
+      swiper-slide.special-offer
         h4.card_heading.special-offer__title Акция на удаление зуба
         p.card_desc.special-offer__desc Компьютерная томография бесплатно
         a.special-offer__more(href="#").card_desc Подробнее
         img(src="~assets/img/offers/offers_backdrop2.png" class="special-offer__backdrop")
         img(src="~assets/img/offers/offers_img2.png" class="special-offer__img")
-      .special-offer
+      swiper-slide.special-offer
         h4.card_heading.special-offer__title Акция на удаление зуба
         p.special-offer__desc.card_desc Компьютерная томография бесплатно
         a.special-offer__more(href="#").card_desc Подробнее
@@ -33,7 +33,30 @@
 
 <script>
 export default {
-    
+  data() {
+    return {
+      swiper: null,
+      swiperOptions: {
+        spaceBetween: 24,
+      slidesPerView: 'auto',
+        navigation: {
+          nextEl: '.swiper-button--next',
+          prevEl: '.swiper-button--prev'
+        }
+      }
+    }
+  },
+  methods: {
+    isStart: function () {
+      return this.swiper == null ? true : this.swiper.isBeginning;
+    },
+    isEnd: function () {
+      return this.swiper == null ? false : this.swiper.isEnd;
+    }
+  },
+  mounted() {
+    this.swiper = this.$refs.offersSwiper.swiperInstance;
+  }
 }
 </script>
 
@@ -41,7 +64,7 @@ export default {
   @import "~/assets/scss/components/swipe_button.scss";
 
   .special-offers {
-    padding: 96px 0;
+    padding: 96px 0 calc(96px - 40px);
 
     &__title {
       margin: 0;
@@ -70,9 +93,12 @@ export default {
     cursor: pointer;
     min-width: 524px;
     line-height: 32px;
+    box-sizing: border-box;
     height: 246px;
+    width: initial;
     padding: 32px 0 24px 32px;
     position: relative;
+    flex-shrink: 1;
     border-radius: 10px;
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.02), 
                 0px 10px 40px rgba(0, 0, 0, 0.04), 

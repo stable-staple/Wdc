@@ -18,10 +18,15 @@ export default {
       }
     ],  
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    script: [
+      {
+        src: 'https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'
+      }
+    ],
     link: [
       { rel: 'stylesheet', href: 'https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' },
       { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css'}
-    ] 
+    ]
   },
   components: true,
   modules: [
