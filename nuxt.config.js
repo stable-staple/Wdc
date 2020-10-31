@@ -1,7 +1,7 @@
 export default {
   buildDir: 'nuxt-dist',
   build: {
-    analyze: false,
+    analyze: true,
     analyze: {
       analyzerMode: 'static'
     }
@@ -20,7 +20,8 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     script: [
       {
-        src: 'https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'
+        src: 'https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js',
+        defer: true
       }
     ],
     link: [

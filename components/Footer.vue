@@ -183,7 +183,6 @@
 <script>
 export default {
   mounted() {
-    const mapboxgl = require('mapbox-gl')
     mapboxgl.accessToken = 'pk.eyJ1IjoiZXdld2UiLCJhIjoiY2tmcGh0a3A1MGk1bTJxcGExdnk5cTJueSJ9.OefbX4ZLtzl9fYi25uHVGw';
     var map = new mapboxgl.Map({
       container: 'map',
