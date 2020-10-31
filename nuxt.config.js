@@ -1,5 +1,11 @@
 export default {
   buildDir: 'nuxt-dist',
+  build: {
+    analyze: true,
+    analyze: {
+      analyzerMode: 'static'
+    }
+  },
   head: {
     title: 'Wdc Dent',
     meta: [
