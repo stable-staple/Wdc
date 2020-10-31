@@ -10,7 +10,7 @@ export default {
         name: 'description',
         content: 'my website description'
       }
-    ],
+    ],  
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     link: [
       { rel: 'stylesheet', href: 'https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' },
@@ -28,5 +28,13 @@ export default {
   },
   plugins: [
     { ssr: true, src: '~/plugins/vue-swiper.js' }
-  ]
+  ],
+  render: {
+    bundleRenderer: {
+      shouldPreload: (file, type) => {
+        if (type === 'font') return /.woff2/.test(file)
+        return ['script', 'style'].includes(type)
+      }
+    }
+  }
 }
