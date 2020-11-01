@@ -39,9 +39,16 @@ export default {
       swiperOptions: {
         spaceBetween: 24,
         slidesPerView: 'auto',
+        grab: true,
         navigation: {
           nextEl: '.swiper-button--next',
           prevEl: '.swiper-button--prev'
+        },
+        breakpoints: {
+          768: {
+            slidesPerView: 1,
+            spaceBetweenSlides: 0
+          }
         }
       }
     }
