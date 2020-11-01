@@ -6,7 +6,7 @@
         svg(width='40' height='40' viewbox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg')
           circle(cx='20' cy='20' r='19.375' stroke-width='1.25')
           path(d='M22 25.2856L18 20.1428L22 14.9999' stroke-width='1.82857')
-      button.swipe-button.swiper-button--next(:disabled="this.currSlide == 1")
+      button.swipe-button.swiper-button--next(:disabled="this.currSlide == 2")
         svg(width='40' height='40' viewbox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg')
           circle(cx='20' cy='20' r='19.3' stroke-width='1.4')
           path(d='M18 15L22 20.1429L18 25.2857' stroke-width='1.8')
