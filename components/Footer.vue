@@ -183,13 +183,20 @@
 <script>
 export default {
   mounted() {
-    mapboxgl.accessToken = 'pk.eyJ1IjoiZXdld2UiLCJhIjoiY2tmcGh0a3A1MGk1bTJxcGExdnk5cTJueSJ9.OefbX4ZLtzl9fYi25uHVGw';
-    var map = new mapboxgl.Map({
-      container: 'map',
-      center: [37.424905, 55.737923],
-      zoom: 16,
-      style: 'mapbox://styles/ewewe/ckfv0xc350aqx1as79qa4had3'
-    });
+    setTimeout(function () {
+      let script = document.createElement("script");
+      script.src = "https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js";
+      document.head.append(script);
+      script.onload = function() {
+        mapboxgl.accessToken = 'pk.eyJ1IjoiZXdld2UiLCJhIjoiY2tmcGh0a3A1MGk1bTJxcGExdnk5cTJueSJ9.OefbX4ZLtzl9fYi25uHVGw';
+        var map = new mapboxgl.Map({
+          container: 'map',
+          center: [37.424905, 55.737923],
+          zoom: 16,
+          style: 'mapbox://styles/ewewe/ckfv0xc350aqx1as79qa4had3?optimize=true'
+        });
+      };
+    }, 2000);
   }
 }
 </script>

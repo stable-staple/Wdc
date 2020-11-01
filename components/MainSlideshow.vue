@@ -18,7 +18,9 @@
         p(class="primary_desc main-slideshow__desc") Импланты швейцарского качества для лечения зубов с технологией максимальной приживаемости
         button.button--more.card_desc Подробнее
       .main-slideshow__green-implants
-        img(class="main-slideshow__green-implants" height="617px" src="~assets/img/green_implants.png") 
+        picture
+          source(srcset="~assets/img/green_implants_mobile.png" media="(max-width: 768px)")
+          img(class="main-slideshow__green-implants" src="~assets/img/green_implants.png") 
       .main-slideshow__swipe-controls
         button(
           class="swipe-button swipe-button--dark swiper-button--prev" @click="prevSlide"

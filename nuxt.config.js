@@ -1,11 +1,11 @@
 export default {
   buildDir: 'nuxt-dist',
-  build: {
-    analyze: false,
-    analyze: {
-      analyzerMode: 'static'
-    }
-  },
+  // build: {
+  //   analyze: false,
+  //   analyze: {
+  //     analyzerMode: 'static'
+  //   }
+  // },
   head: {
     title: 'Wdc Dent',
     meta: [
@@ -18,12 +18,6 @@ export default {
       }
     ],  
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
-    script: [
-      {
-        src: 'https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js',
-        defer: true
-      }
-    ],
     link: [
       { rel: 'stylesheet', href: 'https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' },
       { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css'}
@@ -36,7 +30,7 @@ export default {
   ],
   optimizedImages: {
     optimizeImages: true,
-    optimizeImagesInDev: true
+    optimizeImagesInDev: false
   },
   styleResources: {
     scss: [

@@ -2,7 +2,7 @@
   .about-us
     .about-us__content
       .textgroup(:class="{'textgroup--fade': contentTransition}")
-        h3.textgroup__title.primary_heading {{ slides[currentSlide].title }}
+        h3.primary_heading.textgroup__title {{ slides[currentSlide].title }}
         p.textgroup__text.card_desc {{ slides[currentSlide].desc }}
       .about-us__controls
         button.swipe-button(@click='prevSlide' :disabled='currentSlide === 0')

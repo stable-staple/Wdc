@@ -11,13 +11,13 @@
 		"babel-loader": "^8.1.0",
 		"glightbox": "^3.0.5",
 		"gsap": "^3.5.1",
-		"imagemin-mozjpeg": "^9.0.0",
 		"nuxt": "^2.14.7",
 		"swiper": "^5.4.5",
 		"vue-awesome-swiper": "^4.1.1"
 	},
 	"devDependencies": {
 		"@nuxtjs/style-resources": "^1.0.0",
+		"imagemin-mozjpeg": "^9.0.0",
 		"imagemin-pngquant": "^9.0.1",
 		"node-sass": "^4.14.1",
 		"postcss-smoothscroll-anchor-polyfill": "^2.0.1",

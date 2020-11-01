@@ -14,6 +14,10 @@
       div(class="nav__container medium_header")
         .nav__elem: |
           a(class="nav__link nav__link--phone-icon" href="tel:+7 (499) 372-94-90") +7 (499) 372-94-90
+          button.nav__dropdown
+            svg(width="28" height="16" viewBox="0 0 28 16" fill="none" xmlns="http://www.w3.org/2000/svg")
+              rect(y="4" width="28" height="1.4" rx="0.7" fill="white")
+              rect(y="10" width="28" height="1.4" rx="0.7" fill="white")
         .nav__elem: button(class="nav__appointment-btn card_desc") Записаться на прием
 </template>
 
@@ -82,6 +86,14 @@
     }
   }
 
+  .nav__dropdown {
+    display: inline-block;
+    vertical-align: sub;
+    margin-left: 16px;
+    cursor: pointer;
+    display: none;
+  }
+
   .nav__appointment-btn {
     display: block;
     width: 212px;
@@ -101,6 +113,9 @@
   @media only screen and (max-width: 768px) {
   .nav__link:not(.nav__link--phone-icon), .nav__appointment-btn {
     display: none;
+  }
+  .nav__dropdown { 
+    display: initial;
   }
   .nav__logo {
     margin-left: 16px;
