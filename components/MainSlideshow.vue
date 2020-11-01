@@ -349,6 +349,11 @@
       margin-top: 16px;
     }
 
+    .main-slideshow__green-implants {
+      position: static;
+      text-align: center;
+    }
+
     .main-slideshow__social, 
     .main-slideshow__swipe-controls,
     .main-slideshow__timers { 
