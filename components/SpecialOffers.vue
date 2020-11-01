@@ -38,7 +38,7 @@ export default {
       swiper: null,
       swiperOptions: {
         spaceBetween: 24,
-      slidesPerView: 'auto',
+        slidesPerView: 'auto',
         navigation: {
           nextEl: '.swiper-button--next',
           prevEl: '.swiper-button--prev'
@@ -166,6 +166,7 @@ export default {
 
   @media only screen and (max-width: 768px) {
     .special-offer {
+      min-width: 100%;
       width: 100%;
     }
   }
