@@ -41,9 +41,7 @@ export default {
       currSlide: 0,
       swiperOptions: {
         spaceBetween: 24,
-        totalPages: 2,
         slidesPerView: 'auto',
-        preventInteractionOnTransition: true,
         grab: true,
         navigation: {
           nextEl: '.swiper-button--next',
@@ -58,9 +56,6 @@ export default {
     }
   },
   methods: {
-    inc: function () {
-      this.currSlide++;
-    },
     onSwipe: function(elem) {
       this.isStart = elem.swiper.isBeginning;
       this.isEnd = elem.swiper.isEnd;
