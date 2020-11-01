@@ -166,8 +166,9 @@ export default {
 
   @media only screen and (max-width: 768px) {
     .special-offer {
-      min-width: 100%;
-      width: 100%;
+      flex-shrink: 0;
+      min-width: inherit;
+      width: inherit;
     }
   }
 </style>
