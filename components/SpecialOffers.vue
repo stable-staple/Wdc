@@ -2,11 +2,11 @@
   .special-offers
     span.special-offers__title Акции
     .special-offers__controls
-      button.swipe-button.swiper-button--prev(:disabled="isStart()")
+      button.swipe-button.swiper-button--prev(:disabled="isStart()" @click="currSlide--")
         svg(width='40' height='40' viewbox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg')
           circle(cx='20' cy='20' r='19.375' stroke-width='1.25')
           path(d='M22 25.2856L18 20.1428L22 14.9999' stroke-width='1.82857')
-      button.swipe-button.swiper-button--next(:disabled="isEnd()")
+      button.swipe-button.swiper-button--next(:disabled="isEnd()" @click="currSlide++")
         svg(width='40' height='40' viewbox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg')
           circle(cx='20' cy='20' r='19.3' stroke-width='1.4')
           path(d='M18 15L22 20.1429L18 25.2857' stroke-width='1.8')
@@ -23,12 +23,6 @@
         a.special-offer__more(href="#").card_desc Подробнее
         img(src="~assets/img/offers/offers_backdrop2.png" class="special-offer__backdrop")
         img(src="~assets/img/offers/offers_img2.png" class="special-offer__img")
-      swiper-slide.special-offer
-        h4.card_heading.special-offer__title Акция на удаление зуба
-        p.special-offer__desc.card_desc Компьютерная томография бесплатно
-        a.special-offer__more(href="#").card_desc Подробнее
-        img(src="~assets/img/offers/offers_backdrop1.png" class="special-offer__backdrop")
-        img(src="~assets/img/offers/offers_img1.png" class="special-offer__img")
 </template>
 
 <script>
@@ -36,6 +30,7 @@ export default {
   data() {
     return {
       swiper: null,
+      currSlide: 0,
       swiperOptions: {
         spaceBetween: 24,
         slidesPerView: 'auto',
@@ -44,21 +39,15 @@ export default {
           nextEl: '.swiper-button--next',
           prevEl: '.swiper-button--prev'
         },
-        breakpoints: {
-          768: {
-            slidesPerView: 1,
-            spaceBetweenSlides: 0
-          }
-        }
       }
     }
   },
   methods: {
     isStart: function () {
-      return this.swiper == null ? true : this.swiper.isBeginning;
+      return this.currSlide == 0
     },
     isEnd: function () {
-      return this.swiper == null ? false : this.swiper.isEnd;
+      return this.currSlide == 1
     }
   },
   mounted() {
@@ -174,8 +163,8 @@ export default {
   @media only screen and (max-width: 768px) {
     .special-offer {
       flex-shrink: 0;
-      min-width: inherit;
-      width: inherit;
+      min-width: 100%;
+      width: 100%;
     }
   }
 </style>
