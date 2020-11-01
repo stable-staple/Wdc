@@ -163,4 +163,10 @@ export default {
     right: 0;
     margin-right: 35px;
   }
+
+  @media only screen and (max-width: 768px) {
+    .special-offer {
+      width: 100%;
+    }
+  }
 </style>

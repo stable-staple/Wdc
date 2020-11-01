@@ -118,6 +118,7 @@
     opacity: 1;
     padding-right: 129px;
     max-width: 459px;
+    overflow: hidden;
     height: 100%;
   }
 

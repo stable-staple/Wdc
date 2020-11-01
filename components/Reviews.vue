@@ -70,4 +70,10 @@ export default {
   position: relative;
 }
 
+@media only screen and (max-width: 768px) {
+  .reviews {
+    display: block;
+  }
+}
+
 </style>

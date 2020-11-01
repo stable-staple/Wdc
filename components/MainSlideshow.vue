@@ -349,7 +349,9 @@
       margin-top: 16px;
     }
 
-    .main-slideshow__social, .main-slideshow__swipe-controls { 
+    .main-slideshow__social, 
+    .main-slideshow__swipe-controls,
+    .main-slideshow__timers { 
       display: none;
     }
   }
