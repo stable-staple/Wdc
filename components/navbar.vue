@@ -1,7 +1,7 @@
 <template lang="pug">
   nav(class="nav")
     div(class="nav__inner")
-      div(class="nav__container medium_header")
+      div(class="nav__container medium_header nav__mobile-logo")
         NuxtLink(to="/"): img.nav__logo(src="~/assets/img/logo.svg")
         .nav__elem: |
           NuxtLink(to="services" class="nav__link nav__link--underlined") Услуги и цены
@@ -11,7 +11,7 @@
           NuxtLink(to="services" class="nav__link nav__link--underlined") Наши врачи
         .nav__elem: |
           NuxtLink(to="services" class="nav__link nav__link--underlined") Контакты
-      div(class="nav__container medium_header")
+      div(class="nav__container medium_header nav__mobile-actions")
         .nav__elem: |
           a(class="nav__link nav__link--phone-icon" href="tel:+7 (499) 372-94-90") +7 (499) 372-94-90
           button.nav__dropdown
@@ -54,7 +54,7 @@
   .nav__elem {
     align-self: center;
   }
-  
+
   .nav__link {
     color: white;
     position: relative;
@@ -117,8 +117,13 @@
   .nav__dropdown { 
     display: initial;
   }
+
   .nav__logo {
     margin-left: 16px;
+  }
+
+  .nav__mobile-logo {
+    width: 10%;
   }
 }
 </style>

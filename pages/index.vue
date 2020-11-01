@@ -77,6 +77,7 @@ export default {
       flex-direction: column;
       align-items: center;
       margin-bottom: 12px;
+      bottom: 23px;
 
       & > .service-card + .service-card {
         margin-left: 0;

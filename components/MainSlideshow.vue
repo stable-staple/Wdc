@@ -16,11 +16,20 @@
       div(class="main-slideshow__textgroup" :class="{'main-slideshow__textgroup--fade': contentTransition}")
         h1(class="primary_heading main-slideshow__title") {{ textSlides[currentTextSlide].title }}
         p(class="primary_desc main-slideshow__desc") Импланты швейцарского качества для лечения зубов с технологией максимальной приживаемости
-        button.button--more.card_desc Подробнее
+        button.button--more.main-slideshow__desktop-btn.card_desc Смотреть подробнее
       .main-slideshow__green-implants
         picture
           source(srcset="~assets/img/green_implants_mobile.png" media="(max-width: 768px)")
-          img(class="main-slideshow__green-implants" src="~assets/img/green_implants.png") 
+          img(class="main-slideshow__green-implants__img" src="~assets/img/green_implants.png")
+      .main-slideshow__mobile-btn-container
+        button.button--more.main-slideshow__mobile-btn.card_desc Смотреть подробнее
+      .main-slideshow__timers--mobile
+        svg.slide-timer(:class="{'slide-timer--active': currentTextSlide === 0}" width='6' height='6' viewbox='0 0 6 6' fill='none' xmlns='http://www.w3.org/2000/svg')
+          circle(cx='3' cy='3' r='3' fill='white')
+        svg.slide-timer(:class="{'slide-timer--active': currentTextSlide === 1}" width='6' height='6' viewbox='0 0 6 6' fill='none' xmlns='http://www.w3.org/2000/svg')
+          circle(cx='3' cy='3' r='3' fill='white')
+        svg.slide-timer(:class="{'slide-timer--active': currentTextSlide === 2}" width='6' height='6' viewbox='0 0 6 6' fill='none' xmlns='http://www.w3.org/2000/svg')
+          circle(cx='3' cy='3' r='3' fill='white')
       .main-slideshow__swipe-controls
         button(
           class="swipe-button swipe-button--dark swiper-button--prev" @click="prevSlide"
@@ -187,6 +196,16 @@
     align-self: center;
   }
 
+  .main-slideshow__mobile-btn {
+    display: none;
+    width: 100%;
+  }
+
+  .main-slideshow__mobile-btn-container {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
   .main-slideshow__textgroup {
     position: relative;
     align-self: center;
@@ -292,6 +311,16 @@
     }
   }
 
+  .main-slideshow__timers--mobile {
+    display: none;
+    text-align: center;
+    margin-bottom: calc(23px + 32px);
+
+    & > * + * {
+      margin-left: 19px;
+    }
+  }
+
   .slide-timer {
     transform: scale(1);
     transition: transform 200ms linear;
@@ -303,7 +332,7 @@
 
   .main-slideshow__green-implants {
     position: relative;
-    right: 25px;
+    right: 40px;
     max-width: 100%;
   }
 
@@ -331,32 +360,63 @@
 
   @media only screen and (max-width: 768px) {
     .main-slideshow__textgroup {
+      position: static;
       text-align: center;
       margin: 0;
       width: auto;
     }
 
+    .main-slideshow {
+      height: auto;
+    }
+
     .main-slideshow__title {
       font-size: 24px;
       line-height: 40px;
+      margin-bottom: 12px;
+    }
+
+    .main-slideshow__desc {
+      margin-bottom: 7px;
     }
 
     .main-slideshow__content {
+      position: static;
+      display: flex;
+      height: auto;
+      flex-direction: column;
+    }
+
+    .main-slideshow__textgroup {
+      height: auto;
+      & > * + * {
+        margin-top: 16px;
+      }
+    }
+
+    .main-slideshow__mobile-btn {
       display: block;
     }
 
-    .main-slideshow__textgroup > * + * {
-      margin-top: 16px;
+    .main-slideshow__timers--mobile {
+      display: block;
     }
 
     .main-slideshow__green-implants {
+      margin: 0 auto;
       position: static;
-      text-align: center;
+      margin-bottom: 20px;
+
+      &__img {
+        display: block;
+      }
     }
 
     .main-slideshow__social, 
     .main-slideshow__swipe-controls,
-    .main-slideshow__timers { 
+    .main-slideshow__timers,
+    .main-slideshow__desktop-btn
+    { 
       display: none;
     }
   }

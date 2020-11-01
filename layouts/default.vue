@@ -137,12 +137,21 @@
   }
 
   .button--more {
+    font-family: 'MontserratSemiBold';
+    font-size: 14px;
     margin: 0;
-    height: 45px;
-    width: 215px;
-    border: 1px solid rgba(255, 255, 255, 0.6);
+    height: 44px;
+    width: 247px;
+    border: 1px solid rgba(255, 255, 255, 0.64);
     border-radius: 2px;
-    background: white;
+    color: #ffffff;
+    background: transparent;
+    transition: background-color 180ms;
     cursor: pointer;
+
+    &:hover {
+      color: $primary-black;
+      background-color: #ffffff;
+    }
   }
 </style>
