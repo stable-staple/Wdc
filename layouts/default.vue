@@ -124,7 +124,6 @@
 
   .card_heading {
     font-family: 'MontserratBold';
-    font-style: normal;
     font-size: 16px;
     line-height: 16px;
     color: var(--primary-color);

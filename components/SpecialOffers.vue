@@ -2,23 +2,29 @@
   .special-offers
     span.special-offers__title Акции
     .special-offers__controls
-      button.swipe-button.swiper-button--prev(:disabled="isStart()" @click="currSlide--")
+      button.swipe-button.swiper-button--prev(:disabled="this.currSlide == 0")
         svg(width='40' height='40' viewbox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg')
           circle(cx='20' cy='20' r='19.375' stroke-width='1.25')
           path(d='M22 25.2856L18 20.1428L22 14.9999' stroke-width='1.82857')
-      button.swipe-button.swiper-button--next(:disabled="isEnd()" @click="currSlide++")
+      button.swipe-button.swiper-button--next(:disabled="this.currSlide == 1")
         svg(width='40' height='40' viewbox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg')
           circle(cx='20' cy='20' r='19.3' stroke-width='1.4')
           path(d='M18 15L22 20.1429L18 25.2857' stroke-width='1.8')
     swiper.special-offers__list(ref="offersSwiper" :options="swiperOptions")
       swiper-slide.special-offer
-        h4.card_heading.special-offer__title Акция на импланты
+        p.card_heading.special-offer__title Акция на импланты
         p.special-offer__desc.card_desc Прицельный снимок бесплатно
         a.special-offer__more(href="#").card_desc Подробнее
         img(src="~assets/img/offers/offers_backdrop1.png" class="special-offer__backdrop")
         img(src="~assets/img/offers/offers_img1.png" class="special-offer__img")
       swiper-slide.special-offer
-        h4.card_heading.special-offer__title Акция на удаление зуба
+        p.card_heading.special-offer__title Акция на удаление зуба
+        p.card_desc.special-offer__desc Компьютерная томография бесплатно
+        a.special-offer__more(href="#").card_desc Подробнее
+        img(src="~assets/img/offers/offers_backdrop2.png" class="special-offer__backdrop")
+        img(src="~assets/img/offers/offers_img2.png" class="special-offer__img")
+      swiper-slide.special-offer
+        p.card_heading.special-offer__title Акция на удаление зуба
         p.card_desc.special-offer__desc Компьютерная томография бесплатно
         a.special-offer__more(href="#").card_desc Подробнее
         img(src="~assets/img/offers/offers_backdrop2.png" class="special-offer__backdrop")
@@ -29,29 +35,44 @@
 export default {
   data() {
     return {
-      swiper: null,
+      isStart: true,
+      isEnd: false,
+      totalPages: 1,
       currSlide: 0,
       swiperOptions: {
         spaceBetween: 24,
+        totalPages: 2,
         slidesPerView: 'auto',
+        preventInteractionOnTransition: true,
         grab: true,
         navigation: {
           nextEl: '.swiper-button--next',
           prevEl: '.swiper-button--prev'
-        },
+        }
       }
     }
   },
-  methods: {
-    isStart: function () {
-      return this.currSlide == 0
-    },
-    isEnd: function () {
-      return this.currSlide == 1
+  computed: {
+    swiper() {
+      return this.$refs.offersSwiper.$swiper
     }
   },
+  methods: {
+    inc: function () {
+      this.currSlide++;
+    },
+    defaults: function () {
+      this.isStart = false;
+      this.isEnd = false;
+    }
+  },
+  updated() {
+    this.isStart = false;
+    this.isEnd = false;
+  },
   mounted() {
-    this.swiper = this.$refs.offersSwiper.swiperInstance;
+    this.swiper.on('slidePrevTransitionStart', () => this.currSlide--)
+    this.swiper.on('slideNextTransitionStart', () => this.currSlide++)
   }
 }
 </script>
@@ -109,8 +130,8 @@ export default {
   .special-offer__title {
     line-height: 29px;
     margin: 0 0 4px 0;
-    font-size: 20px;
-    font-weight: 700;
+    font-size: 18px;
+    font-style: normal;
     color: $primary-black;
   }
 
