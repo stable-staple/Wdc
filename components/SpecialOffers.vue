@@ -40,9 +40,9 @@ export default {
       totalPages: 1,
       currSlide: 0,
       swiperOptions: {
-        spaceBetween: 24,
         slidesPerView: 'auto',
         grab: true,
+        spaceBetween: 24,
         navigation: {
           nextEl: '.swiper-button--next',
           prevEl: '.swiper-button--prev'
@@ -91,9 +91,9 @@ export default {
     display: flex;
     overflow: scroll;
     margin-left: -40px;
-    & > .special-offer + .special-offer {
-      margin-left: 24px;
-    }
+    // & > .special-offer + .special-offer {
+    //   margin-left: 24px;
+    // }
   }
 
   .special-offer {
@@ -172,10 +172,33 @@ export default {
   }
 
   @media only screen and (max-width: 768px) {
+    .special-offers__title {
+      font-size: 22px;
+      line-height: 28px;
+    }
+
+    .special-offers {
+      padding: 41px 0 0;
+    }
+
+    .special-offers__list {
+      width: calc(100% + 40px);
+
+      & > .special-offer + .special-offer {
+        margin-left: 12px !important;
+      }
+    }
+
     .special-offer {
       flex-shrink: 0;
       min-width: 100%;
+      padding: 16px 0 24px 16px;
       width: 100%;
+      height: 167px;
+
+      &__more {
+        visibility: hidden;
+      }
     }
   }
 </style>
