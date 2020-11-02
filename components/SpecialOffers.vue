@@ -91,9 +91,9 @@ export default {
     display: flex;
     overflow: scroll;
     margin-left: -40px;
-    // & > .special-offer + .special-offer {
-    //   margin-left: 24px;
-    // }
+    & > .special-offer + .special-offer {
+      margin-left: 24px;
+    }
   }
 
   .special-offer {
@@ -185,7 +185,7 @@ export default {
       width: calc(100% + 40px);
 
       & > .special-offer + .special-offer {
-        margin-left: 12px !important;
+        margin-left: 12px;
       }
     }
 

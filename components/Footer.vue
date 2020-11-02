@@ -96,6 +96,7 @@
   #map {
     width: 100vw;
     height: 768px;
+    outline: #ffffff;
   }
 
   .footer {
@@ -195,8 +196,13 @@ export default {
           zoom: 16,
           style: 'mapbox://styles/ewewe/ckfv0xc350aqx1as79qa4had3?optimize=true'
         });
+        map.scrollZoom.disable();
+        map.addControl(new mapboxgl.NavigationControl());
+        var marker = new mapboxgl.Marker()
+          .setLngLat([37.424905, 55.737923])
+          .addTo(map);
       };
-    }, 2000);
+    }, 3000);
   }
 }
 </script>
