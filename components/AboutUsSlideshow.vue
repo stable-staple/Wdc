@@ -1,6 +1,17 @@
 <template lang="pug">
   .about-us
     .about-us__content
+      .textgroup--mobile
+        span.textgroup--mobile__title {{ slides[currentSlide].title }}
+        .special-offers__controls
+          button.swipe-button.swiper-button--prev(:disabled="this.isStart")
+            svg(width='40' height='40' viewbox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg')
+              circle(cx='20' cy='20' r='19.375' stroke-width='1.25')
+              path(d='M22 25.2856L18 20.1428L22 14.9999' stroke-width='1.82857')
+          button.swipe-button.swiper-button--next(:disabled="this.isEnd")
+            svg(width='40' height='40' viewbox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg')
+              circle(cx='20' cy='20' r='19.3' stroke-width='1.4')
+              path(d='M18 15L22 20.1429L18 25.2857' stroke-width='1.8')
       .textgroup(:class="{'textgroup--fade': contentTransition}")
         h3.primary_heading.textgroup__title {{ slides[currentSlide].title }}
         p.textgroup__text.card_desc {{ slides[currentSlide].desc }}
@@ -24,6 +35,7 @@
         @click="gallery.settings.startAt = currentSlide; gallery.open();"
       )
       .about-us__img-overlay(:class="{'about-us__img-overlay--scaled': contentTransition}")
+    p.textgroup__text.textgroup--mobile__text.card_desc(style="margin-bottom: 0;") {{ slides[currentSlide].desc }}
 </template>
 
 <script>
@@ -195,6 +207,23 @@
   }
 
   @media only screen and (max-width: 768px) {
+    .about-us__controls {
+      display: none;
+    }
+
+    .about-us {
+      padding: 40px 0;
+    }
+
+    .about-us__img {
+      margin-bottom: 20px;
+    }
+
+    .about-us__content {
+      max-width: initial;
+      width: 100%;
+    }
+
     .about-us__img__inner {
     }
   }

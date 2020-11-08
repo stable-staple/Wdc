@@ -354,7 +354,8 @@ li {
   font-family: 'MontserratBold';
   font-style: normal;
   &:after {
-    content: url('~assets/img/arrow_right.svg');
+    content: url('~assets/img/arrow_right_black.svg');
+    fill: $primary-black;
     margin-left: 16px;
     transition: opacity 300ms ease-in-out;
     opacity: 0;

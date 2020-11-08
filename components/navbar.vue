@@ -1,24 +1,28 @@
 <template lang="pug">
-  nav(class="nav")
-    div(class="nav__inner")
-      div(class="nav__container medium_header nav__mobile-logo")
-        NuxtLink(to="/"): img.nav__logo(src="~/assets/img/logo.svg")
-        .nav__elem: |
-          NuxtLink(to="services" class="nav__link nav__link--underlined") Услуги и цены
-        .nav__elem: |
-          NuxtLink(to="services" class="nav__link nav__link--underlined") О нас
-        .nav__elem: |
-          NuxtLink(to="services" class="nav__link nav__link--underlined") Наши врачи
-        .nav__elem: |
-          NuxtLink(to="services" class="nav__link nav__link--underlined") Контакты
-      div(class="nav__container medium_header nav__mobile-actions")
-        .nav__elem: |
-          a(class="nav__link nav__link--phone-icon" href="tel:+7 (499) 372-94-90") +7 (499) 372-94-90
-          button.nav__dropdown
-            svg(width="28" height="16" viewBox="0 0 28 16" fill="none" xmlns="http://www.w3.org/2000/svg")
-              rect(y="4" width="28" height="1.4" rx="0.7" fill="white")
-              rect(y="10" width="28" height="1.4" rx="0.7" fill="white")
-        .nav__elem: button(class="nav__appointment-btn card_desc") Записаться на прием
+  div
+    nav.nav__hidden
+    nav(class="nav")
+      div(class="nav__inner")
+        div(class="nav__container medium_header nav__mobile-logo")
+          NuxtLink(to="/"): img.nav__logo(src="~/assets/img/logo.svg")
+          .nav__elem: |
+            NuxtLink(to="services" class="nav__link nav__link--underlined") Услуги и цены
+          .nav__elem: |
+            NuxtLink(to="services" class="nav__link nav__link--underlined") О клинике
+          .nav__elem: |
+            NuxtLink(to="services" class="nav__link nav__link--underlined") Врачи
+          .nav__elem: |
+            NuxtLink(to="services" class="nav__link nav__link--underlined") Статьи
+          .nav__elem: |
+            NuxtLink(to="services" class="nav__link nav__link--underlined") Контакты
+        div(class="nav__container medium_header nav__mobile-actions")
+          .nav__elem: |
+            a(class="nav__link nav__link--phone-icon" href="tel:+7 (499) 372-94-90") +7 (499) 372-94-90
+            button.nav__dropdown
+              svg(width="28" height="16" viewBox="0 0 28 16" fill="none" xmlns="http://www.w3.org/2000/svg")
+                rect(y="4" width="28" height="1.4" rx="0.7" fill="white")
+                rect(y="10" width="28" height="1.4" rx="0.7" fill="white")
+          .nav__elem: button(class="nav__appointment-btn card_desc") Записаться на прием
 </template>
 
 <style lang="scss">
@@ -26,7 +30,7 @@
     top: 0;
     padding: 12px 0;
     background-color: $primary-black;
-    position: sticky;
+    position: fixed;
     z-index: 3;
     width: 100%;
 
@@ -41,6 +45,10 @@
     & > * + * {
       margin-left: 32px;
     }
+  }
+
+  .nav__hidden {
+    height: 64px;
   }
   
   .nav__inner {
@@ -111,19 +119,39 @@
   }
 
   @media only screen and (max-width: 768px) {
-  .nav__link:not(.nav__link--phone-icon), .nav__appointment-btn {
-    display: none;
-  }
-  .nav__dropdown { 
-    display: initial;
-  }
+    .nav {
+      padding: 8px 0 32px 0;
+      height: 48px;
+    }
 
-  .nav__logo {
-    margin-left: 16px;
-  }
+    .nav__inner {
+      max-width: initial;
+      padding: 0 16px;
+      height: 32px;
+    }
 
-  .nav__mobile-logo {
-    width: 10%;
-  }
+    .nav__hidden {
+      height: 80px;
+    }
+
+    .nav__link:not(.nav__link--phone-icon), .nav__appointment-btn {
+      display: none;
+    }
+
+    .nav__dropdown {
+      display: initial;
+    }
+
+    .nav__logo {
+      height: 32px;
+    }
+
+    .nav__mobile-logo {
+      width: 10%;
+    }
+
+    .nav__mobile-actions {
+      flex-direction: row-reverse;
+    }
 }
 </style>

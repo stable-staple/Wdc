@@ -1,15 +1,16 @@
 <template lang="pug">
   .special-offers
-    span.special-offers__title Акции
-    .special-offers__controls
-      button.swipe-button.swiper-button--prev(:disabled="this.isStart")
-        svg(width='40' height='40' viewbox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg')
-          circle(cx='20' cy='20' r='19.375' stroke-width='1.25')
-          path(d='M22 25.2856L18 20.1428L22 14.9999' stroke-width='1.82857')
-      button.swipe-button.swiper-button--next(:disabled="this.isEnd")
-        svg(width='40' height='40' viewbox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg')
-          circle(cx='20' cy='20' r='19.3' stroke-width='1.4')
-          path(d='M18 15L22 20.1429L18 25.2857' stroke-width='1.8')
+    .special-offers__textgroup--mobile
+      span.special-offers__textgroup--mobile__title Акции
+      .special-offers__controls
+        button.swipe-button.swiper-button--prev(:disabled="this.isStart")
+          svg(width='40' height='40' viewbox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg')
+            circle(cx='20' cy='20' r='19.375' stroke-width='1.25')
+            path(d='M22 25.2856L18 20.1428L22 14.9999' stroke-width='1.82857')
+        button.swipe-button.swiper-button--next(:disabled="this.isEnd")
+          svg(width='40' height='40' viewbox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg')
+            circle(cx='20' cy='20' r='19.3' stroke-width='1.4')
+            path(d='M18 15L22 20.1429L18 25.2857' stroke-width='1.8')
     swiper.special-offers__list(ref="offersSwiper" :options="swiperOptions")
       swiper-slide.special-offer
         p.card_heading.special-offer__title Акция на импланты
@@ -72,24 +73,36 @@ export default {
 
   .special-offers {
     padding: 96px 0 calc(96px - 40px);
+  }
+
+  .special-offers__textgroup--mobile {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: visible;
+    width: 100%;
+    margin-bottom: 0;
 
     &__title {
       margin: 0;
       font-family: 'MontserratSemiBold';
-      font-size: 48px;
-      line-height: 48px;
+      max-width: 70%;
       font-weight: 600;
+      font-size: 40px;
+      line-height: 26px;
     }
   }
 
   .special-offers__controls {
     float: right;
+    height: 40px;
   }
 
   .special-offers__list {
     padding: 40px;
     display: flex;
-    overflow: scroll;
+    overflow: hidden;
     margin-left: -40px;
     & > .special-offer + .special-offer {
       margin-left: 24px;
@@ -172,17 +185,21 @@ export default {
   }
 
   @media only screen and (max-width: 768px) {
-    .special-offers__title {
-      font-size: 22px;
-      line-height: 28px;
+    .textgroup--mobile {
+      margin-bottom: 0;
     }
 
     .special-offers {
       padding: 41px 0 0;
     }
 
+    .special-offers__textgroup--mobile__title {
+      font-size: 22px;
+    }
+
     .special-offers__list {
       width: calc(100% + 40px);
+      padding-top: 32px;
 
       & > .special-offer + .special-offer {
         margin-left: 12px;
@@ -198,6 +215,14 @@ export default {
 
       &__more {
         visibility: hidden;
+      }
+
+      &__backdrop {
+        height: 122px;
+      }
+
+      &__img {
+        height: 90px;
       }
     }
   }

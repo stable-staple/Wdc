@@ -43,7 +43,7 @@ export default {
   }
 
   .service-card__desc {
-    margin: 0 0 5.5px 0;
+    margin: 0 0 6px 0;
     color: $primary-color;
   }
 
@@ -76,12 +76,16 @@ export default {
 
   @media only screen and (max-width: 768px) {
     .service-card {
-      padding-top: 20px;
       width: 100%;
+      line-height: 76px;
     }
 
     .service-card__img {
-      display: none;
+      display: inline;
+      height: 51px;
+      width: 51px;
+      margin: 0 16px;
+      vertical-align: middle;
     }
 
     .service-card__arrow {
@@ -89,7 +93,9 @@ export default {
     }
 
     .service-card__textgroup {
-      margin-left: 20px;
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0;
     }
   }
 </style>

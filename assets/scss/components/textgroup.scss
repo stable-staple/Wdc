@@ -31,6 +31,30 @@
   color: $primary-color;
 }
 
+.textgroup--mobile {
+  height: 50px;
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  overflow: visible;
+  width: 100%;
+  margin-bottom: 32px;
+
+  &__title {
+    margin: 0;
+    display: none;
+    font-family: 'MontserratSemiBold';
+    max-width: 70%;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 26px;
+  }
+
+  &__text {
+    display: none;
+  }
+}
+
 @keyframes textgroupFade {
   from {
     opacity: 0;
@@ -43,7 +67,23 @@
 }
 
 @media only screen and (max-width: 768px) {
+  .textgroup {
+    display: none;
+  }
+
   .textgroup__text {
     width: auto;
+  }
+
+  .textgroup--mobile {
+    display: flex;
+  }
+
+  .textgroup--mobile__text {
+    display: block;
+  }
+
+  .textgroup--mobile__title {
+    display: block;
   }
 }

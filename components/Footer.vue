@@ -94,7 +94,7 @@
   }
 
   #map {
-    width: 100vw;
+    width: 100%;
     height: 768px;
     outline: #ffffff;
   }
@@ -177,6 +177,26 @@
       color: rgba(255, 255, 255, 0.64);
       font-size: 14px;
       line-height: 14px;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    .footer__nav {
+      height: 88px;
+      margin: 0 16px;
+      padding: 24px 0;
+    }
+
+    .footer__button {
+      height: 40px;
+    }
+
+    .footer__links, .footer__links__nav {
+      flex-direction: column;
+    }
+
+    .footer__nav__arrow-up {
+      display: none;
     }
   }
 </style>

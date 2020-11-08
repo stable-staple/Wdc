@@ -9,6 +9,7 @@
 <style lang="scss">
   body {
     margin: 0 !important;
+    overflow-x: hidden;
   }
 
   a {
@@ -74,6 +75,10 @@
     opacity: 0.3;
   }
 
+  //* {
+  //  outline: 1px solid red;
+  //}
+
   .container--main {
     margin: 0 auto;
     max-width: $container--main-width;
@@ -87,11 +92,11 @@
   }
 
   .full-bleed {
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin: 0 -50vw;
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin: 0 -50vw;
   }
 
   .primary_heading {
@@ -153,5 +158,9 @@
       color: $primary-black;
       background-color: #ffffff;
     }
+  }
+
+  .glightbox-open {
+    overflow: auto;
   }
 </style>

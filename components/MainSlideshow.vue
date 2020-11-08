@@ -292,7 +292,7 @@
     display: flex;
     flex-direction: column;
     position: absolute;
-    right: 2.3px;
+    right: 0;
     align-self: center;
     z-index: 1;
 
@@ -330,7 +330,7 @@
     }
   }
 
-  .main-slideshow__green-implants {
+  .main-slideshow__green-implants__img {
     position: relative;
     right: 40px;
     max-width: 100%;
@@ -389,9 +389,6 @@
 
     .main-slideshow__textgroup {
       height: auto;
-      & > * + * {
-        margin-top: 16px;
-      }
     }
 
     .main-slideshow__mobile-btn {
@@ -408,6 +405,7 @@
       margin-bottom: 20px;
 
       &__img {
+        position: static;
         display: block;
       }
     }
