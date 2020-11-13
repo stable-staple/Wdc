@@ -33,40 +33,15 @@
         )
         button(class="services-sections-apply__apply-btn") Записаться на прием
         p(class="services-block__modal__confidential") Нажимая кнопку «Записаться на прием», вы соглашаетесь с конфиденциальностью персональной информации
-  .service-info
-    span.service-info__breadcrumbs
-      NuxtLink.breadcrumbs__link(to="/") Главная&nbsp;&nbsp;
-      | / &nbsp;Детская стоматология
-    h1.services-block__title {{ servicesSection[currentSection].name }}
-    ul.services-list
-      li.services-list__elem(
-        v-for="service in servicesSection[currentSection].servicesList"
-        @click="modalTitle = service.name; modalOpened = true;"
-      )
-        span {{ service.name }}
-          span(class="service__price") {{ service.price }}
-    hr.service-section__sep
-    img.service-info__img(
-      src="~assets/img/services_page/child_dent1.jpg"
-      width="853px" 
-      height="524px"
-      )
-    p.service-section__desc {{ servicesSection[currentSection].description }}
-    span.service-info__more Читать полностью
-    hr.service-section__sep
-
+  NuxtChild
   .services__right
     .services-sections-list
-      a.services-sections-list__elem(
-        href="#"
-        v-for="(section, ind) in servicesSection" 
-        @click="currentSection = ind"
+      NuxtLink.services-sections-list__elem(
+        v-for="(section, ind) in sidebar"
+        :to="section.href"
         :class="{'services-sections-list__elem--active': currentSection == ind}"
-        ) {{ section.name}}
-    .services-sections-apply
-      p.services-sections-apply__desc Вы можете записаться на прием по телефону или оставить заявку
-      a.services-sections-apply__tel(href="tel:+7(499) 372 94 90") +7 (499) 372 94 90
-      button.services-sections-apply__apply-btn Оставить заявку
+        :key="section.title"
+        ) {{ section.title}}
 </template>
 
 <script>
@@ -76,6 +51,36 @@ export default {
       modalOpened: false,
       modalTitle: null,
       currentSection: 0,
+      sidebar: [
+        {
+          title: "Детская стоматология",
+          href: "/services/detskaya_stomatologiya"
+        },
+        {
+          title: "Лечение зубов",
+          href: "/services/lechenie_zubov"
+        },
+        {
+          title: "Удаление и реставрация",
+          href: "/services/udalenie_i_restavratsiya"
+        },
+        {
+          title: "Виниры и люминиры",
+          href: "/services/viniry_i_luminiry"
+        },
+        {
+          title: "Отбеливание и гигиена",
+          href: "/services/otbelivanie_i_gigiena"
+        },
+        {
+          title: "Исправление прикуса",
+          href: "/services/ispravlenie_prikusa"
+        },
+        {
+          title: "Осмотр и консультация",
+          href: "/services/osmotr_i_konsultatsiya"
+        }
+      ],
       servicesSection: [
         {
           name: "Детская стоматология",
@@ -168,16 +173,19 @@ export default {
           ]
         },
         {
-          name: "Импланты и протезы"
+          name: "Удаление и реставрация"
         },
         {
-          name: "Импланты и протезы"
+          name: "Виниры и люминиры"
         },
         {
-          name: "Импланты и протезы"
+          name: "Отбеливание и гигиена"
         },
         {
-          name: "Импланты и протезы"
+          name: "Исправление прикуса"
+        },
+        {
+          name: "Осмотр и консультация"
         }
       ]
     }
@@ -304,6 +312,13 @@ export default {
       margin-left: 8px;
     }
   }
+  &__title {
+    margin: 0 0 32px 0;
+    color: $primary-black;
+    font-family: 'MontserratSemiBold';
+    font-size: 40px;
+    line-height: 48px;
+  }
 }
 
 .breadcrumbs__link {
@@ -326,7 +341,6 @@ export default {
 
 .services-list__elem {
   font-family: 'MontserratRegular';
-  padding-left: 41px;
   padding-right: 49px;
   cursor: pointer;
   height: 72px;
@@ -387,21 +401,25 @@ li {
   min-width: 394px;
   font-size: 14px;
   margin: 0 0 32px 0;
-  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.02), 
-              0px 10px 40px rgba(0, 0, 0, 0.04),
-              0px 2px 6px rgba(0, 0, 0, 0.04), 
-              0px 0px 1px rgba(114, 110, 110, 0.04);
   border-radius: 10px;
+  & > * + * {
+    margin-top: 10px;    
+  }
 }
 
 .services-sections-list__elem {
   display: block;
-  height: 4em;
+  height: 4.5em;
   padding-left: 66px;
-  line-height: 4em;
+  line-height: 4.5em;
   cursor: pointer;
-  font-family: 'MontserratRegular';
-  color: #78797D;
+  font-family: 'MontserratSemiBold';
+  color: $primary-black;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.02), 
+              0px 10px 40px rgba(0, 0, 0, 0.04), 
+              0px 2px 6px rgba(0, 0, 0, 0.04), 
+              0px 0px 1px rgba(0, 0, 0, 0.04);
+  border-radius: 6px;
   &:hover {
     background: #F8F8F8;
     &:after {
@@ -414,7 +432,6 @@ li {
     &:hover:after {
       opacity: 0;
     }
-    color: $primary-black;
   }
   &:after {
     content: url('~assets/img/arrow_right.svg');
@@ -426,42 +443,22 @@ li {
 }
 
 .services-sections-apply {
-  width: 394px;
-  height: 217px;
-  background: #FFFFFF;
-  padding: 26px;
-  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.02), 
-              0px 10px 40px rgba(0, 0, 0, 0.04), 
-              0px 2px 6px rgba(0, 0, 0, 0.04), 
-              0px 0px 1px rgba(0, 0, 0, 0.04);
-  border-radius: 10px;
-  
-  &__desc {
-    font-family: 'MontserratRegular';
-    font-size: 14px;
-    line-height: 24px;
-    margin: 0 0 16px 0;
-    color: $primary-black;
-  }
-  &__tel {
-    display: inline-block;
-    font-family: 'MontserratRegular';
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 32px;
-    margin: 0 0 20px 0;
-    color: $primary-black;
-  }
-  &__apply-btn {
-    height: 49px;
-    width: 100%;
-    font-family: 'MontserratBold';
-    cursor: pointer;
-    background: $primary-black;
-    border-radius: 2px;
-    font-size: 14px;
-    color: #FFFFFF;
-  }
+ background: $primary-grey-light;
+ border-radius: 2px;
+ padding: 14px 20px;
+ margin-top: 48px;
+
+ &__desc {
+   font-family: 'MontserratRegular';
+   font-size: 14px;
+   line-height: 24px;
+   margin: 0;
+   color: $primary-black;
+   & > a {
+     color: $primary-black;
+     font-weight: bold;
+   }
+ }
 }
 
 .margin-right-del {

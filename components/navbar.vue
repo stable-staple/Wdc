@@ -6,15 +6,15 @@
         div(class="nav__container medium_header nav__mobile-logo")
           NuxtLink(to="/"): img.nav__logo(src="~/assets/img/logo.svg")
           .nav__elem: |
-            NuxtLink(to="services" class="nav__link nav__link--underlined") Услуги и цены
+            NuxtLink(to="/services/detskaya_stomatologiya" class="nav__link nav__link--underlined") Услуги и цены
           .nav__elem: |
-            NuxtLink(to="services" class="nav__link nav__link--underlined") О клинике
+            NuxtLink(to="/services" class="nav__link nav__link--underlined") О клинике
           .nav__elem: |
-            NuxtLink(to="services" class="nav__link nav__link--underlined") Врачи
+            NuxtLink(to="/services" class="nav__link nav__link--underlined") Врачи
           .nav__elem: |
-            NuxtLink(to="services" class="nav__link nav__link--underlined") Статьи
+            NuxtLink(to="/services" class="nav__link nav__link--underlined") Статьи
           .nav__elem: |
-            NuxtLink(to="services" class="nav__link nav__link--underlined") Контакты
+            NuxtLink(to="/services" class="nav__link nav__link--underlined") Контакты
         div(class="nav__container medium_header nav__mobile-actions")
           .nav__elem: |
             a(class="nav__link nav__link--phone-icon" href="tel:+7 (499) 372-94-90") +7 (499) 372-94-90

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0622c075-0869-456b-922f-7e44642bfdae" name="Default Changelist" comment="changed structure">
+      <change afterPath="$PROJECT_DIR$/pages/services/detskaya_stomatologiya.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/AboutUsSlideshow.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/AboutUsSlideshow.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/navbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/navbar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/services.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/services.vue" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Vue Single File Component" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1jygW1iAspDz387cwUuF9vwEB6n" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+    <property name="vuejs.nuxt.types-notification-shown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Кирилл\WebstormProjects\Wdc\assets\img" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="WdcDent" type="ChromiumRemoteDebugType" factoryName="Chromium Remote" port="9229">
+      <method v="2">
+        <option name="NpmBeforeRunTask" enabled="true">
+          <package-json value="$PROJECT_DIR$/package.json" />
+          <command value="run" />
+          <scripts>
+            <script value="dev" />
+          </scripts>
+          <node-interpreter value="project" />
+          <envs />
+        </option>
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0622c075-0869-456b-922f-7e44642bfdae" name="Default Changelist" comment="" />
+      <created>1604781774778</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1604781774778</updated>
+      <workItem from="1604781776510" duration="1209000" />
+      <workItem from="1604783071972" duration="935000" />
+      <workItem from="1604769562350" duration="5464000" />
+      <workItem from="1604783145703" duration="420000" />
+      <workItem from="1604785921093" duration="29712000" />
+    </task>
+    <task id="LOCAL-00001" summary="changed structure">
+      <created>1604849235457</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1604849235457</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="changed structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed structure" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="361" y="71" key="#Deployment" timestamp="1604769611493">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="71" key="#Deployment/0.0.1536.824@0.0.1536.824" timestamp="1604769611493" />
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604769750580">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1604769750580" />
+    <state x="506" y="214" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1604797053258">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="506" y="214" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1604797053258" />
+    <state width="1515" height="159" key="GridCell.Tab.0.bottom" timestamp="1604871578158">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="159" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1604871578158" />
+    <state width="1515" height="159" key="GridCell.Tab.0.center" timestamp="1604871578158">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="159" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1604871578158" />
+    <state width="1515" height="159" key="GridCell.Tab.0.left" timestamp="1604871578158">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="159" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1604871578158" />
+    <state width="1515" height="159" key="GridCell.Tab.0.right" timestamp="1604871578158">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="159" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1604871578158" />
+    <state x="277" y="57" key="SettingsEditor" timestamp="1604783083350">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1604783083350" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1604849247056">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1604849247056" />
+    <state x="478" y="11" width="579" height="801" key="find.popup" timestamp="1604783323462">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="478" y="11" width="579" height="801" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1604783323462" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1604769769256">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1604769769256" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1604870997292">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1604870997292" />
+  </component>
+</project>
