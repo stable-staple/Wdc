@@ -304,11 +304,16 @@ export default {
     display: inline-block;
     color: $primary-black;
     font-family: 'MontserratBold';
+    height: 37px;
+    width: 198px;
+    border-radius: 2px;
+    background-color: $primary-grey-light;
     font-size: 14px;
     line-height: 17px;
+    opacity: 0.56;
     cursor: pointer;
     &:after {
-      content: url('~assets/img/arrow_down.svg');
+      content: url('~assets/img/arrow_down_black.svg');
       margin-left: 8px;
     }
   }

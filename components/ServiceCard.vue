@@ -78,6 +78,10 @@ export default {
     .service-card {
       width: 100%;
       line-height: 76px;
+
+      &:hover {
+        transform: translateY(0);
+      }
     }
 
     .service-card__img {

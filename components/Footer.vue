@@ -158,6 +158,7 @@
 
     & > div > a {
       color: rgba(255, 255, 255, 0.32);
+      font-family: 'MontserratRegular';
       font-size: 14px;
       line-height: 14px;
     }
@@ -172,6 +173,8 @@
   .footer__copyright {
     display: flex;
     justify-content: space-between;
+    font-family: 'MontserratRegular';
+    font-size: 14px;
 
     & > span {
       color: rgba(255, 255, 255, 0.64);

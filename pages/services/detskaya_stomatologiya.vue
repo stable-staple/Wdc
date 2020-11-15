@@ -26,7 +26,7 @@
       height="524px"
       )
       p.service-section__desc {{ description }}
-    span.service-info__more Читать полностью
+    button.service-info__more Читать полностью
     hr.service-section__sep
 </template>
 

@@ -2,7 +2,7 @@
   .doctors
     .doctors__modal(v-if="modalOpened" @click.self="modalOpened = false")
       .doctors__modal__inner
-        .doctors__modal__img-container
+        img.doctors__modal__img-container(:src="require(`../assets/img/doctors/doctor1.jpg`)")
         .doctors__modal__content
           h2.doctors__modal__content__title Иванчина Татьяна Александровна
           h5.doctors__modal__content__desc Врач - стоматолог, терапевт
@@ -14,7 +14,7 @@
             li.doctors__modal__list-item
               | Пломбирование корневых каналов зубов методом латеральной компакции гуттаперчи
             li.doctors__modal__list-item Профессиональная гигиена полости рта
-          button Записаться на прием
+          button.doctors__modal__btn Записаться на прием
         .close-modal(@click="modalOpened = false")
           svg(width='24' height='24' viewbox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg')
             rect(x='0.75' y='1.81055' width='1.4' height='30.0003' transform='rotate(-45 0.75 1.81055)' fill='#272727')
@@ -224,10 +224,35 @@ export default {
     transform: translate(-50%, -50%);
   }
 
+  .doctors__modal__list {
+    padding-left: 16px;
+    font-family: 'MontserratRegular';
+    font-size: 14px;
+    line-height: 24px;
+    margin: 0;
+
+    & > * + * {
+      margin-top: 16px;
+      line-height: 20px;
+    }
+  }
+
   .doctors__modal__list-item {
     &::marker {
       color: $primary-green;
     }
+  }
+
+  .doctors__modal__btn {
+    position: absolute;
+    bottom: 0;
+    width: 258px;
+    height: 45px;
+    cursor: pointer;
+    background-color: $primary-black;
+    font-family: 'MontserratSemiBold';  
+    color: #FFFFFF;
+    border-radius: 2px;
   }
 
   .close-modal {
@@ -246,13 +271,25 @@ export default {
   }
   
   .doctors__modal__content {
+    position: relative;
     display: inline-block;
     vertical-align: top;
     height: 100%;
     width: 450px;
 
     &__title {
-      margin: 0;
+      margin: 0 0 12px 0;
+      font-family: 'MontserratSemiBold';
+      line-height: 40px;
+      font-size: 32px;
+      color: $primary-black;
+    }
+
+    &__desc {
+      font-family: 'MontserratRegular';
+      font-size: 12px;
+      color: $primary-grey;
+      margin: 0 0 20px 0;
     }
   }
 
