@@ -2,7 +2,7 @@
   .service-info
     span.service-info__breadcrumbs
       NuxtLink.breadcrumbs__link(to="/") Главная&nbsp;&nbsp;
-      | / {{ title }}
+      | / &nbsp;{{ title }}
     h1.services-block__title {{ title }}
     ul.services-list
       li.services-list__elem(

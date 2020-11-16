@@ -2,7 +2,7 @@
   .service-info
     span.service-info__breadcrumbs
       NuxtLink.breadcrumbs__link(to="/") Главная&nbsp;&nbsp;
-      | / Лечение зубов
+      | / &nbsp;Лечение зубов
     h1.services-block__title Лечение зубов
     ul.services-list
       li.services-list__elem(

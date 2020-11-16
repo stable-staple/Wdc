@@ -30,14 +30,15 @@
                     rect(x="6.98999" y="5.99976" width="20" height="1.4" rx="0.7" transform="rotate(45 6.98999 5.99976)" fill="white")
           .nav__elem: button(class="card_desc nav__appointment-btn") Записаться на прием
     .nav__dropdown-menu(:class="{'nav__dropdown-menu--active': toggleDropdown}")
-      ul.nav__dropdown-menu__list
-        li.nav__dropdown-menu__list-item: a(href="#") Услуги и цены
-        li.nav__dropdown-menu__list-item: a(href="#") О клинике
-        li.nav__dropdown-menu__list-item: a(href="#") Врачи
-        li.nav__dropdown-menu__list-item: a(href="#") Статьи
-        li.nav__dropdown-menu__list-item: a(href="#") Контакты
-      hr(style="margin-bottom:24px;margin-top: 28px;")
-      address.wdc-address Москва, ул. Крылатская, дом 19
+      .nav__dropdown-menu__inner
+        ul.nav__dropdown-menu__list
+          li.nav__dropdown-menu__list-item: a(href="#") Услуги и цены
+          li.nav__dropdown-menu__list-item: a(href="#") О клинике
+          li.nav__dropdown-menu__list-item: a(href="#") Врачи
+          li.nav__dropdown-menu__list-item: a(href="#") Статьи
+          li.nav__dropdown-menu__list-item: a(href="#") Контакты
+        hr(style="margin-bottom:24px;margin-top: 28px;")
+        address.wdc-address Москва, ул. Крылатская, дом 19
       button.button--more.nav__appointment-btn--mobile.card_desc Записаться на прием
 </template>
 
@@ -133,6 +134,7 @@ export default {
     margin-left: 16px;
     cursor: pointer;
     display: none;
+    overflow: hidden;
     &__icon {
       vertical-align: sub;
     }
@@ -144,24 +146,34 @@ export default {
     position: fixed;
     right: 0;
     width: 100%;
-    visibility: hidden;
+    overflow: hidden;
     background: $primary-black;
     z-index: 12;
-    height: calc(100vh - 40px);
-    padding: 24px 16px 24px 16px;
+    height: 0;
+    transition: height 500ms;
+    padding: 0 16px;
+
+    &__inner {
+      position: relative;
+      top: 35px;
+    }
 
     &--active {
-      visibility: visible;
+      height: calc(100% - 40px);
+      padding: 0 16px;
     }
   }
 
   .nav__dropdown-menu__list {
+    position: relative;
+    top: 0px;
+    overflow: hidden;
     list-style: none;
+    padding: 0;
     & > * + * {
       margin-top: 24px;
     }
-    margin-bottom: 0 0 28px 0;
-    padding: 0;
+    margin: 0 0 28px 0;
   }
 
   .nav__dropdown-menu__list-item {
