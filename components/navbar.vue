@@ -36,7 +36,7 @@
         li.nav__dropdown-menu__list-item: a(href="#") Врачи
         li.nav__dropdown-menu__list-item: a(href="#") Статьи
         li.nav__dropdown-menu__list-item: a(href="#") Контакты
-      hr(style="margin-bottom:24px;")
+      hr(style="margin-bottom:24px;margin-top: 28px;")
       address.wdc-address Москва, ул. Крылатская, дом 19
       button.button--more.nav__appointment-btn--mobile.card_desc Записаться на прием
 </template>
@@ -92,9 +92,8 @@ export default {
   
   .nav__appointment-btn--mobile {
     position: absolute;
-    bottom: 0;
+    bottom: 24px;
     width: calc(100% - 32px);
-    margin-bottom: 24px;
   }
 
   .nav__link {
@@ -134,7 +133,6 @@ export default {
     margin-left: 16px;
     cursor: pointer;
     display: none;
-
     &__icon {
       vertical-align: sub;
     }
@@ -142,15 +140,15 @@ export default {
 
   .nav__dropdown-menu {
     display: none;
-    top: 80px;
-    position: absolute;
+    top: 40px;
+    position: fixed;
     right: 0;
     width: 100%;
     visibility: hidden;
     background: $primary-black;
     z-index: 12;
-    height: 453px;
-    padding: 0 16px;
+    height: calc(100vh - 40px);
+    padding: 24px 16px 24px 16px;
 
     &--active {
       visibility: visible;
@@ -162,7 +160,7 @@ export default {
     & > * + * {
       margin-top: 24px;
     }
-    margin: -8px 0 28px 0;
+    margin-bottom: 0 0 28px 0;
     padding: 0;
   }
 
