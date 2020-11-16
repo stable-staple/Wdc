@@ -18,12 +18,38 @@
         div(class="nav__container medium_header nav__mobile-actions")
           .nav__elem: |
             a(class="nav__link nav__link--phone-icon" href="tel:+7 (499) 372-94-90") +7 (499) 372-94-90
-            button.nav__dropdown
-              svg(width="28" height="16" viewBox="0 0 28 16" fill="none" xmlns="http://www.w3.org/2000/svg")
-                rect(y="4" width="28" height="1.4" rx="0.7" fill="white")
-                rect(y="10" width="28" height="1.4" rx="0.7" fill="white")
-          .nav__elem: button(class="nav__appointment-btn card_desc") Записаться на прием
+            button.nav__dropdown(@click="toggleDropdown = !toggleDropdown")
+              .nav__dropdown__icon
+                div(v-if="!toggleDropdown")
+                  svg(width="28" height="16" viewBox="0 0 28 16" fill="none" xmlns="http://www.w3.org/2000/svg")
+                    rect(y="4" width="28" height="1.4" rx="0.7" fill="white")
+                    rect(y="10" width="28" height="1.4" rx="0.7" fill="white")
+                div(v-if="toggleDropdown")
+                  svg(width="28" height="16" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg")
+                    rect(x="6" y="20.1418" width="20" height="1.4" rx="0.7" transform="rotate(-45 6 20.1418)" fill="white")
+                    rect(x="6.98999" y="5.99976" width="20" height="1.4" rx="0.7" transform="rotate(45 6.98999 5.99976)" fill="white")
+          .nav__elem: button(class="card_desc nav__appointment-btn") Записаться на прием
+    .nav__dropdown-menu(:class="{'nav__dropdown-menu--active': toggleDropdown}")
+      ul.nav__dropdown-menu__list
+        li.nav__dropdown-menu__list-item: a(href="#") Услуги и цены
+        li.nav__dropdown-menu__list-item: a(href="#") О клинике
+        li.nav__dropdown-menu__list-item: a(href="#") Врачи
+        li.nav__dropdown-menu__list-item: a(href="#") Статьи
+        li.nav__dropdown-menu__list-item: a(href="#") Контакты
+      hr(style="margin-bottom:24px;")
+      address.wdc-address Москва, ул. Крылатская, дом 19
+      button.button--more.nav__appointment-btn--mobile.card_desc Записаться на прием
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      toggleDropdown: false
+    }
+  }
+}
+</script>
 
 <style lang="scss">
   .nav {
@@ -49,6 +75,7 @@
 
   .nav__hidden {
     height: 64px;
+    background-color: $primary-black;
   }
   
   .nav__inner {
@@ -61,6 +88,13 @@
 
   .nav__elem {
     align-self: center;
+  }
+  
+  .nav__appointment-btn--mobile {
+    position: absolute;
+    bottom: 0;
+    width: calc(100% - 32px);
+    margin-bottom: 24px;
   }
 
   .nav__link {
@@ -100,9 +134,51 @@
     margin-left: 16px;
     cursor: pointer;
     display: none;
+
+    &__icon {
+      vertical-align: sub;
+    }
+  }
+
+  .nav__dropdown-menu {
+    display: none;
+    top: 80px;
+    position: absolute;
+    right: 0;
+    width: 100%;
+    visibility: hidden;
+    background: $primary-black;
+    z-index: 12;
+    height: 453px;
+    padding: 0 16px;
+
+    &--active {
+      visibility: visible;
+    }
+  }
+
+  .nav__dropdown-menu__list {
+    list-style: none;
+    & > * + * {
+      margin-top: 24px;
+    }
+    margin: -8px 0 28px 0;
+    padding: 0;
+  }
+
+  .nav__dropdown-menu__list-item {
+    color: #FFFFFF;
+    font-family: 'MontserratRegular';
+    font-size: 14px;
+    line-height: 14px;
+    &:after {
+      content: url('~assets/img/menu_arrow_right.svg');
+      float: right;
+    }
   }
 
   .nav__appointment-btn {
+    font-family: 'MontserratSemiBold';
     display: block;
     width: 212px;
     height: 37px;
@@ -115,6 +191,20 @@
       color: $primary_black;
       background-color: white;
       cursor: pointer;
+    }
+  }
+
+  .wdc-address {
+    font-family: 'MontserratRegular';
+    font-style: normal;
+    color: #FFFFFF;
+    font-size: 14px;
+    line-height: 38px;
+
+    &:before {
+      content: url('~assets/img/map_marker.svg');
+      margin-right: 13px;
+      vertical-align: sub;
     }
   }
 
@@ -138,7 +228,8 @@
       display: none;
     }
 
-    .nav__dropdown {
+    .nav__dropdown,
+    .nav__dropdown-menu {
       display: initial;
     }
 

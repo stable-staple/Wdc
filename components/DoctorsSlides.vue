@@ -343,6 +343,10 @@ export default {
       width: 180px;
       height: 254px;
 
+      &:hover {
+        transform: translateY(0);
+      }
+
       &__img {
         width: 151px;
         height: 199px;
