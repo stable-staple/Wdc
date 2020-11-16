@@ -78,9 +78,11 @@
         .footer__links
           .footer__links__nav
             a(href="#") Услуги и цены
-            a(href="#") О нас
+            a(href="#") О клинике
             a(href="#") Наши врачи
+            a(href="#") Статьи
             a(href="#") Контакты
+          hr.footer__separate.footer__separate--mobile
           .footer__links__policy
             a(href="#") Политика конфиденциальности
         .footer__copyright
@@ -148,7 +150,11 @@
   }
 
   .footer__separate {
-    margin-bottom: 32px;
+    margin: 0 0 32px 0;
+
+    &--mobile {
+      display: none;
+    }
   }
 
   .footer__links {
@@ -157,10 +163,10 @@
     margin-bottom: 12px;
 
     & > div > a {
-      color: rgba(255, 255, 255, 0.32);
+      color: rgba(255, 255, 255, 0.56);
       font-family: 'MontserratRegular';
       font-size: 14px;
-      line-height: 14px;
+      line-height: 20px;
     }
   }
 
@@ -179,27 +185,75 @@
     & > span {
       color: rgba(255, 255, 255, 0.64);
       font-size: 14px;
-      line-height: 14px;
+      line-height: 20px;
     }
   }
 
   @media only screen and (max-width: 768px) {
+    .footer {
+      height: auto;
+      margin: 0 16px;
+    }
+
     .footer__nav {
       height: 88px;
-      margin: 0 16px;
+      margin: 0;
       padding: 24px 0;
     }
-
-    .footer__button {
-      height: 40px;
+    
+    .footer__nav__social {
+      transform-origin: top right;
+      // scale button from 56px to 40px size
+      transform: scale(0.7143);
+      & > * + * {
+        margin-left: 8px;
+      }
     }
 
-    .footer__links, .footer__links__nav {
-      flex-direction: column;
+    .footer__separate {
+      margin: 0 0 24px 0;
+
+      &--mobile {
+        display: block;
+      }
+    }
+
+    .footer__links {
+      display: block;
+
+      & > div > a {
+        display: block;
+      }
+    }
+
+    .footer__links__policy {
+      margin-bottom: 16px;
+    }
+
+    .footer__links__nav {
+      display: block;
+      margin-bottom: 24px;
+
+      & > a {
+        display: block;
+        margin-left: 0;
+      }
+
+      & > a + a {
+        margin-top: 16px;
+      }
     }
 
     .footer__nav__arrow-up {
       display: none;
+    }
+
+    .footer__copyright {
+      padding-bottom: 32px;
+
+      & > span {
+        color: rgba(255, 255, 255, 0.4);
+      }
     }
   }
 </style>

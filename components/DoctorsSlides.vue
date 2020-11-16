@@ -20,6 +20,17 @@
             rect(x='0.75' y='1.81055' width='1.4' height='30.0003' transform='rotate(-45 0.75 1.81055)' fill='#272727')
             rect(x='21.9641' y='0.75' width='1.4' height='30.0003' transform='rotate(45 21.9641 0.75)' fill='#272727')
     .doctors__content(:class="{'doctors__content--hide': hideDoctors}")
+      .textgroup--mobile
+        .textgroup--mobile__title Наша работа — ваше здоровье
+        .special-offers__controls.doctors__controls--mobile
+          button.swipe-button.swiper-button--prev(@click="prevSlide")
+            svg(width='40' height='40' viewbox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg')
+              circle(cx='20' cy='20' r='19.375' stroke-width='1.25')
+              path(d='M22 25.2856L18 20.1428L22 14.9999' stroke-width='1.82857')
+          button.swipe-button.swiper-button--next(@click="nextSlide")
+            svg(width='40' height='40' viewbox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg')
+              circle(cx='20' cy='20' r='19.3' stroke-width='1.4')
+              path(d='M18 15L22 20.1429L18 25.2857' stroke-width='1.8')
       .textgroup
         h3.textgroup__title.primary_heading Наша работа — ваше здоровье
         p.textgroup__text.card_desc
@@ -50,6 +61,9 @@
         img.doctors__slide__arrow(src="~assets/img/services/arrow_right.svg")
       swiper-slide.doctors__slide
       swiper-slide.doctors__slide
+    p.textgroup__text.textgroup--mobile__text.card_desc 
+      | У нас работают профессионалы своего дела. Врачи регулярно повышают квалификацию
+      | и стажируются для того, чтобы наши пациенты всегда были довольны результатом
 </template>
 
 <script>
@@ -68,7 +82,8 @@ export default {
   computed: {
     swiper() {
       return this.$refs.doctorsSwiper.$swiper;
-    }
+    },
+    
   },
   methods: {
     nextSlide: function () {
@@ -135,6 +150,10 @@ export default {
     position: absolute;
     top: 388px;
     z-index: 2;
+
+    &--mobile {
+      display: none;
+    }
   }
 
   .doctors__slide {
@@ -296,11 +315,38 @@ export default {
   @media only screen and (max-width: 768px) {
     .doctors {
       display: block;
+      padding: 40px 0 0;
     }
+
+    .doctors__controls {
+      display: none;
+    }
+
+    .doctors__controls--mobile {
+      display: inline;
+    }
+
     .doctors__content {
       transition: none;
       width: auto;
-      margin: 0
+      height: 100%;
+      margin: 0;
+      
+      &--hide {
+        width: auto;
+        opacity: 1;
+        transition: none;
+      }
+    }
+    
+    .doctors__slide {
+      width: 180px;
+      height: 254px;
+
+      &__img {
+        width: 151px;
+        height: 199px;
+      }
     }
   }
 </style>

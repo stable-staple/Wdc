@@ -72,7 +72,10 @@
   }
 
   hr {
-    opacity: 0.3;
+    opacity: 0.32;
+    height: 2px;
+    color: #DDDBDB;
+    background-color: #DDDBDB;
   }
 
   //* {

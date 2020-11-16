@@ -213,6 +213,10 @@ export default {
       width: 100%;
       height: 167px;
 
+      &:hover {
+        transform: translateY(0);
+      }
+
       &__more {
         visibility: hidden;
       }
