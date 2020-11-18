@@ -92,6 +92,7 @@
     .container--main {
       margin: 0 15px;
       width: auto;
+      -webkit-overflow-scrolling: touch;
     }
   }
 
