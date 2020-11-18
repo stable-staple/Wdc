@@ -96,6 +96,7 @@
         swiperOptions: {
           speed: 1000,
           watchSlidesProgress: true,
+          grab: true,
           on: {
             progress: function() {
               var swiper = this;

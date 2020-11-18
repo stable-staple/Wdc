@@ -4,7 +4,7 @@
     nav(class="nav")
       div(class="nav__inner")
         div(class="nav__container medium_header nav__mobile-logo")
-          NuxtLink(to="/"): img.nav__logo(src="~/assets/img/logo.svg")
+          NuxtLink(to="/"): img.nav__logo(src="~/assets/img/logo.svg" @click="toggleDropdown = false")
           .nav__elem: |
             NuxtLink(to="/services/detskaya_stomatologiya" class="nav__link nav__link--underlined") Услуги и цены
           .nav__elem: |
@@ -32,13 +32,13 @@
     .nav__dropdown-menu(:class="{'nav__dropdown-menu--active': toggleDropdown}")
       .nav__dropdown-menu__inner
         ul.nav__dropdown-menu__list
-          li.nav__dropdown-menu__list-item: a(href="#") Услуги и цены
-          li.nav__dropdown-menu__list-item: a(href="#") О клинике
+          li.nav__dropdown-menu__list-item(@click="toggleDropdown = false"): NuxtLink(to="/services/detskaya_stomatologiya") Услуги и цены
+          li.nav__dropdown-menu__list-item: a(href="#" ) О клинике
           li.nav__dropdown-menu__list-item: a(href="#") Врачи
           li.nav__dropdown-menu__list-item: a(href="#") Статьи
           li.nav__dropdown-menu__list-item: a(href="#") Контакты
         hr(style="margin-bottom:24px;margin-top: 28px;")
-        address.wdc-address Москва, ул. Крылатская, дом 19
+        address.wdc-address: a(href="https://yandex.ru/maps/?rtext=~55.737923%2C37.424905") Москва, ул. Крылатская, дом 19
       button.button--more.nav__appointment-btn--mobile.card_desc Записаться на прием
 </template>
 
@@ -76,7 +76,6 @@ export default {
 
   .nav__hidden {
     height: 64px;
-    background-color: $primary-black;
   }
   
   .nav__inner {
@@ -151,7 +150,7 @@ export default {
     z-index: 12;
     height: 0;
     transition: height 500ms;
-    padding: 0 16px;
+    padding: 0 26px 0 16px;
 
     &__inner {
       position: relative;
@@ -160,7 +159,6 @@ export default {
 
     &--active {
       height: calc(100% - 40px);
-      padding: 0 16px;
     }
   }
 

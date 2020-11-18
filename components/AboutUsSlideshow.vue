@@ -1,7 +1,7 @@
 <template lang="pug">
   .about-us
     .about-us__content
-      .textgroup--mobile
+      .textgroup--mobile-controls
         span.textgroup--mobile__title {{ slides[currentSlide].title }}
         .special-offers__controls
           button.swipe-button.swiper-button--prev(@click='prevSlide' :disabled="currentSlide == 0")
@@ -33,12 +33,14 @@
       img.about-us__img__inner(
         :src='slides[currentSlide].imgUrl' 
         @click="gallery.settings.startAt = currentSlide; gallery.open();"
-      )
+        :key='slides[currentSlide].imgUrl'
+      ) 
       .about-us__img-overlay(:class="{'about-us__img-overlay--scaled': contentTransition}")
-    p.textgroup__text.textgroup--mobile__text.card_desc(
-      style="margin-bottom: 0;"
-      :class="{'textgroup--fade': contentTransition}"
-      ) {{ slides[currentSlide].desc }}
+    .textgroup--mobile(:class="{'textgroup--fade': contentTransition}")
+      p.textgroup__text.textgroup--mobile__text.card_desc(
+        style="margin-bottom: 0;"
+        :key="currentSlide"
+        ) {{ slides[currentSlide].desc }}
 </template>
 
 <script>

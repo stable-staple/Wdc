@@ -20,7 +20,7 @@
             rect(x='0.75' y='1.81055' width='1.4' height='30.0003' transform='rotate(-45 0.75 1.81055)' fill='#272727')
             rect(x='21.9641' y='0.75' width='1.4' height='30.0003' transform='rotate(45 21.9641 0.75)' fill='#272727')
     .doctors__content(:class="{'doctors__content--hide': hideDoctors}")
-      .textgroup--mobile
+      .textgroup--mobile-controls
         .textgroup--mobile__title Наша работа — ваше здоровье
         .special-offers__controls.doctors__controls--mobile
           button.swipe-button.swiper-button--prev(@click="prevSlide")

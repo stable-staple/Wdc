@@ -35,6 +35,7 @@
         p(class="services-block__modal__confidential") Нажимая кнопку «Записаться на прием», вы соглашаетесь с конфиденциальностью персональной информации
   NuxtChild
   .services__right
+    div.services__right__title Другие услуги
     .services-sections-list
       NuxtLink.services-sections-list__elem(
         v-for="(section, ind) in sidebar"
@@ -299,6 +300,7 @@ export default {
   }
   &__img {
     margin: 0 0 32px 0;
+    max-width: 100%;
   }
   &__more {
     display: inline-block;
@@ -387,6 +389,13 @@ li {
   top: 80px;
 }
 
+.services__right__title {
+  font-family: 'MontserratSemiBold';
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: $primary-black;
+}
+
 .service-section__desc {
   margin: 0 0 40px 0;
   font-family: 'MontserratRegular';
@@ -399,6 +408,7 @@ li {
   margin: 88px 0;
 }
 
+// Для десктопа
 .services-sections-list {
   padding: 0;
   top: 140px;
@@ -469,4 +479,15 @@ li {
 .margin-right-del {
   margin-right: -80px;
 }
+
+@media only screen and (max-width: 768px) {
+  .services-block {
+    display: block;
+    margin: 0;
+  }
+  .services__right {
+    display: none;
+  }
+}
+
 </style>

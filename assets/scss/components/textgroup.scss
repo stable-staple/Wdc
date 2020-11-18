@@ -22,7 +22,7 @@
 
 .textgroup__text {
   margin: 0 0 64px 0;
-  opacity: 0.64;
+  opacity: 0.72;
   font-family: 'MontserratRegular';
   font-size: 16px;
   line-height: 24px;
@@ -31,7 +31,7 @@
   color: $primary-color;
 }
 
-.textgroup--mobile {
+.textgroup--mobile-controls {
   height: 50px;
   display: none;
   align-items: center;
@@ -39,7 +39,10 @@
   overflow: visible;
   width: 100%;
   margin-bottom: 32px;
+}
 
+.textgroup--mobile {
+  height: 115px;
   &__title {
     margin: 0;
     display: none;
@@ -75,7 +78,7 @@
     width: auto;
   }
 
-  .textgroup--mobile {
+  .textgroup--mobile-controls {
     display: flex;
   }
 
