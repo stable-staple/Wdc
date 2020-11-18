@@ -31,6 +31,8 @@
       img(src='img/about_us/about_us3.jpg' style="display: none;")
       img(src='img/about_us/about_us4.jpg' style="display: none;")
       img.about-us__img__inner(
+        width="726"
+        height="635"
         :src='slides[currentSlide].imgUrl' 
         @click="gallery.settings.startAt = currentSlide; gallery.open();"
         :key='slides[currentSlide].imgUrl'
@@ -147,6 +149,7 @@
   }
 
   .about-us__img__inner {
+    height: auto;
     position: relative;
     border-radius: 6px;
     display: block;
