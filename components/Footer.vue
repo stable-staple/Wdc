@@ -2,7 +2,7 @@
   footer
     .clinics-info--mobile
       h2.clinics-info--mobile__title West Dental Clinic
-      address.wdc-address.clinics-info--mobile__address: a(href="https://yandex.ru/maps/?rtext=~55.737923%2C37.424905") Москва, ул. Крылатская, дом 19
+      address.wdc-address.clinics-info--mobile__address: a Москва, ул. Крылатская, дом 19
       .clinics-info--mobile__work-hours
         p.clinics-info--mobile__work-hours__title Время работы
         P.clinics-info--mobile__work-hours__content пн - пт 9:00 - 21:00
@@ -11,10 +11,31 @@
           br
           | воскресенье выходной
     #map
-    .address-input
-      input.address-input__field(type="text" name="address" id="address")
-      label.address-input__label(for="address") Введите адрес
-      button.address-input__btn Проложите маршрут
+      .map__navigation
+        p.map__navigation__invite West Dental Clinic
+          .address-input
+            input.address-input__field(type="text" name="address_desktop")
+            label.address-input__label(for="address_desktop") Введите адрес
+            button.map__navigation__action Проложить маршрут
+          hr(style="margin-bottom:26px;")
+          address.wdc-address.clinics-info__address: a Москва, ул. Крылатская, дом 19
+          .map__navigation__info
+          p.clinics-info__work-hours__title Время работы
+            p.map__navigation__info__text пн - пт
+              time(datetime="9:00")  9:00 
+              | - 
+              time(datetime="21:00") 21:00
+              br
+              | суббота&nbsp;
+              time(datetime="9:00") 9:00&nbsp;
+              | - 
+              time(datetime="18:00") 18:00
+              br
+              | воскресенье - выходной
+    .address-input--mobile
+      input.address-input--mobile__field(type="text" name="address" id="address")
+      label.address-input--mobile__label(for="address") Введите адрес
+      button.address-input--mobile__btn Проложите маршрут
     .footer
       .footer__nav
         img(src="~/assets/img/logo.svg")
@@ -110,15 +131,118 @@
   }
 
   #map {
+    position: relative;
     width: 100%;
     height: 768px;
     outline: #ffffff;
+  }
+
+  .map__navigation {
+    position: relative;
+    top: 164px;
+    left: 48px;
+    width: 389px;
+    height: 438px;
+    padding: 48px;
+    border-radius: 10px;
+    box-shadow: 40px;
+    box-sizing: border-box;
+    background-color: #FFFFFF;
+    z-index: 2;
+  }
+
+  .map__navigation__invite {
+    max-width: 277px;
+    font-family: 'MontserratBold';
+    font-size: 24px;
+    line-height: 32px;
+    margin: 0 0 20px 0;
+    color: #272727;
+  }
+
+  .map__navigation__input {
+    position: relative;
+    padding-bottom: 20px;
+    width: 100%;
+    margin: 0 0 32px 0;
+    border: 1px solid rgba(39, 39, 39, 0.24);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+  }
+
+  .map__navigation__action {
+    display: block;
+    width: 100%;
+    height: 46px;
+    border: 1px solid rgba(39, 39, 39, 0.24);
+    border-radius: 4px;
+    font-family: 'MontserratSemiBold';
+    background-color: #FFFFFF;
+    transition: background-color 120ms;
+    font-size: 14px;
+    line-height: 14px;
+    margin: 0 0 40px 0;
+    cursor: pointer;
+    color: $primary-black;
+    margin-bottom: 33px;
+
+    &:hover {
+      background-color: $primary-black;
+      color: #ffffff;
+    }
+  }
+
+  .map__navigation__info {
+    width: 251px;
+    margin: 0 auto;
+    color: $primary-grey;
+  }
+
+  .map__navigation__info__text {
+    margin: 0;
+    line-height: 24px;
+    font-size: 14px;
+    font-family: 'MontserratRegular';
+    color: $primary-grey;
+  }
+
+  .map__navigation__input:focus {
+    outline: none;
+  }
+
+  .map__marker {
+    background-image: url('~assets/img/map_marker_big.svg');
+    background-size: cover;
+    width: 80px;
+    height: 87px;
   }
 
   .footer {
     height: 269px;
     max-width: $container--main-width;
     margin: 0 auto;
+  }
+
+  .clinics-info {
+    &__address {
+      & > a {
+        color: $primary-black;
+      }
+      &:before {
+        position: relative;
+        bottom: 1px;
+        content: url('~assets/img/map_marker_footer.svg');
+        margin-right: 8px;
+      }
+    }
+    &__work-hours__title {
+      line-height: 24px;
+      font-size: 14px;
+      color: $primary-black;
+      font-family: 'MontserratMedium';
+      margin: 0;
+    }
   }
 
   .clinics-info--mobile {
@@ -129,16 +253,19 @@
     font-size: 14px;
 
     &__title {
-      margin: 0 0 16px 13.7px;
+      margin: 0 0 16px 12px;
       line-height: 24px;
+      font-family: 'MontserratSemiBold';
     }
 
     &__address {
-      margin-left: 13.7px;
+      margin-left: 12px;
       & > a {
         color: $primary-black;
       }
       &:before {
+        position: relative;
+        bottom: 1px;
         content: url('~assets/img/map_marker_footer.svg');
       }
     }
@@ -146,10 +273,12 @@
 
   .clinics-info--mobile__work-hours {
     position: relative;
-    margin-left: 43px;
+    margin-left: 39px;
     &__title {
       color: $primary-black;
+      font-family: 'MontserratMedium';
       margin: 0;
+      line-height: 24px;
     }
     &__content {
       line-height: 24px;
@@ -159,6 +288,32 @@
   }
 
   .address-input {
+    position: relative;
+    &__label {
+      position: absolute;
+      left: 0;
+      font-size: 14px;
+      transform: translate3d(0, 0, 0);
+      transition: all 0.2s ease-in-out;
+      opacity: 0.56;
+      font-family: 'MontserratRegular';
+    }
+    &__field {
+      height: 32px;
+      width: 100%;
+      &:focus + .address-input__label {
+        transform: translate3d(0, -12px, 0);
+      }
+      border: 1px solid rgba(39, 39, 39, 0.24);
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      margin-bottom: 32px;
+    }
+  }
+
+  .address-input--mobile {
+    display: none;
     position: relative;
     padding: 32px 16px;
     background-color: #ffffff;
@@ -174,7 +329,7 @@
     &__field {
       height: 32px;
       width: 100%;
-      &:focus + .address-input__label {
+      &:focus + .address-input--mobile__label {
         transform: translate3d(0, -10px, 0);
       }
       border: 1px solid rgba(39, 39, 39, 0.24);
@@ -182,7 +337,6 @@
       border-left: none;
       border-right: none;
       margin-bottom: 32px;
-; 
     }
     &__btn {
       display: block;
@@ -290,6 +444,11 @@
       height: 229px;
     }
 
+    .map__marker {
+      width: 41px;
+      height: 45px;
+    }
+
     .footer {
       height: auto;
       margin: 0 16px;
@@ -301,7 +460,8 @@
       padding: 24px 0;
     }
 
-    .clinics-info--mobile {
+    .clinics-info--mobile,
+    .address-input--mobile {
       display: block;
     }
     
@@ -348,7 +508,8 @@
       }
     }
 
-    .footer__nav__arrow-up {
+    .footer__nav__arrow-up,
+    .map__navigation {
       display: none;
     }
 
@@ -376,11 +537,14 @@ export default {
           container: 'map',
           center: [37.424905, 55.737923],
           zoom: 16,
-          style: 'mapbox://styles/ewewe/ckfv0xc350aqx1as79qa4had3?optimize=true'
+          style: 'mapbox://styles/ewewe/ckfv0xc350aqx1as79qa4had3'
         });
         map.scrollZoom.disable();
+
+        var markerEl = document.createElement('div');
+        markerEl.className = 'map__marker';
         map.addControl(new mapboxgl.NavigationControl());
-        var marker = new mapboxgl.Marker()
+        var marker = new mapboxgl.Marker(markerEl)
           .setLngLat([37.424905, 55.737923])
           .addTo(map);
       };

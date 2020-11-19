@@ -335,6 +335,7 @@
   .main-slideshow__green-implants__img {
     position: relative;
     right: 40px;
+    bottom: 20px;
     max-width: 100%;
   }
 
