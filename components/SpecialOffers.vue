@@ -3,11 +3,11 @@
     .special-offers__textgroup--mobile
       span.special-offers__textgroup--mobile__title Акции
       .special-offers__controls
-        button.swipe-button.swiper-button--prev(:disabled="this.isStart")
+        button.swipe-button.swiper-button--prev.special-offer__control--prev(:disabled="this.isStart")
           svg(width='40' height='40' viewbox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg')
             circle(cx='20' cy='20' r='19.375' stroke-width='1.25')
             path(d='M22 25.2856L18 20.1428L22 14.9999' stroke-width='1.82857')
-        button.swipe-button.swiper-button--next(:disabled="this.isEnd")
+        button.swipe-button.swiper-button--next.special-offer__control--next(:disabled="this.isEnd")
           svg(width='40' height='40' viewbox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg')
             circle(cx='20' cy='20' r='19.3' stroke-width='1.4')
             path(d='M18 15L22 20.1429L18 25.2857' stroke-width='1.8')
@@ -45,8 +45,8 @@ export default {
         grab: true,
         spaceBetween: 24,
         navigation: {
-          nextEl: '.swiper-button--next',
-          prevEl: '.swiper-button--prev'
+          nextEl: '.special-offer__control--next',
+          prevEl: '.special-offer__control--prev'
         }
       }
     }

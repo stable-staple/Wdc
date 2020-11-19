@@ -2,7 +2,7 @@
 .reviews
   .reviews__content
     .textgroup
-      h3(class="textgroup__title primary_heading") Отзывы наших пациентов
+      h3(class="textgroup__title primary_heading reviews__title") Отзывы
       p(class="reviews__content__text card_desc") 
         | Действия представителей оппозиции представляют собой 
         | не что иное, как квинтэссенцию победы
@@ -31,6 +31,10 @@ export default {
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
+}
+
+.reviews__title {
+  max-width: 459px;
 }
 
 .reviews__content__text {

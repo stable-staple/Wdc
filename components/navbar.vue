@@ -32,11 +32,11 @@
     .nav__dropdown-menu(:class="{'nav__dropdown-menu--active': toggleDropdown}")
       .nav__dropdown-menu__inner
         ul.nav__dropdown-menu__list
-          li.nav__dropdown-menu__list-item(@click="toggleDropdown = false"): NuxtLink(to="/services/detskaya_stomatologiya") Услуги и цены
-          li.nav__dropdown-menu__list-item: a(href="#" ) О клинике
-          li.nav__dropdown-menu__list-item: a(href="#") Врачи
-          li.nav__dropdown-menu__list-item: a(href="#") Статьи
-          li.nav__dropdown-menu__list-item: a(href="#") Контакты
+          NuxtLink.nav__dropdown-menu__list-item(to="/services/detskaya_stomatologiya") Услуги и цены
+          a.nav__dropdown-menu__list-item(href="#") О клинике
+          a.nav__dropdown-menu__list-item(href="#") Врачи
+          a.nav__dropdown-menu__list-item(href="#") Статьи
+          a.nav__dropdown-menu__list-item(href="#") Контакты
         hr(style="margin-bottom:24px;margin-top: 28px;")
         address.wdc-address: a(href="https://yandex.ru/maps/?rtext=~55.737923%2C37.424905") Москва, ул. Крылатская, дом 19
       button.button--more.nav__appointment-btn--mobile.card_desc Записаться на прием
@@ -169,12 +169,13 @@ export default {
     list-style: none;
     padding: 0;
     & > * + * {
-      margin-top: 24px;
+      padding-top: 24px;
     }
     margin: 0 0 28px 0;
   }
 
   .nav__dropdown-menu__list-item {
+    display: block;
     color: #FFFFFF;
     font-family: 'MontserratRegular';
     font-size: 14px;
@@ -203,7 +204,7 @@ export default {
   }
 
   .wdc-address {
-    font-family: 'MontserratRegular';
+    font-family: 'MontserratSemiBold';
     font-style: normal;
     color: #FFFFFF;
     font-size: 14px;

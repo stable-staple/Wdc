@@ -47,6 +47,7 @@
 
 <script>
 export default {
+  scrollToTop: true,
   data: function() {
     return {
       modalOpened: false,

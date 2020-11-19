@@ -38,7 +38,7 @@
         :key='slides[currentSlide].imgUrl'
       ) 
       .about-us__img-overlay(:class="{'about-us__img-overlay--scaled': contentTransition}")
-    .textgroup--mobile(:class="{'textgroup--fade': contentTransition}")
+    .textgroup--mobile(:class="{'textgroup--fade': contentTransition}" style="height:115px;")
       p.textgroup__text.textgroup--mobile__text.card_desc(
         style="margin-bottom: 0;"
         :key="currentSlide"

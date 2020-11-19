@@ -1,5 +1,15 @@
 <template lang="pug">
   footer
+    .clinics-info--mobile
+      h2.clinics-info--mobile__title West Dental Clinic
+      address.wdc-address.clinics-info--mobile__address: a(href="https://yandex.ru/maps/?rtext=~55.737923%2C37.424905") Москва, ул. Крылатская, дом 19
+      .clinics-info--mobile__work-hours
+        p.clinics-info--mobile__work-hours__title Время работы
+        P.clinics-info--mobile__work-hours__content пн - пт 9:00 - 21:00
+          br
+          | суббота 10:00 - 18:00
+          br
+          | воскресенье выходной
     #map
     .footer
       .footer__nav
@@ -77,7 +87,7 @@
       .footer__info
         .footer__links
           .footer__links__nav
-            a(href="#") Услуги и цены
+            NuxtLink(to="/services/detskaya_stomatologiya") Услуги и цены
             a(href="#") О клинике
             a(href="#") Наши врачи
             a(href="#") Статьи
@@ -105,6 +115,43 @@
     height: 269px;
     max-width: $container--main-width;
     margin: 0 auto;
+  }
+
+  .clinics-info--mobile {
+    background-color: #ffffff;
+    display: none;
+    padding: 48px 0 20px;
+    font-family: 'MontserratRegular';
+    font-size: 14px;
+
+    &__title {
+      margin: 0 0 16px 13.7px;
+      line-height: 24px;
+    }
+
+    &__address {
+      margin-left: 13.7px;
+      & > a {
+        color: $primary-black;
+      }
+      &:before {
+        content: url('~assets/img/map_marker_footer.svg');
+      }
+    }
+  }
+
+  .clinics-info--mobile__work-hours {
+    position: relative;
+    margin-left: 43px;
+    &__title {
+      color: $primary-black;
+      margin: 0;
+    }
+    &__content {
+      line-height: 24px;
+      color: $primary-grey;
+      margin: 0;
+    }
   }
 
   .footer__nav {
@@ -190,6 +237,10 @@
   }
 
   @media only screen and (max-width: 768px) {
+    #map {
+      height: 229px;
+    }
+
     .footer {
       height: auto;
       margin: 0 16px;
@@ -199,6 +250,10 @@
       height: 88px;
       margin: 0;
       padding: 24px 0;
+    }
+
+    .clinics-info--mobile {
+      display: block;
     }
     
     .footer__nav__social {
@@ -253,6 +308,7 @@
 
       & > span {
         color: rgba(255, 255, 255, 0.4);
+        font-size: 12px;
       }
     }
   }

@@ -23,11 +23,11 @@
       .textgroup--mobile-controls
         .textgroup--mobile__title Наша работа — ваше здоровье
         .special-offers__controls.doctors__controls--mobile
-          button.swipe-button.swiper-button--prev(@click="prevSlide")
+          button.swipe-button.swiper-button--prev(@click="prevSlideMobile" :disabled="this.isStart")
             svg(width='40' height='40' viewbox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg')
               circle(cx='20' cy='20' r='19.375' stroke-width='1.25')
               path(d='M22 25.2856L18 20.1428L22 14.9999' stroke-width='1.82857')
-          button.swipe-button.swiper-button--next(@click="nextSlide")
+          button.swipe-button.swiper-button--next(@click="nextSlideMobile" :disabled="this.isEnd")
             svg(width='40' height='40' viewbox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg')
               circle(cx='20' cy='20' r='19.3' stroke-width='1.4')
               path(d='M18 15L22 20.1429L18 25.2857' stroke-width='1.8')
@@ -38,30 +38,42 @@
           | Врачи регулярно повышают квалификацию и стажируются для того, 
           | чтобы наши пациенты всегда были довольны результатом
     .doctors__controls
-      button.swipe-button.swiper-button--prev(@click="prevSlide")
+      button.swipe-button.swiper-button--prev(@click="prevSlide" :disabled="!this.hideDoctors")
         svg(width='40' height='40' viewbox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg')
           circle(cx='20' cy='20' r='19.375' stroke-width='1.25')
           path(d='M22 25.2856L18 20.1428L22 14.9999' stroke-width='1.82857')
-      button.swipe-button.swiper-button--next(@click="nextSlide")
+      button.swipe-button.swiper-button--next(@click="nextSlide" :disabled="this.isEnd && this.hideDoctors")
         svg(width='40' height='40' viewbox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg')
           circle(cx='20' cy='20' r='19.3' stroke-width='1.4')
           path(d='M18 15L22 20.1429L18 25.2857' stroke-width='1.8')
     swiper.doctors__slides(ref="doctorsSwiper" :options="swiperOptions")
       swiper-slide.doctors__slide
-        img.doctors__slide__img(src="~assets/img/doctors/doctor1.jpg" @click="modalOpened = true")
+        img.doctors__slide__img(src="~assets/img/doctors/romantsov.png" @click="modalOpened = true")
         .doctors__slide__textgroup
-          p.doctors__slide__full-name.card_heading Иванчина Т.А.
-          p.doctors__slide__description Врач стоматолог-терапевт
+          p.doctors__slide__full-name.card_heading Романцов А.В.
         img.doctors__slide__arrow(src="~assets/img/services/arrow_right.svg")
       swiper-slide.doctors__slide
-        img.doctors__slide__img(src="~assets/img/doctors/doctor2.jpg")
+        img.doctors__slide__img(src="~assets/img/doctors/romantsov.png" @click="modalOpened = true")
         .doctors__slide__textgroup
-          p.doctors__slide__full-name.card_heading Иваненко М.А.
-          p.doctors__slide__description Врач стоматолог-терапевт
+          p.doctors__slide__full-name.card_heading Романцов А.В.
         img.doctors__slide__arrow(src="~assets/img/services/arrow_right.svg")
       swiper-slide.doctors__slide
+        img.doctors__slide__img(src="~assets/img/doctors/romantsov.png" @click="modalOpened = true")
+        .doctors__slide__textgroup
+          p.doctors__slide__full-name.card_heading Романцов А.В.
+        img.doctors__slide__arrow(src="~assets/img/services/arrow_right.svg")
       swiper-slide.doctors__slide
-    p.textgroup__text.textgroup--mobile__text.card_desc 
+        img.doctors__slide__img(src="~assets/img/doctors/romantsov.png" @click="modalOpened = true")
+        .doctors__slide__textgroup
+          p.doctors__slide__full-name.card_heading Романцов А.В.
+        img.doctors__slide__arrow(src="~assets/img/services/arrow_right.svg")
+      swiper-slide.doctors__slide
+        img.doctors__slide__img(src="~assets/img/doctors/romantsov.png" @click="modalOpened = true")
+        .doctors__slide__textgroup
+          p.doctors__slide__full-name.card_heading Романцов А.В.
+        img.doctors__slide__arrow(src="~assets/img/services/arrow_right.svg")
+      swiper-slide.doctors__slide
+    p.doctors__text--mobile
       | У нас работают профессионалы своего дела. Врачи регулярно повышают квалификацию
       | и стажируются для того, чтобы наши пациенты всегда были довольны результатом
 </template>
@@ -70,6 +82,8 @@
 export default {
   data() {
     return {
+      isStart: true,
+      isEnd: false,
       swiperOptions: {
         slidesPerView: 'auto',
         speed: 400,
@@ -96,10 +110,24 @@ export default {
     prevSlide: function () {
       if (this.swiper.isBeginning && this.hideDoctors) {
         this.hideDoctors = false;
+        this.swiper.slidePrev();
       } else {
         this.swiper.slidePrev();
       }
+    },
+    nextSlideMobile: function () {
+      this.swiper.slideNext();
+    },
+    prevSlideMobile: function () {
+      this.swiper.slidePrev();
+    },
+    onSwipe: function(elem) {
+      this.isStart = elem.swiper.isBeginning;
+      this.isEnd = elem.swiper.isEnd;
     }
+  },
+  mounted() {
+    this.swiper.on('transitionStart', () => this.onSwipe(this))
   }
 }
 </script>
@@ -118,8 +146,7 @@ export default {
   .doctors__content {
     overflow: hidden;
     opacity: 1;
-    width: 60%;
-    margin-right: 145px;
+    width: 115%;
     transition-delay: 0s, 0s, 0.35s;
     transition-duration: 0.5s, 0.5s, 0.3s;
     transition-property: width, margin-right, opacity;
@@ -140,6 +167,10 @@ export default {
     }
   }
 
+  .doctors__text--mobile {
+    display: none
+  }
+
   .doctors__slides {
     position: relative;
     padding: 40px;
@@ -157,14 +188,13 @@ export default {
   }
 
   .doctors__slide {
-    box-shadow: 0 10px 10px rgba(136, 113, 113, 0.02), 
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.02), 
               0 10px 40px rgba(0, 0, 0, 0.04), 
               0 2px 6px rgba(0, 0, 0, 0.04),
               0 0 1px rgba(0, 0, 0, 0.04);
     border-radius: 10px;
     background-color: #FFFFFF;
     width: 310px;
-    height: 456px;
     cursor: pointer;
     position: relative;
     transition: transform 100ms linear;
@@ -183,17 +213,15 @@ export default {
 
   .doctors__slide__img {
     display: block;
-    margin: 63px auto 0;
-    margin-top: 63px;
+    margin: 48px auto 0;
   }
 
   .doctors__slide__textgroup {
-    width: 262px;
-    margin: 0 auto;
+    padding: 23px 32px;
   }
 
   .doctors__slide__full-name {
-    margin: 0 0 5px;
+    margin: 0;
     color: $primary-black;
   }
 
@@ -202,7 +230,7 @@ export default {
     position: absolute;
     opacity: 0;
     right: 24px;
-    bottom: 20px;
+    bottom: 10px;
     transition: opacity 300ms ease-in-out;
   }
 
@@ -315,7 +343,13 @@ export default {
   @media only screen and (max-width: 768px) {
     .doctors {
       display: block;
-      padding: 40px 0 0;
+      padding: 40px 0 40px;
+    }
+
+    .doctors__slides {
+      padding: 32px 40px 20px 40px;
+      margin-left: -40px;
+      margin-bottom: -40px;
     }
 
     .doctors__controls {
@@ -338,18 +372,51 @@ export default {
         transition: none;
       }
     }
+
+    .doctors__text--mobile {
+      font-size: 14px;
+      height: auto;
+      font-family: 'MontserratRegular';
+      min-height: auto;
+      line-height: 24px;
+    }
     
     .doctors__slide {
       width: 180px;
-      height: 254px;
+      height: auto;
+      padding-top: 14px;
+      box-sizing: content-box;
+      margin-right: 12px;
 
       &:hover {
         transform: translateY(0);
       }
 
+      &__textgroup {
+        width: auto;
+        padding: 0;
+        margin-left: 16px;
+        margin-bottom: 13px;
+      }
+
+      &__full-name {
+        font-size: 12px;
+        margin: 0;
+      }
+
+      &__arrow { 
+        visibility: visible;
+        opacity: 1;
+        bottom: 1px;
+        right: 5px;
+        transform-origin: center left;
+        transform: scale(0.8);
+      }
+
       &__img {
         width: 151px;
-        height: 199px;
+        margin: 0 auto;
+        margin-bottom: 12px;
       }
     }
   }
