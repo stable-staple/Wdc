@@ -15,7 +15,7 @@
     .main-slideshow__content
       div(class="main-slideshow__textgroup" :class="{'main-slideshow__textgroup--fade': contentTransition}")
         h1(class="primary_heading main-slideshow__title") {{ textSlides[currentTextSlide].title }}
-        p(class="primary_desc main-slideshow__desc") Импланты швейцарского качества для лечения зубов с технологией максимальной приживаемости
+        p(class="primary_desc main-slideshow__desc") Импланты швейцарского качества с технологией максимальной приживаемости
         button.button--more.main-slideshow__desktop-btn.card_desc Смотреть подробнее
       .main-slideshow__green-implants
         picture
@@ -78,7 +78,7 @@
         currentTextSlide: 0,
         textSlides: [
           {
-            title: "Швейцарское качество",
+            title: "Импланты Straumann",
             desc: "Наша клиника использует импланты проверенных годами компаний",
             img: 'img/main_implants.png'
           },
@@ -159,7 +159,7 @@
   .main-slideshow {
     display: flex;
     position: relative;
-    height: 800px;
+    height: 738px;
   }
 
   .main-slideshow__slides {
@@ -243,7 +243,8 @@
   }
 
   .main-slideshow__desc {
-    margin-bottom: 40px;
+    margin-bottom: 32px;
+    font-size: 14px;
   }
 
   .main-slideshow__controls {
