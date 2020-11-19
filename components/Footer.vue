@@ -11,6 +11,10 @@
           br
           | воскресенье выходной
     #map
+    .address-input
+      input.address-input__field(type="text" name="address" id="address")
+      label.address-input__label(for="address") Введите адрес
+      button.address-input__btn Проложите маршрут
     .footer
       .footer__nav
         img(src="~/assets/img/logo.svg")
@@ -151,6 +155,51 @@
       line-height: 24px;
       color: $primary-grey;
       margin: 0;
+    }
+  }
+
+  .address-input {
+    position: relative;
+    padding: 32px 16px;
+    background-color: #ffffff;
+
+    &__label {
+      position: absolute;
+      left: 16px;
+      transform: translate3d(0, 0, 0);
+      transition: all 0.2s ease-in-out;
+      opacity: 0.56;
+      font-family: 'MontserratRegular';
+    }
+    &__field {
+      height: 32px;
+      width: 100%;
+      &:focus + .address-input__label {
+        transform: translate3d(0, -10px, 0);
+      }
+      border: 1px solid rgba(39, 39, 39, 0.24);
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      margin-bottom: 32px;
+; 
+    }
+    &__btn {
+      display: block;
+      color: $primary_black;
+      font-family: 'MontserratSemiBold';
+      background-color: white;
+      cursor: pointer;
+      transition: background-color 180ms;
+      border-radius: 2px;
+      border: 1px solid rgba(39, 39, 39, 0.56);
+      width: 100%;
+      height: 48px;
+
+      &:hover {
+        color: #ffffff;
+        background-color: $primary-black;
+      }
     }
   }
 
