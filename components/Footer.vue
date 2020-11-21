@@ -14,9 +14,9 @@
       .map__navigation
         p.map__navigation__invite West Dental Clinic
           .address-input
-            input.address-input__field(type="text" name="address_desktop")
+            input.address-input__field(type="text" name="address_desktop" id="geocoder-desktop")
             label.address-input__label(for="address_desktop") Введите адрес
-            button.map__navigation__action Проложить маршрут
+            button.map__navigation__action(@click="routeToWdc") Проложить маршрут
           hr(style="margin-bottom:26px;")
           address.wdc-address.clinics-info__address: a Москва, ул. Крылатская, дом 19
           .map__navigation__info
@@ -439,6 +439,18 @@
     }
   }
 
+  .mapbox-form-label {
+    display: none;
+  }
+
+  .directions-icon {
+    display: none;
+  }
+
+  #mapbox-directions-destination-input {
+    display: none;
+  }
+
   @media only screen and (max-width: 768px) {
     #map {
       height: 229px;
@@ -528,12 +540,20 @@
 export default {
   mounted() {
     setTimeout(function () {
-      let script = document.createElement("script");
-      script.src = "https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js";
-      document.head.append(script);
-      script.onload = function() {
+      let mapbox = document.createElement("script");
+      let mapboxDirections = document.createElement("script");
+
+      mapbox.src = "https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js";
+      mapboxDirections.src = "https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js";
+
+      document.head.append(mapbox);
+      document.head.append(mapboxDirections);
+
+      mapbox.onload = function() {
         mapboxgl.accessToken = 'pk.eyJ1IjoiZXdld2UiLCJhIjoiY2tmcGh0a3A1MGk1bTJxcGExdnk5cTJueSJ9.OefbX4ZLtzl9fYi25uHVGw';
+
         var map = new mapboxgl.Map({
+          language: 'ru',
           container: 'map',
           center: [37.424905, 55.737923],
           zoom: 16,
@@ -543,10 +563,29 @@ export default {
 
         var markerEl = document.createElement('div');
         markerEl.className = 'map__marker';
+
+        var mapDirections = new MapboxDirections({
+          accessToken: mapboxgl.accessToken,
+          unit: 'metric',
+          interactive: false,
+          controls: {
+            "instructions": false,
+            "profileSwitcher": false
+          },
+          geocoder: {
+            language: 'ru',
+            country: 'ru'  
+          }
+        });
+        mapDirections.setDestination([37.424905, 55.737923]);
+
         map.addControl(new mapboxgl.NavigationControl());
+        map.addControl(mapDirections, 'top-left');
+
         var marker = new mapboxgl.Marker(markerEl)
           .setLngLat([37.424905, 55.737923])
           .addTo(map);
+        self.map = map;
       };
     }, 3000);
   }

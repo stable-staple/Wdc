@@ -35,7 +35,7 @@
         height="635"
         :src='slides[currentSlide].imgUrl' 
         @click="gallery.settings.startAt = currentSlide; gallery.open();"
-        :key='slides[currentSlide].imgUrl'
+        :key='currentSlide'
       ) 
       .about-us__img-overlay(:class="{'about-us__img-overlay--scaled': contentTransition}")
     .textgroup--mobile(:class="{'textgroup--fade': contentTransition}" style="height:115px;")
@@ -181,19 +181,19 @@
 
   @keyframes overlap {
     from {
-      transform: scaleY(0);
+      transform: scale3d(1, 0, 1);
       transform-origin: top;
     }
     50% {
-      transform: scaleY(1);
+      transform: scale3d(1, 1, 1);
       transform-origin: top;
     }
-    50.001% {
+    50.000001% {
       transform-origin: bottom;
     }
     to {
       transform-origin: bottom;
-      transform: scaleY(0);
+      transform: scale3d(1, 0 1);
     }
   }
 

@@ -60,7 +60,6 @@ export default {
     position: fixed;
     z-index: 3;
     width: 100%;
-
     &--transparent {
       background-color: $primary-black;
     }

@@ -89,6 +89,14 @@ export default {
     display: block;
     padding: 48px 0;
   }
+
+  .play-button {
+    transform: translate(-50%, -50%) scale(0.63);
+
+    &:hover {
+      transform: translate(-50%, -50%) scale(0.83);
+    }
+  }
 }
 
 </style>

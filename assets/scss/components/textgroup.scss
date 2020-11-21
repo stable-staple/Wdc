@@ -73,6 +73,13 @@
 @media only screen and (max-width: 768px) {
   .textgroup {
     display: none;
+
+    &--fade {
+      transition: none;
+      animation: none;
+      opacity: 1;
+      transform: none;
+    }
   }
 
   .textgroup__text {
