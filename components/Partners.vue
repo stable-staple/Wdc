@@ -1,8 +1,12 @@
 <template lang="pug">
 .partners.full-bleed
   .partners__inner
-    img.partners__elem(src="~assets/img/sponsors/sponsors_ankylos.png")
-    img.partners__elem(src="~assets/img/sponsors/sponsors_astratech.png")
+    picture
+      source(srcset="~assets/img/sponsors/sponsors_ankylos_mobile.png" media="(max-width: 768px)")
+      img.partners__elem(src="~assets/img/sponsors/sponsors_ankylos.png")
+    picture
+      source(srcset="~assets/img/sponsors/sponsors_astratech_mobile.png" media="(max-width: 768px)")
+      img.partners__elem(src="~assets/img/sponsors/sponsors_astratech.png")
     img.partners__elem(src="~assets/img/sponsors/sponsors_biohorizons.png")
     img.partners__elem(src="~assets/img/sponsors/sponsors_dentium.png")
     img.partners__elem(src="~assets/img/sponsors/sponsors_impro.png")
@@ -73,5 +77,15 @@ export default {
   position: absolute;
   top: 0;
   left: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .partners {
+    padding: 48px 0;
+    margin-bottom: 20px;
+  }
+  .partners__elem {
+    height: 52px;
+  }
 }
 </style>
