@@ -334,12 +334,21 @@ export default {
   opacity: 0.48;
 }
 
+.services-block__title-wrapper {
+  display: block;
+}
+
 .services-block__title {
   font-family: 'MontserratRegular';
   font-size: 48px;
   line-height: 56px;
   color: $primary-black;
   margin: 0 0 40px 0;
+
+  &__img {
+    position: relative;
+    bottom: 5px;
+  }
 }
 
 .services-list {
@@ -353,10 +362,12 @@ export default {
   cursor: pointer;
   height: 72px;
   border-radius: 6px;
+  display: flex;
 
   & > span {
     color: $primary-black;
-    line-height: 72px;
+    width: 100%;
+    align-self: center;
     font-size: 16px;
   }
   &:hover {
@@ -486,7 +497,71 @@ li {
     display: block;
     margin: 0;
   }
+
+  .services-block__select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: $primary-black;
+    font-size: 16px;
+    padding: 20px 15px;
+    font-family: 'MontserratSemiBold';
+    color: #ffffff;
+    border: none;
+    width: calc(100% + 30px);
+    background-image: url("~assets/img/arrow_down_white.svg");
+    background-repeat: no-repeat, repeat;
+    /* arrow icon position (1em from the right, 50% vertical) , then gradient position*/
+    background-position: right 16px top 40%, 0 0;
+    background-size: 14px auto, 100%;
+    margin: 0 -15px;
+  }
+
+
   .services__right {
+    display: none;
+  }
+
+  .service__price {
+    float: none;
+    display: block;
+  }
+
+  .services-list {
+    & > * + * {
+      margin-top: 12px;
+    }
+  }
+
+  .services-list__elem {
+    font-family: 'MontserratMedium';
+    height: auto;
+    padding: 12px;
+    line-height: 18px;
+    & > span {
+      font-size: 12px;
+    }
+    box-shadow: 0px -10px 10px rgba(0, 0, 0, 0.01), 0px 10px 40px rgba(0, 0, 0, 0.04), 0px -2px 6px rgba(0, 0, 0, 0.02), 0px 0px 1px rgba(0, 0, 0, 0.04);
+    border-radius: 10px;
+  }
+
+  .services-block__title-wrapper {
+    display: flex;
+    justify-content: space-between;
+    background: $primary-black;
+    margin: 0 -15px;
+    padding: 0 15px;
+  }
+
+  .services-block__title {
+    font-size: 16px;
+    background-color: $primary-black;
+    line-height: 60px;
+    margin: 0;
+    color: #ffffff;
+  }
+
+  .service-info__breadcrumbs {
     display: none;
   }
 }

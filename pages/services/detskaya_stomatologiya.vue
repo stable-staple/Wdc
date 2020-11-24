@@ -3,7 +3,14 @@
     span.service-info__breadcrumbs
       NuxtLink.breadcrumbs__link(to="/") Главная&nbsp;&nbsp;
       | / &nbsp;Детская стоматология
-    h1.services-block__title Детская стоматология
+    .services-block__title-wrapper
+      select.services-block__select
+        option(value="1") Детская стоматология
+        option(value="2") фыр
+        option(value="3") мур
+        option(value="4") пур
+      //- h1.services-block__title Детская стоматология
+      //- img.services-block__title__img(src="~assets/img/arrow_down_white.svg")
     ul.services-list
       li.services-list__elem(
         v-for="service in services"
