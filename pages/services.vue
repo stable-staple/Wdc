@@ -509,6 +509,10 @@ li {
 }
 
 @media only screen and (max-width: 768px) {
+  .service-section__sep {
+    margin: 40px 0;
+  }
+
   .services-block {
     display: block;
     margin: 0;
@@ -543,6 +547,14 @@ li {
   .service__price {
     float: none;
     display: block;
+    border-top: 1px solid;
+    border-top-color: rgba(39, 39, 39, 0.08);
+    margin: 10px -12px 0;
+    padding: 10px 12px 0;
+    &:after {
+      float: right;
+      opacity: 1;
+    }
   }
 
   .services-list {
@@ -559,7 +571,10 @@ li {
     & > span {
       font-size: 12px;
     }
-    box-shadow: 0px -10px 10px rgba(0, 0, 0, 0.01), 0px 10px 40px rgba(0, 0, 0, 0.04), 0px -2px 6px rgba(0, 0, 0, 0.02), 0px 0px 1px rgba(0, 0, 0, 0.04);
+    box-shadow: 0px -10px 10px rgba(0, 0, 0, 0.01),
+                0px 10px 40px rgba(0, 0, 0, 0.04), 
+                0px -2px 6px rgba(0, 0, 0, 0.02), 
+                0px 0px 1px rgba(0, 0, 0, 0.04);
     border-radius: 10px;
   }
 
