@@ -32,11 +32,11 @@
     .nav__dropdown-menu(:class="{'nav__dropdown-menu--active': toggleDropdown}")
       .nav__dropdown-menu__inner
         ul.nav__dropdown-menu__list
-          NuxtLink.nav__dropdown-menu__list-item(to="/services/detskaya_stomatologiya") Услуги и цены
-          a.nav__dropdown-menu__list-item(href="#") О клинике
-          a.nav__dropdown-menu__list-item(href="#") Врачи
-          a.nav__dropdown-menu__list-item(href="#") Статьи
-          a.nav__dropdown-menu__list-item(href="#") Контакты
+          NuxtLink.nav__dropdown-menu__list-item(to="/services/detskaya_stomatologiya" @click.native="toggleDropdown = false") Услуги и цены
+          a.nav__dropdown-menu__list-item(href="#" @click="toggleDropdown = false") О клинике
+          a.nav__dropdown-menu__list-item(href="#" @click="toggleDropdown = false") Врачи
+          a.nav__dropdown-menu__list-item(href="#" @click="toggleDropdown = false") Статьи
+          a.nav__dropdown-menu__list-item(href="#" @click="toggleDropdown = false") Контакты
         hr(style="margin-bottom:24px;margin-top: 28px;")
         address.wdc-address: a(href="https://yandex.ru/maps/?rtext=~55.737923%2C37.424905") Москва, ул. Крылатская, дом 19
       button.button--more.nav__appointment-btn--mobile.card_desc Записаться на прием
@@ -93,6 +93,7 @@ export default {
     position: absolute;
     bottom: 24px;
     width: calc(100% - 32px);
+    background-color: $primary-black;
   }
 
   .nav__link {
@@ -148,16 +149,23 @@ export default {
     background: $primary-black;
     z-index: 12;
     height: 0;
-    transition: height 500ms;
+    transition: height .56s cubic-bezier(0.52, 0.16, 0.24, 1);
+    backdrop-filter: none;
     padding: 0 26px 0 16px;
 
     &__inner {
       position: relative;
       top: 35px;
+      opacity: 0;
+      transition: opacity .4s;
     }
 
     &--active {
       height: calc(100% - 40px);
+
+      .nav__dropdown-menu__inner {
+        opacity: 1;
+      }
     }
   }
 
@@ -190,13 +198,12 @@ export default {
     display: block;
     width: 212px;
     height: 37px;
-    background: transparent;
     border-radius: 2px;
     border: 1px solid #FFFFFF;
     color: white;
     transition: background-color 180ms;
     &:hover {
-      color: $primary_black;
+      color: $primary-black;
       background-color: white;
       cursor: pointer;
     }
@@ -229,7 +236,8 @@ export default {
     }
 
     .nav__hidden {
-      height: 80px;
+      padding: 8px 0 32px 0;
+      height: 48px;
     }
 
     .nav__link:not(.nav__link--phone-icon), .nav__appointment-btn {

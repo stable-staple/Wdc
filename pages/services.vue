@@ -38,7 +38,7 @@
     div.services__right__title Другие услуги
     .services-sections-list
       NuxtLink.services-sections-list__elem(
-        v-for="(section, ind) in sidebar"
+        v-for="(section, ind) in this.filteredSidebar"
         :to="section.href"
         :class="{'services-sections-list__elem--active': currentSection == ind}"
         :key="section.title"
@@ -54,6 +54,10 @@ export default {
       modalTitle: null,
       currentSection: 0,
       sidebar: [
+        {
+          title: "Импланты и протезы",
+          href: "/services/implanty_i_protezy"
+        },
         {
           title: "Детская стоматология",
           href: "/services/detskaya_stomatologiya"
@@ -190,6 +194,14 @@ export default {
           name: "Осмотр и консультация"
         }
       ]
+    }
+  },
+  computed: {
+    filteredSidebar: function() {
+      let self = this;
+      return this.sidebar.filter(function (obj) {
+        return obj.href !== self.$route.path;
+      });
     }
   }
 }
@@ -488,6 +500,10 @@ li {
  }
 }
 
+.services-block__select {
+  display: none;
+}
+
 .margin-right-del {
   margin-right: -80px;
 }
@@ -499,6 +515,7 @@ li {
   }
 
   .services-block__select {
+    display: initial;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -518,7 +535,8 @@ li {
   }
 
 
-  .services__right {
+  .services__right,
+  .services-block__title {
     display: none;
   }
 

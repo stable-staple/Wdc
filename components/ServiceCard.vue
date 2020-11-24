@@ -1,5 +1,5 @@
 <template lang="pug">
-  .service-card
+  NuxtLink(:to="'/services/' + route").service-card
     img(:src='this.img' class="service-card__img")
     .service-card__textgroup
       p(class="service-card__desc card_heading") {{ this.desc }}
@@ -12,7 +12,8 @@ export default {
   props: {
     'desc': String,
     'price': String,
-    'img': String
+    'img': String,
+    'route': String
   },
   data: function() {
     return {}

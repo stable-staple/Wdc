@@ -4,6 +4,10 @@
       NuxtLink.breadcrumbs__link(to="/") Главная&nbsp;&nbsp;
       | / &nbsp;{{ title }}
     h1.services-block__title {{ title }}
+    .services-block__title-wrapper
+      select.services-block__select(v-model="selected" :onchange="this.$router.push({ path: selected })")
+        option(:value="selected" selected="selected") {{ title }}
+        option(v-for="(section, ind) in this.$parent.filteredSidebar" :value="section.href") {{ section.title }}
     ul.services-list
       li.services-list__elem(
         v-for="service in services"
@@ -36,6 +40,7 @@ export default {
   data: function () {
     return {
       title: "Осмотр и консультация",
+      selected: this.$route.path,
       description: "Детская стоматология На молодежной (West Dental Clinic) специализируется на здоровье зубов \
                     детей от младенчества до подросткового возраста. Наши врачи прекрасно понимают \
                     различия структуры зубов и полости рта у детей и взрослых. Они имеют те же знания \

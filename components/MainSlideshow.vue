@@ -385,6 +385,7 @@
 
     .main-slideshow__content {
       position: static;
+      padding-top: 32px;
       display: flex;
       height: auto;
       flex-direction: column;
