@@ -39,6 +39,7 @@ div
 <script>
 export default {
   name: "osmotr_i_konsultatsiya",
+  transition: 'slide-bottom',
   data: function () {
     return {
       title: "Осмотр и консультация",

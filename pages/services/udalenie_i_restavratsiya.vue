@@ -38,6 +38,7 @@ div
 
 <script>
 export default {
+  transition: 'slide-bottom',
   name: "lechenie_zubov",
   data: function () {
     return {

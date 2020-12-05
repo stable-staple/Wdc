@@ -39,6 +39,7 @@ div
 <script>
 export default {
   name: "detskaya_stomatologiya",
+  transition: 'slide-bottom',
   data: function () {
     return {
       description: "Детская стоматология На молодежной (West Dental Clinic) специализируется на здоровье зубов \

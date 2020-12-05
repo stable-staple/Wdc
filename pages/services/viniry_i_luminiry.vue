@@ -39,6 +39,7 @@ div
 <script>
 export default {
   name: "viniry_i_luminiry",
+  transition: 'slide-bottom',
   data: function () {
     return {
       title: "Виниры и люминиры",

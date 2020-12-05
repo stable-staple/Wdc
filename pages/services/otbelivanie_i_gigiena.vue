@@ -39,6 +39,7 @@ div
 <script>
 export default {
   name: "otbelivanie_i_gigiena",
+  transition: 'slide-bottom',
   data: function () {
     return {
       title: "Отбеливание и гигиена",

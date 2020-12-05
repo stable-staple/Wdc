@@ -39,6 +39,7 @@ div
 <script>
 export default {
   name: "implanty_i_protezy",
+  transition: 'slide-bottom',
   data: function () {
     return {
       title: "Импланты и протезы",

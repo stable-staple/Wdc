@@ -39,6 +39,7 @@ div
 <script>
 export default {
   name: "lechenie_zubov",
+  transition: 'slide-bottom',
   data: function () {
     return {
       title: "Лечение зубов",

@@ -46,6 +46,7 @@ div
 <script>
 export default {
   name: "ispravlenie_prikusa",
+  transition: 'slide-bottom',
   data: function () {
     return {
       title: "Исправление прикуса",

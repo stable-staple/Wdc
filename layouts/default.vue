@@ -35,6 +35,16 @@
     font-style: normal;
   }
 
+  .slide-bottom-enter-active,
+  .slide-bottom-leave-active {
+    transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
+  }
+  .slide-bottom-enter,
+  .slide-bottom-leave-to {
+    opacity: 0;
+    transform: translate3d(0, 15px, 0);
+  }
+
   @font-face {
     font-family: 'MontserratMedium';
     src: url('~assets/fonts/Montserrat-Medium.woff2') format('woff2'),
