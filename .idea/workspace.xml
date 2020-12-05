@@ -23,10 +23,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0622c075-0869-456b-922f-7e44642bfdae" name="Default Changelist" comment="changed structure">
-      <change afterPath="$PROJECT_DIR$/pages/services/detskaya_stomatologiya.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1606117572360.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/components/swipe_button.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/components/swipe_button.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/AboutUsSlideshow.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/AboutUsSlideshow.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/DoctorsModal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/DoctorsModal.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/DoctorsSlides.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/DoctorsSlides.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Footer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/Footer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/MainSlideshow.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/MainSlideshow.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Partners.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/Partners.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Reviews.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/Reviews.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ServiceCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/ServiceCard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ServiceModal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/ServiceModal.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/SpecialOffers.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/SpecialOffers.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/navbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/navbar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/default.vue" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/default.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/services.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/services.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/services/detskaya_stomatologiya.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/services/detskaya_stomatologiya.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/services/implanty_i_protezy.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/services/implanty_i_protezy.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/services/ispravlenie_prikusa.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/services/ispravlenie_prikusa.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/services/lechenie_zubov.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/services/lechenie_zubov.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/services/osmotr_i_konsultatsiya.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/services/osmotr_i_konsultatsiya.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/services/otbelivanie_i_gigiena.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/services/otbelivanie_i_gigiena.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/services/udalenie_i_restavratsiya.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/services/udalenie_i_restavratsiya.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/services/viniry_i_luminiry.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/services/viniry_i_luminiry.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,6 +108,7 @@
       <workItem from="1604769562350" duration="5464000" />
       <workItem from="1604783145703" duration="420000" />
       <workItem from="1604785921093" duration="29712000" />
+      <workItem from="1606874624346" duration="10000" />
     </task>
     <task id="LOCAL-00001" summary="changed structure">
       <created>1604849235457</created>
@@ -113,6 +133,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="changed structure" />

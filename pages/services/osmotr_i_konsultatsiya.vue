@@ -1,4 +1,6 @@
 <template lang="pug">
+div
+  ServiceModal(v-model="modalOpened" :modalTitle="selectedService" :serviceSectionTitle="title.toLowerCase()")
   .service-info
     span.service-info__breadcrumbs
       NuxtLink.breadcrumbs__link(to="/") Главная&nbsp;&nbsp;
@@ -11,7 +13,7 @@
     ul.services-list
       li.services-list__elem(
         v-for="service in services"
-        @click="modalTitle = service.name; modalOpened = true;"
+        @click="modalOpened = true; selectedService = service.name"
       )
         span {{ service.name }}
           span(class="service__price") {{ service.price }}
@@ -41,6 +43,9 @@ export default {
     return {
       title: "Осмотр и консультация",
       selected: this.$route.path,
+      modalOpened: false,
+      selectedService: null,
+      modalTitle: null,
       description: "Детская стоматология На молодежной (West Dental Clinic) специализируется на здоровье зубов \
                     детей от младенчества до подросткового возраста. Наши врачи прекрасно понимают \
                     различия структуры зубов и полости рта у детей и взрослых. Они имеют те же знания \

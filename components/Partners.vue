@@ -2,10 +2,16 @@
 .partners.full-bleed
   .partners__inner
     picture
-      source(srcset="~assets/img/sponsors/sponsors_ankylos_mobile.png" media="(max-width: 768px)")
+      source(
+        srcset="~assets/img/sponsors/sponsors_ankylos_mobile.png",
+        media="(max-width: 768px)"
+      )
       img.partners__elem(src="~assets/img/sponsors/sponsors_ankylos.png")
     picture
-      source(srcset="~assets/img/sponsors/sponsors_astratech_mobile.png" media="(max-width: 768px)")
+      source(
+        srcset="~assets/img/sponsors/sponsors_astratech_mobile.png",
+        media="(max-width: 768px)"
+      )
       img.partners__elem(src="~assets/img/sponsors/sponsors_astratech.png")
     img.partners__elem(src="~assets/img/sponsors/sponsors_biohorizons.png")
     img.partners__elem(src="~assets/img/sponsors/sponsors_dentium.png")
@@ -17,45 +23,48 @@
 </template>
 
 <script>
-import { gsap } from 'gsap'
+import { gsap } from "gsap";
 
 export default {
   data() {
-    return {}
+    return {};
   },
   methods: {
     setAnimValues() {
-      let cards = document.querySelectorAll('.partners__elem');
-      
+      let cards = document.querySelectorAll(".partners__elem");
+
       innerWidth = 3000;
-      
+
       const cardWidth = innerWidth / (cards.length / 2);
 
-      cards.forEach((card, i) => 
+      cards.forEach((card, i) =>
         gsap.set(card, {
           x: () => i * cardWidth,
-          overwrite: "auto"
+          overwrite: "auto",
         })
       );
-      
+
       gsap.to(cards, {
-        duration: 21  ,
+        duration: 21,
         ease: "none",
         x: `+=${innerWidth}`,
         repeat: -1,
         modifiers: {
-          x: gsap.utils.unitize(gsap.utils.wrap(-cardWidth, innerWidth * 2 - cardWidth), "px")
+          x: gsap.utils.unitize(
+            gsap.utils.wrap(-cardWidth, innerWidth * 2 - cardWidth),
+            "px"
+          ),
         },
       });
-    }
+    },
   },
   mounted() {
     const cardsContainer = document.querySelector(".partners__inner");
     cardsContainer.innerHTML += cardsContainer.innerHTML;
 
     this.setAnimValues();
-  }
-}
+  },
+};
 </script>
 
 <style lang="scss">

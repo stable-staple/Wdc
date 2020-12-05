@@ -1,4 +1,6 @@
 <template lang="pug">
+div
+  ServiceModal(v-model="modalOpened" :modalTitle="selectedService" :serviceSectionTitle="title.toLowerCase()")
   .service-info
     span.service-info__breadcrumbs
       NuxtLink.breadcrumbs__link(to="/") Главная&nbsp;&nbsp;
@@ -11,7 +13,7 @@
     ul.services-list
       li.services-list__elem(
         v-for="service in services"
-        @click="modalTitle = service.name; modalOpened = true;"
+        @click="modalOpened = true; selectedService = service.name"
       )
         span {{ service.name }}
           span(class="service__price") {{ service.price }}
@@ -40,6 +42,8 @@ export default {
   data: function () {
     return {
       title: "Импланты и протезы",
+      modalOpened: false,
+      selectedService: null,
       selected: '/services/implanty_i_protezy',
       description: "Детская стоматология На молодежной (West Dental Clinic) специализируется на здоровье зубов \
                     детей от младенчества до подросткового возраста. Наши врачи прекрасно понимают \

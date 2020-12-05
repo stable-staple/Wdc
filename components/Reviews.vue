@@ -5,31 +5,49 @@
       .textgroup--mobile__title Отзывы
       .special-offers__controls.doctors__controls--mobile
         button.swipe-button.swiper-button--prev
-          svg(width='40' height='40' viewbox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg')
-            circle(cx='20' cy='20' r='19.375' stroke-width='1.25')
-            path(d='M22 25.2856L18 20.1428L22 14.9999' stroke-width='1.82857')
+          svg(
+            width="40",
+            height="40",
+            viewbox="0 0 40 40",
+            fill="none",
+            xmlns="http://www.w3.org/2000/svg"
+          )
+            circle(cx="20", cy="20", r="19.375", stroke-width="1.25")
+            path(d="M22 25.2856L18 20.1428L22 14.9999", stroke-width="1.82857")
         button.swipe-button.swiper-button--next
-          svg(width='40' height='40' viewbox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg')
-            circle(cx='20' cy='20' r='19.3' stroke-width='1.4')
-            path(d='M18 15L22 20.1429L18 25.2857' stroke-width='1.8')
+          svg(
+            width="40",
+            height="40",
+            viewbox="0 0 40 40",
+            fill="none",
+            xmlns="http://www.w3.org/2000/svg"
+          )
+            circle(cx="20", cy="20", r="19.3", stroke-width="1.4")
+            path(d="M18 15L22 20.1429L18 25.2857", stroke-width="1.8")
     .textgroup
-      h3(class="textgroup__title primary_heading reviews__title") Отзывы
-      p(class="reviews__content__text card_desc") 
-        | Действия представителей оппозиции представляют собой 
+      h3.textgroup__title.primary_heading.reviews__title Отзывы
+      p.reviews__content__text.card_desc 
+        | Действия представителей оппозиции представляют собой
         | не что иное, как квинтэссенцию победы
   .reviews__img
     .play-button
-      svg(width='64' height='64' viewbox='0 0 64 64' fill='none' xmlns='http://www.w3.org/2000/svg')
-        circle(cx='32' cy='32' r='32' fill='#272727')
-        path(d='M39.7727 31.2914C40.3182 31.6064 40.3182 32.3936 39.7727 32.7086L28.7273 39.0857C28.1818 39.4006 27.5 39.0069 27.5 38.3771L27.5 25.6229C27.5 24.9931 28.1818 24.5994 28.7273 24.9143L39.7727 31.2914Z' fill='white')
+      svg(
+        width="64",
+        height="64",
+        viewbox="0 0 64 64",
+        fill="none",
+        xmlns="http://www.w3.org/2000/svg"
+      )
+        circle(cx="32", cy="32", r="32", fill="#272727")
+        path(
+          d="M39.7727 31.2914C40.3182 31.6064 40.3182 32.3936 39.7727 32.7086L28.7273 39.0857C28.1818 39.4006 27.5 39.0069 27.5 38.3771L27.5 25.6229C27.5 24.9931 28.1818 24.5994 28.7273 24.9143L39.7727 31.2914Z",
+          fill="white"
+        )
     img.reviews__img__inner(src="~assets/img/reviews__image.png")
-
 </template>
 
 <script>
-export default {
-    
-}
+export default {};
 </script>
 
 <style lang="scss">
@@ -48,7 +66,7 @@ export default {
 }
 
 .reviews__content__text {
-  font-family: 'MontserratRegular';
+  font-family: "MontserratRegular";
   font-size: 16px;
   line-height: 24px;
   max-width: 400px;
@@ -98,5 +116,4 @@ export default {
     }
   }
 }
-
 </style>

@@ -1,4 +1,8 @@
 .swipe-button {
+  touch-action: manipulation;
+  border-radius: 19.3px;
+  height: 40px;
+  overflow: hidden;
   &:hover:enabled {
     cursor: pointer;
   }
@@ -9,10 +13,12 @@
     transition-property: fill, stroke;
     transition-duration: 180ms, 180ms;
     fill: transparent;
-    stroke: $primary-color;
+    stroke: $primary-black;
   }
   &:hover:enabled > svg > * {
-    fill: $primary-color;
+    fill: $primary-black;
+  }
+  &:hover:enabled > svg > path {
     stroke: #FFFFFF;
   }
   &--dark {
@@ -21,10 +27,21 @@
     }
     &:hover:enabled > svg > * {
       fill: #FFFFFF;
-      stroke: $primary-color;
+      stroke: #FFFFFF;
+    }
+    &:hover:enabled > svg > path {
+      stroke: $primary-black;
     }
   }
   & + & {
     margin-left: 4px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .swipe-button {
+    &:hover:enabled {
+      cursor: initial;
+    }
   }
 }
