@@ -4,12 +4,19 @@
   .services__right
     div.services__right__title Другие услуги
     .services-sections-list
-      NuxtLink.services-sections-list__elem(
+      .services-sections-list__elem(
         v-for="(section, ind) in this.filteredSidebar"
-        :to="section.href"
         :class="{'services-sections-list__elem--active': currentSection == ind}"
         :key="section.title"
-        ) {{ section.title}}
+        )
+          img.services-sections-list__elem__img(:src="section.img", width="36", height="36") 
+          NuxtLink(:to="section.href" class="services-sections-list__elem__link") {{ section.title }}
+      //- NuxtLink.services-sections-list__elem(
+      //-   v-for="(section, ind) in this.filteredSidebar"
+      //-   :to="section.href"
+      //-   :class="{'services-sections-list__elem--active': currentSection == ind}"
+      //-   :key="section.title"
+      //-   ) {{ section.title }}
 </template>
 
 <script>
@@ -23,35 +30,43 @@ export default {
       sidebar: [
         {
           title: "Импланты и протезы",
-          href: "/services/implanty_i_protezy"
+          href: "/services/implanty_i_protezy",
+          img: '/img/services/implanty.png'
         },
         {
           title: "Детская стоматология",
-          href: "/services/detskaya_stomatologiya"
+          href: "/services/detskaya_stomatologiya",
+          img: '/img/services/children_dent.png'
         },
         {
           title: "Лечение зубов",
-          href: "/services/lechenie_zubov"
+          href: "/services/lechenie_zubov",
+          img: '/img/services/treatment.png'
         },
         {
           title: "Удаление и реставрация",
-          href: "/services/udalenie_i_restavratsiya"
+          href: "/services/udalenie_i_restavratsiya",
+          img: '/img/services/udalenie.png'
         },
         {
           title: "Виниры и люминиры",
-          href: "/services/viniry_i_luminiry"
+          href: "/services/viniry_i_luminiry",
+          img: '/img/services/otbelivanie.png'
         },
         {
           title: "Отбеливание и гигиена",
-          href: "/services/otbelivanie_i_gigiena"
+          href: "/services/otbelivanie_i_gigiena",
+          img: '/img/services/otbelivanie.png'
         },
         {
           title: "Исправление прикуса",
-          href: "/services/ispravlenie_prikusa"
+          href: "/services/ispravlenie_prikusa",
+          img: '/img/services/overbite_fix.png'
         },
         {
           title: "Осмотр и консультация",
-          href: "/services/osmotr_i_konsultatsiya"
+          href: "/services/osmotr_i_konsultatsiya",
+          img: '/img/services/consulting.png'
         }
       ],
       servicesSection: [
@@ -125,7 +140,7 @@ export default {
           servicesList: [
             {
               name: "Установка имплантата Straumann",
-              price: "55 000 руб"
+              price: "55 000 руб",
             },
             {
               name: "Установка мини-имплатата MDI",
@@ -330,10 +345,11 @@ li {
 .services-sections-list__elem {
   display: block;
   height: 4.5em;
-  padding-left: 66px;
+  padding-left: 20px;
   line-height: 4.5em;
   cursor: pointer;
   font-family: 'MontserratSemiBold';
+  position: relative;
   color: $primary-black;
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.02), 
               0px 10px 40px rgba(0, 0, 0, 0.04), 
@@ -359,6 +375,25 @@ li {
     margin-right: 50px;
     transition: opacity 300ms ease-in-out;
     opacity: 0;
+  }
+}
+
+.services-sections-list__elem__img {
+  vertical-align: middle;
+}
+
+.services-sections-list__elem__link {
+  color: $primary-black;
+  padding-left: 16px;
+
+  &:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    content: '';
+    width: 100%;
+    height: 100%;
   }
 }
 

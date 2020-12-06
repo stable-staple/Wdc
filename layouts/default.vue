@@ -43,7 +43,7 @@
   .slide-bottom-leave-to {
     opacity: 0;
     transform: translate3d(0, 15px, 0);
-  }
+}
 
   @font-face {
     font-family: 'MontserratMedium';

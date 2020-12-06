@@ -30,34 +30,40 @@
       h3.services-block__modal__service-desc Записаться на прием, {{ serviceSectionTitle }}
     h4.services-block__modal__desc(v-if="modalTitle == null") Запись на прием
     form(service-block__modal__form)
-      div(style="display: inline-block")
-        label.services-block__modal__label(for="name") Имя
+      div(style="display: inline-block; position: relative;")
         input.services-block__modal__field(
           type="text",
           name="name",
           spellcheck="false",
+          autocomplete="off",
+          placeholder=" ",
           required
         )
-      div(style="display: inline-block")
-        label.services-block__modal__label(for="phone") Телефон
+        label.services-block__modal__label(for="name") Имя
+      div(style="display: inline-block; position: relative;")
         input.services-block__modal__field.margin-right-del(
           type="text",
           name="phone",
+          placeholder=" "
           required
         )
-      div(style="display: inline-block")
-        label.services-block__modal__label(for="phone") Дата
+        label.services-block__modal__label(for="phone") Телефон
+      div(style="display: inline-block; position: relative;")
         input.services-block__modal__field(type="date", name="date")
-      div(style="display: inline-block")
-        label.services-block__modal__label(for="phone") Время
-        input.services-block__modal__field.margin-right-del(type="time")
-      input(
-        class='services-block__modal__field \
-                      services-block__modal__field--full-width',
-        type="text",
-        placeholder="Ваше сообщение...",
-        autocomplete="off"
-      )
+        label.services-block__modal__label(for="date") Дата
+      div(style="display: inline-block; position: relative;")
+        input.services-block__modal__field.margin-right-del(type="time", name="time")
+        label.services-block__modal__label(for="time") Время
+      div(style="display: inline-block; position: relative; width: 100%;")
+        input(
+          class='services-block__modal__field',
+          type="text",
+          name="message",
+          placeholder=" ",
+          autocomplete="off",
+          style="width: 100%; margin-bottom: 56px;"
+        )
+        label.services-block__modal__label(for="message") Ваше сообщение
       button.services-block__modal__apply-btn Записаться на прием
       p.services-block__modal__confidential
         | Нажимая кнопку «Записаться на прием», вы соглашаетесь с #[u конфиденциальностью персональной информации]
@@ -129,22 +135,38 @@ export default {
   &__field {
     display: block;
     width: 331px; 
-    margin: 8px 80px 24px 0;
-    height: 41px;
+    margin: 8px 80px 48px 0;
+    height: auto;
     padding: 0 0 16px 0;
     border-style: none none solid none;
     border-bottom: solid 1px;
     // $primary-grey with applied opacity
     border-bottom-color: rgba(116, 115, 118, 0.32);
-    &--full-width {
-      width: 100%;
-      margin-bottom: 56px;
+    // &::-webkit-calendar-picker-indicator {
+      // display: none;
+      // -webkit-appearance: none;
+    // }
+    &:placeholder-shown[type="text"] + label {
+      top: 8px;
+      font-size: 16px;
+    }
+    &:focus[type="text"] + label,
+    &:focus[type="date"] + label, &:valid[type="date"] + label,
+    &:focus[type="time"] + label, &:valid[type="time"] + label
+    {
+      top: -20px;
+      font-size: 12px;
     }
   }
   &__label {
     font-family: 'MontserratRegular';
-    font-size: 12px;
+    font-size: 16px;
+    transition: 0.2s ease all;
     line-height: 24px;
+    pointer-events: none;
+    top: -20px;
+    font-size: 12px;
+    position: absolute;
     color: $primary-black;
   }
   &__confidential {
@@ -155,7 +177,7 @@ export default {
     font-size: 12px;
     line-height: 24px;
   }
-  input[type="text"] {
+  &__field {
     font-family: 'MontserratMedium';
     font-weight: 500;
     font-size: 16px;
@@ -168,7 +190,7 @@ export default {
   color: $primary-grey;
   font-family: 'MontserratRegular';
   font-weight: normal;
-  margin: 0 0 40px 0;
+  margin: 0 0 60px 0;
   font-size: 16px;
   line-height: 24px;
 }
