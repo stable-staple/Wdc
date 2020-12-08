@@ -92,6 +92,7 @@ export default {
   },
   mounted () {
     this.mobileViewQuery = window.matchMedia("(max-width: 768px)");
+    this.isMobile = this.mobileViewQuery.matches;
     this.mobileViewQuery.addListener(() => {
       this.isMobile = this.mobileViewQuery.matches
     });
