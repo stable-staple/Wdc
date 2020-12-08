@@ -1,6 +1,6 @@
 <template lang="pug">
 .services-block__modal(v-show="value", @click.self="close")
-  .services-block__modal__inner
+  .services-block__modal__inner(v-scroll-lock="isMobile && value")
     .close-modal(@click="close")
       svg(
         width="24",
@@ -80,12 +80,21 @@ export default {
     modalTitle: String
   },
   data: function () {
-    return {};
+    return {
+      mobileViewQuery: null,
+      isMobile: false
+    }
   },
   methods: {
     close() {
       this.$emit("input", !this.value)
     }
+  },
+  mounted () {
+    this.mobileViewQuery = window.matchMedia("(max-width: 768px)");
+    this.mobileViewQuery.addListener(() => {
+      this.isMobile = this.mobileViewQuery.matches
+    });
   }
 };
 </script>

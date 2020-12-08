@@ -1,22 +1,23 @@
 <template lang="pug">
-.services-block
-  NuxtChild
-  .services__right
-    div.services__right__title Другие услуги
-    .services-sections-list
-      .services-sections-list__elem(
-        v-for="(section, ind) in this.filteredSidebar"
-        :class="{'services-sections-list__elem--active': currentSection == ind}"
-        :key="section.title"
-        )
-          img.services-sections-list__elem__img(:src="section.img", width="36", height="36") 
-          NuxtLink(:to="section.href" class="services-sections-list__elem__link") {{ section.title }}
-      //- NuxtLink.services-sections-list__elem(
-      //-   v-for="(section, ind) in this.filteredSidebar"
-      //-   :to="section.href"
-      //-   :class="{'services-sections-list__elem--active': currentSection == ind}"
-      //-   :key="section.title"
-      //-   ) {{ section.title }}
+div
+  .services-block
+    NuxtChild
+    .services__right
+      div.services__right__title Другие услуги
+      .services-sections-list
+        .services-sections-list__elem(
+          v-for="(section, ind) in this.filteredSidebar"
+          :class="{'services-sections-list__elem--active': currentSection == ind}"
+          :key="section.title"
+          )
+            img.services-sections-list__elem__img(:src="section.img", width="36", height="36") 
+            NuxtLink(:to="section.href" class="services-sections-list__elem__link") {{ section.title }}
+        //- NuxtLink.services-sections-list__elem(
+        //-   v-for="(section, ind) in this.filteredSidebar"
+        //-   :to="section.href"
+        //-   :class="{'services-sections-list__elem--active': currentSection == ind}"
+        //-   :key="section.title"
+        //-   ) {{ section.title }}
 </template>
 
 <script>
@@ -75,6 +76,9 @@ export default {
           description: "Детская стоматология На молодежной (West Dental Clinic) специализируется на здоровье зубов \
                         детей от младенчества до подросткового возраста. Наши врачи прекрасно понимают \
                         различия структуры зубов и полости рта у детей и взрослых. Они имеют те же знания \
+                        и навыки, что и традиционные врачи-стоматологи, но дополнительно изучили способы \
+                        и навыки, что и традиционные врачи-стоматологи, но дополнительно изучили способы \
+                        и навыки, что и традиционные врачи-стоматологи, но дополнительно изучили способы \
                         и навыки, что и традиционные врачи-стоматологи, но дополнительно изучили способы \
                         и манипуляции, чтобы сделать посещение врача-стоматолога менее травмирующим для ребёнка.",
           servicesList: [
@@ -321,7 +325,14 @@ li {
   font-family: 'MontserratRegular';
   font-size: 16px;
   line-height: 32px;
+  max-height: 159px;
+  transition: max-height 300ms;
+  overflow: hidden;
   color: $primary-black;
+}
+
+.service-section__desc--open {
+  max-height: 320px;
 }
 
 .service-section__sep {
@@ -431,6 +442,16 @@ li {
 
   .service-section__desc {
     margin: 0 0 24px 0;
+    font-size: 13px;
+    line-height: 24px;
+    opacity: 0.72;
+    max-height: 69px;
+    overflow: hidden;
+    transition: max-height 300ms;
+  }
+
+  .service-section__desc--open {
+    max-height: 350px;
   }
 
   .services-block {
@@ -519,6 +540,11 @@ li {
 
   .service-info__breadcrumbs {
     display: none;
+  }
+
+  .service-info__title {
+    font-size: 22px;
+    line-height: 28px;
   }
 }
 

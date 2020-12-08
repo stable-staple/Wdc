@@ -26,13 +26,11 @@ div
     hr.service-section__sep
     h1.service-info__title Об услуге
     div
-      img.service-info__img(
+      img.service-info__img(  
       src="~assets/img/services_page/child_dent1.jpg"
-      width="853px"
-      height="524px"
       )
-      p.service-section__desc {{ description }}
-    button.service-info__more Читать полностью
+      p.service-section__desc(:class="{'service-section__desc--open': fullDesc }") {{ description }}
+    button.service-info__more(@click="fullDesc = !fullDesc") Читать полностью
     hr.service-section__sep
 </template>
 
@@ -46,11 +44,14 @@ export default {
                     детей от младенчества до подросткового возраста. Наши врачи прекрасно понимают \
                     различия структуры зубов и полости рта у детей и взрослых. Они имеют те же знания \
                     и навыки, что и традиционные врачи-стоматологи, но дополнительно изучили способы \
+                    и навыки, что и традиционные врачи-стоматологи, но дополнительно изучили способы \
+                    и навыки, что и традиционные врачи-стоматологи, но дополнительно изучили способы \
                     и манипуляции, чтобы сделать посещение врача-стоматолога менее травмирующим для ребёнка.",
       title: "Детская стоматология",
       selected: '/services/detskaya_stomatologiya',
       modalOpened: false,
       selectedService: null,
+      fullDesc: false,
       services: [
         {
           name: "Психологическая адаптация к стоматологическому приему детей",

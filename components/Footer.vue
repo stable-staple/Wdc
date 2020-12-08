@@ -35,7 +35,7 @@ footer
   .address-input--mobile
     input#address.address-input--mobile__field(type="text", name="address")
     label.address-input--mobile__label(for="address") Введите адрес
-    button.address-input--mobile__btn Проложите маршрут
+    button.address-input--mobile__btn(@click="routed") Проложите маршрут
   .footer
     .footer__nav
       img(src="~/assets/img/logo.svg")
@@ -647,12 +647,8 @@ export default {
     }
   },
   methods: {
-    async optimizedRoute() {
-      const ip = await this.$axios.$get('https://api.mapbox.com/optimized-trips/v1/mapbox/driving/-122.42,37.78;-122.45,37.91;-122.48,37.73?access_token=pk.eyJ1IjoiZXdld2UiLCJhIjoiY2tmcGh0a3A1MGk1bTJxcGExdnk5cTJueSJ9.OefbX4ZLtzl9fYi25uHVGw')
-      console.log(ip);
-    },
     routed() {
-      let htmlGeocoderInput = document.querySelector('.mapboxgl-ctrl-geocoder > input');
+      let htmlGeocoderInput = document.querySelector('#geocoder-desktop > .mapboxgl-ctrl-geocoder > input');
       this.mapboxDirections.actions.queryOrigin(htmlGeocoderInput.value);
     }
   },
@@ -709,13 +705,9 @@ export default {
 
         let htmlGeocoder = document.querySelector('.mapboxgl-ctrl-geocoder');
         document.querySelector('#geocoder-desktop').appendChild(htmlGeocoder);
-        let htmlGeocoderInput = document.querySelector('.mapboxgl-ctrl-geocoder > input');
+        let htmlGeocoderInput = document.querySelector('#geocoder-desktop > .mapboxgl-ctrl-geocoder > input');
         htmlGeocoderInput.setAttribute('placeholder', 'Введите адрес');
         htmlGeocoderInput.setAttribute('spellcheck', 'false');
-
-        htmlGeocoderInput.addEventListener('change', function () {
-          this.removeEventListener('change');
-        });
 
         let mapButton = document.querySelector('.map__navigation__action');
 
@@ -725,7 +717,6 @@ export default {
         self.map = map;
       };
     }, 3000);
-    this.optimizedRoute();
   },
 };
 </script>

@@ -27,7 +27,7 @@ export default {
       }
     ],  
     script: [{src: 'https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js', defer: true}],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '~assets/img/favicon.ico' }],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/img/favicon.ico' }],
     link: [
       { rel: 'stylesheet', href: 'https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' },
       { rel: 'stylesheet', href: 'https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.0.2/mapbox-gl-directions.css'},
