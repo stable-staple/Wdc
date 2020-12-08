@@ -44,14 +44,14 @@
           path(d="M18 15L22 20.1429L18 25.2857", stroke-width="1.8")
   .about-us__img
     //- Preload image
-    img(src="img/about_us/about_us.jpg", style="display: none;")
-    img(src="img/about_us/about_us2.jpg", style="display: none;")
-    img(src="img/about_us/about_us3.jpg", style="display: none;")
-    img(src="img/about_us/about_us4.jpg", style="display: none;")
+    img(src="~/assets/img/about_us/about_us.jpg", style="display: none;")
+    img(src="~/assets/img/about_us/about_us2.jpg", style="display: none;")
+    img(src="~/assets/img/about_us/about_us3.jpg", style="display: none;")
+    img(src="~/assets/img/about_us/about_us4.jpg", style="display: none;")
     img.about-us__img__inner(
       width="726",
       height="635",
-      :src="slides[currentSlide].imgUrl",
+      :src="require(`../assets/img/about_us/${slides[currentSlide].imgUrl}.jpg`)",
       @click="gallery.settings.startAt = currentSlide; gallery.open()",
       :key="currentSlide"
     ) 
@@ -83,28 +83,28 @@ export default {
           desc:
             "В своей работе мы используем только лучшие технологии проверенных производителей, \
                   которые ускоряют работу и помогают добиться наилучших результатов лечения ",
-          imgUrl: "/img/about_us/about_us.jpg",
+          imgUrl: "about_us",
         },
         {
           title: "Ответственный подход",
           desc:
             "Перед каждой процедурой проводится консультация и предварительный осмотр \
                   для того, чтобы лечение вышло наиболее эффективным",
-          imgUrl: "/img/about_us/about_us2.jpg",
+          imgUrl: "about_us2",
         },
         {
           title: "Комфортное лечение",
           desc:
             "Лечение в нашей клинике проходит быстро и безболезненно. Мы заботимся о том, \
                   чтобы у наших пациентов оставались только положительные впечатления от приема",
-          imgUrl: "/img/about_us/about_us3.jpg",
+          imgUrl: "about_us3",
         },
         {
           title: "Уютная атмосфера",
           desc:
             "Мы стараемся сделать все для того, чтобы нахождение в нашей стоматологии \
                       оставляло ощущение домашнего уюта и дружелюбия",
-          imgUrl: "/img/about_us/about_us4.jpg",
+          imgUrl: "about_us4",
         },
       ],
     };
@@ -131,19 +131,19 @@ export default {
     this.gallery = new Gallery({
       elements: [
         {
-          href: "/img/about_us/about_us.jpg",
+          href: require(`../assets/img/about_us/about_us.jpg`),
           type: "image",
         },
         {
-          href: "/img/about_us/about_us2.jpg",
+          href: require(`../assets/img/about_us/about_us2.jpg`),
           type: "image",
         },
         {
-          href: "/img/about_us/about_us3.jpg",
+          href: require(`../assets/img/about_us/about_us3.jpg`),
           type: "image",
         },
         {
-          href: "/img/about_us/about_us4.jpg",
+          href: require(`../assets/img/about_us/about_us4.jpg`),
           type: "image",
         },
       ],
