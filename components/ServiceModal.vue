@@ -30,7 +30,7 @@
       h3.services-block__modal__service-desc Записаться на прием, {{ serviceSectionTitle }}
     h4.services-block__modal__desc(v-if="modalTitle == null") Запись на прием
     form(service-block__modal__form)
-      div(style="display: inline-block; position: relative;")
+      div.services-block__modal__field-wrap(style="position: relative;")
         input.services-block__modal__field(
           type="text",
           name="name",
@@ -40,7 +40,7 @@
           required
         )
         label.services-block__modal__label(for="name") Имя
-      div(style="display: inline-block; position: relative;")
+      div.services-block__modal__field-wrap(style="position: relative;")
         input.services-block__modal__field.margin-right-del(
           type="text",
           name="phone",
@@ -48,13 +48,13 @@
           required
         )
         label.services-block__modal__label(for="phone") Телефон
-      div(style="display: inline-block; position: relative;")
-        input.services-block__modal__field(type="date", name="date")
+      div.services-block__modal__field-wrap(style="position: relative;")
+        input.services-block__modal__field(type="date", name="date", required)
         label.services-block__modal__label(for="date") Дата
-      div(style="display: inline-block; position: relative;")
-        input.services-block__modal__field.margin-right-del(type="time", name="time")
+      div.services-block__modal__field-wrap.services__field__time(style="position: relative;")
+        input.services-block__modal__field.margin-right-del(type="time", name="time", required)
         label.services-block__modal__label(for="time") Время
-      div(style="display: inline-block; position: relative; width: 100%;")
+      div.services-block__modal__field-wrap.services-block__modal__field__message(style="position: relative; width: 100%;")
         input(
           class='services-block__modal__field',
           type="text",
@@ -216,4 +216,54 @@ export default {
 .margin-right-del {
     margin-right: -80px;
 }
+
+.services-block__modal__field-wrap {
+  display: inline-block;
+}
+
+@media only screen and (max-width: 768px) {
+  .services-block__modal {
+    overflow: hidden;
+  }
+
+  .services-block__modal__inner {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 52px 15px;
+    overflow: hidden;
+    border-radius: 0;
+  }
+
+  .services-block__modal__title {
+    white-space: normal;
+    display: none;
+  }
+
+  .services-block__modal__label {
+    top: -28px;
+  }
+
+  .services-block__modal__field {
+    width: 100%;
+    margin: 8px 80px 56px 0;
+
+    &:focus[type="text"] + label,
+    &:focus[type="date"] + label, &:valid[type="date"] + label,
+    &:focus[type="time"] + label, &:valid[type="time"] + label
+    {
+      top: -28px;
+      font-size: 12px;
+    }
+  }
+
+  .services-block__modal__field-wrap {
+    display: block;
+  }
+
+  .services-block__modal__field__message,
+  .services__field__time {
+    display: none;
+  }
+} 
 </style>

@@ -51,7 +51,12 @@ export default {
     ]
   },
   plugins: [
-    { ssr: true, src: '~/plugins/vue-swiper.js' }
+    { 
+      ssr: true, src: '~/plugins/vue-swiper.js',
+    },
+    {
+      src: '~/plugins/v-scroll-lock.js'
+    }
   ],
   render: {
     bundleRenderer: {
