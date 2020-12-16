@@ -23,29 +23,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0622c075-0869-456b-922f-7e44642bfdae" name="Default Changelist" comment="changed structure">
-      <change beforePath="$PROJECT_DIR$/1606117572360.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scss/components/swipe_button.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/components/swipe_button.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/AboutUsSlideshow.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/AboutUsSlideshow.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/DoctorsModal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/DoctorsModal.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/DoctorsSlides.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/DoctorsSlides.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Footer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/Footer.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/MainSlideshow.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/MainSlideshow.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Partners.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/Partners.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Reviews.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/Reviews.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ServiceCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/ServiceCard.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/ServiceModal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/ServiceModal.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/SpecialOffers.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/SpecialOffers.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/navbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/navbar.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/layouts/default.vue" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/default.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nuxt.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/nuxt.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/services.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/services.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/services/detskaya_stomatologiya.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/services/detskaya_stomatologiya.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/services/implanty_i_protezy.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/services/implanty_i_protezy.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/services/ispravlenie_prikusa.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/services/ispravlenie_prikusa.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/services/lechenie_zubov.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/services/lechenie_zubov.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/services/osmotr_i_konsultatsiya.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/services/osmotr_i_konsultatsiya.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/services/otbelivanie_i_gigiena.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/services/otbelivanie_i_gigiena.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/services/udalenie_i_restavratsiya.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/services/udalenie_i_restavratsiya.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/services/viniry_i_luminiry.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/services/viniry_i_luminiry.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +58,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="full.screen.before.presentation.mode" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="settings.nodejs" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -109,6 +98,13 @@
       <workItem from="1604783145703" duration="420000" />
       <workItem from="1604785921093" duration="29712000" />
       <workItem from="1606874624346" duration="10000" />
+      <workItem from="1607946656816" duration="100000" />
+      <workItem from="1607962374945" duration="1717000" />
+      <workItem from="1608026257353" duration="20000" />
+      <workItem from="1608026309593" duration="42000" />
+      <workItem from="1608026398614" duration="148000" />
+      <workItem from="1608115332264" duration="97000" />
+      <workItem from="1608115441079" duration="1479000" />
     </task>
     <task id="LOCAL-00001" summary="changed structure">
       <created>1604849235457</created>
@@ -138,55 +134,5 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="changed structure" />
     <option name="LAST_COMMIT_MESSAGE" value="changed structure" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="361" y="71" key="#Deployment" timestamp="1604769611493">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="361" y="71" key="#Deployment/0.0.1536.824@0.0.1536.824" timestamp="1604769611493" />
-    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604769750580">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1604769750580" />
-    <state x="506" y="214" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1604797053258">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="506" y="214" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1604797053258" />
-    <state width="1515" height="159" key="GridCell.Tab.0.bottom" timestamp="1604871578158">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1515" height="159" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1604871578158" />
-    <state width="1515" height="159" key="GridCell.Tab.0.center" timestamp="1604871578158">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1515" height="159" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1604871578158" />
-    <state width="1515" height="159" key="GridCell.Tab.0.left" timestamp="1604871578158">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1515" height="159" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1604871578158" />
-    <state width="1515" height="159" key="GridCell.Tab.0.right" timestamp="1604871578158">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1515" height="159" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1604871578158" />
-    <state x="277" y="57" key="SettingsEditor" timestamp="1604783083350">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1604783083350" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1604849247056">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1604849247056" />
-    <state x="478" y="11" width="579" height="801" key="find.popup" timestamp="1604783323462">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="478" y="11" width="579" height="801" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1604783323462" />
-    <state x="425" y="187" key="run.anything.popup" timestamp="1604769769256">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1604769769256" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1604870997292">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1604870997292" />
   </component>
 </project>

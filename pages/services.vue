@@ -362,10 +362,10 @@ li {
   font-family: 'MontserratSemiBold';
   position: relative;
   color: $primary-black;
-  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.02), 
-              0px 10px 40px rgba(0, 0, 0, 0.04), 
-              0px 2px 6px rgba(0, 0, 0, 0.04), 
-              0px 0px 1px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.02),
+              0 10px 40px rgba(0, 0, 0, 0.04),
+              0 2px 6px rgba(0, 0, 0, 0.04),
+              0 0 1px rgba(0, 0, 0, 0.04);
   border-radius: 6px;
   &:hover {
     background: #F8F8F8;
@@ -451,7 +451,7 @@ li {
   }
 
   .service-section__desc--open {
-    max-height: 350px;
+    max-height: 600px;
   }
 
   .services-block {
@@ -471,7 +471,7 @@ li {
     background-color: $primary-black;
     font-size: 16px;
     padding: 20px 15px;
-    font-family: 'MontserratSemiBold';
+    font-family: 'MontserratSemiBold', serif;
     color: #ffffff;
     border: none;
     width: calc(100% + 30px);

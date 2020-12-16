@@ -3,7 +3,7 @@
     Navbar
     div(class="container--main")
       Nuxt
-    Footer
+    Footer(id="footer")
 </template>
 
 <style lang="scss">

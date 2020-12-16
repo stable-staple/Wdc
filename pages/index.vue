@@ -15,9 +15,9 @@
     hr.full-bleed
     SpecialOffers
     hr.full-bleed
-    AboutUsSlideshow
+    AboutUsSlideshow(id="about_us")
     hr.full-bleed
-    DoctorsSlides
+    DoctorsSlides(id="doctors")
     hr.full-bleed
     Reviews
     hr.full-bleed

@@ -1,6 +1,13 @@
 export default {
   router: {
     scrollBehavior(to, from, savedPosition) {
+      if (to.hash[0] == '#') {
+        return new Promise(resolve => {
+          window.$nuxt.$once("triggerScroll", () => {
+            resolve({selector: to.hash});
+          });
+        });
+      }
       return new Promise(resolve => {
         window.$nuxt.$once("triggerScroll", () => {
           resolve({ x: 0, y: 0 });
@@ -8,6 +15,9 @@ export default {
       });
     }
   },
+  serverMiddleware: [
+    { path: '/api/appointment', handler: '~/api/appointment' },
+  ],
   buildDir: 'nuxt-dist',
   // build: {
   //   analyze: false,

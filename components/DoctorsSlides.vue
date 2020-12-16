@@ -365,6 +365,7 @@ export default {
   &__desc {
     font-family: "MontserratRegular";
     font-size: 12px;
+    line-height: 24px;
     color: $primary-grey;
     margin: 0 0 20px 0;
   }
@@ -374,6 +375,23 @@ export default {
   .doctors {
     display: block;
     padding: 40px 0 40px;
+  }
+
+  .doctors__modal {
+    overflow: hidden;
+  }
+
+  .doctors__modal__inner {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 52px 15px;
+    overflow: hidden;
+    border-radius: 0;
+  }
+
+  .doctors__modal__img-container {
+    display: none;
   }
 
   .doctors__slides {

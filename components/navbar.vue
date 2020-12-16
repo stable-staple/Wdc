@@ -14,13 +14,13 @@ div
             to="/services/detskaya_stomatologiya"
           ) Услуги и цены
         .nav__elem: |
-          NuxtLink.nav__link.nav__link--underlined(to="/services/detskaya_stomatologiya") О клинике
+          NuxtLink.nav__link.nav__link--underlined(:to="{ name: 'index', hash: '#about_us'}", @click.native="fyr") О клинике
         .nav__elem: |
-          NuxtLink.nav__link.nav__link--underlined(to="/services/detskaya_stomatologiya") Врачи
+          NuxtLink.nav__link.nav__link--underlined(:to="{ name: 'index', hash: '#doctors'}") Врачи
         .nav__elem: |
           NuxtLink.nav__link.nav__link--underlined(to="/services/detskaya_stomatologiya") Статьи
         .nav__elem: |
-          NuxtLink.nav__link.nav__link--underlined(to="/services/detskaya_stomatologiya") Контакты
+          NuxtLink.nav__link.nav__link--underlined(:to="{ name: 'index', hash: '#footer'}") Контакты
       .nav__container.medium_header.nav__mobile-actions
         .nav__elem: |
           a.nav__link.nav__link--phone-icon(href="tel:+7 (499) 372-94-90") +7 (499) 372-94-90
@@ -107,6 +107,11 @@ export default {
       modalOpened: false
     };
   },
+  methods: {
+    fyr() {
+      console.log('sdfs');
+    }
+  }
 };
 </script>
 

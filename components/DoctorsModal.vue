@@ -1,6 +1,6 @@
 <template lang="pug">
 .doctors__modal(v-show="value", @click.self="close")
-  .doctors__modal__inner
+  .doctors__modal__inner(v-scroll-lock="isMobile && value")
     img.doctors__modal__img-container(
       :src="require(`../assets/img/doctors/doctor1.jpg`)"
     )
@@ -53,12 +53,22 @@ export default {
     modalTitle: String
   },
   data: function () {
-    return {};
+    return {
+      mobileViewQuery: null,
+      isMobile: false
+    };
   },
   methods: {
     close() {
       this.$emit("input", !this.value)
     }
+  },
+  mounted() {
+    this.mobileViewQuery = window.matchMedia("(max-width: 768px)");
+    this.isMobile = this.mobileViewQuery.matches;
+    this.mobileViewQuery.addListener(() => {
+      this.isMobile = this.mobileViewQuery.matches
+    });
   }
 };
 </script>

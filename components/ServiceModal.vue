@@ -37,6 +37,7 @@
           spellcheck="false",
           autocomplete="off",
           placeholder=" ",
+          v-model="letter.name"
           required
         )
         label.services-block__modal__label(for="name") Имя
@@ -44,15 +45,16 @@
         input.services-block__modal__field.margin-right-del(
           type="text",
           name="phone",
-          placeholder=" "
+          placeholder=" ",
+          v-model="letter.phone"
           required
         )
         label.services-block__modal__label(for="phone") Телефон
       div.services-block__modal__field-wrap(style="position: relative;")
-        input.services-block__modal__field(type="date", name="date", required)
+        input.services-block__modal__field(type="date", name="date", v-model="letter.date" required)
         label.services-block__modal__label(for="date") Дата
       div.services-block__modal__field-wrap.services__field__time(style="position: relative;")
-        input.services-block__modal__field.margin-right-del(type="time", name="time", required)
+        input.services-block__modal__field.margin-right-del(type="time", name="time", v-model="letter.time" required)
         label.services-block__modal__label(for="time") Время
       div.services-block__modal__field-wrap.services-block__modal__field__message(style="position: relative; width: 100%;")
         input(
@@ -61,10 +63,11 @@
           name="message",
           placeholder=" ",
           autocomplete="off",
+          v-model="letter.message",
           style="width: 100%; margin-bottom: 56px;"
         )
         label.services-block__modal__label(for="message") Ваше сообщение
-      button.services-block__modal__apply-btn Записаться на прием
+      button.services-block__modal__apply-btn(@click="sendLetter") Записаться на прием
       p.services-block__modal__confidential
         | Нажимая кнопку «Записаться на прием», вы соглашаетесь с #[u конфиденциальностью персональной информации]
 </template>
@@ -82,12 +85,22 @@ export default {
   data: function () {
     return {
       mobileViewQuery: null,
-      isMobile: false
+      isMobile: false,
+      letter: {
+        name: null,
+        phone: null,
+        date: null,
+        time: null,
+        message: null
+      }
     }
   },
   methods: {
     close() {
       this.$emit("input", !this.value)
+    },
+    sendLetter() {
+      this.$axios.$post('/api/appointment', this.letter);
     }
   },
   mounted () {
@@ -208,7 +221,6 @@ export default {
 .services-block__modal__apply-btn {
   background: #272727;
   border-radius: 4px;
-  padding: 20px 40px;
   height: 53px;
   font-family: 'MontserratSemiBold';
   color: #FFFFFF;
@@ -234,6 +246,11 @@ export default {
 @media only screen and (max-width: 768px) {
   .services-block__modal {
     overflow: hidden;
+  }
+
+  .services-block__modal__apply-btn {
+    height: 45px;
+    margin-top: -16px;
   }
 
   .services-block__modal__inner {
