@@ -15,9 +15,6 @@ export default {
       });
     }
   },
-  serverMiddleware: [
-    { path: '/api/appointment', handler: '~/api/appointment' },
-  ],
   buildDir: 'nuxt-dist',
   // build: {
   //   analyze: false,
