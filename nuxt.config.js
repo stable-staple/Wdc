@@ -1,7 +1,7 @@
 export default {
   router: {
     scrollBehavior(to, from, savedPosition) {
-      if (to.hash[0] == '#') {
+      if (to.hash[0] === '#') {
         return new Promise(resolve => {
           window.$nuxt.$once("triggerScroll", () => {
             resolve({selector: to.hash});
@@ -37,8 +37,8 @@ export default {
       }
     ],  
     script: [{src: 'https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js', defer: true}],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/img/favicon.ico' }],
     link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/img/favicon.ico' },
       { rel: 'stylesheet', href: 'https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' },
       { rel: 'stylesheet', href: 'https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.0.2/mapbox-gl-directions.css'},
       { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css'},
