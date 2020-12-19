@@ -22,7 +22,21 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0622c075-0869-456b-922f-7e44642bfdae" name="Default Changelist" comment="changed structure" />
+    <list default="true" id="0622c075-0869-456b-922f-7e44642bfdae" name="Default Changelist" comment="changed structure">
+      <change afterPath="$PROJECT_DIR$/pages/pravo.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vue2-smooth-scroll.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/DoctorsSlides.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/DoctorsSlides.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Footer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/Footer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ServiceModal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/ServiceModal.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/navbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/navbar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/default.vue" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/default.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nuxt.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/nuxt.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/vue-swiper.js" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/vue-swiper.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,6 +45,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JavaScript File" />
         <option value="Vue Single File Component" />
       </list>
     </option>
@@ -92,7 +107,7 @@
       <workItem from="1608026309593" duration="42000" />
       <workItem from="1608026398614" duration="148000" />
       <workItem from="1608115332264" duration="97000" />
-      <workItem from="1608115441079" duration="1930000" />
+      <workItem from="1608115441079" duration="10232000" />
     </task>
     <task id="LOCAL-00001" summary="changed structure">
       <created>1604849235457</created>

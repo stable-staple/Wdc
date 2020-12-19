@@ -1,5 +1,5 @@
 <template lang="pug">
-  main
+  main(id="top")
     MainSlideshow
     .main__services
       .main__services-row
@@ -19,7 +19,7 @@
     hr.full-bleed
     DoctorsSlides(id="doctors")
     hr.full-bleed
-    Reviews
+    Reviews(id="reviews")
     hr.full-bleed
     Partners
     hr.full-bleed

@@ -13,6 +13,13 @@
     background-color: #ffffff;
   }
 
+  .close-modal {
+    position: absolute;
+    top: 40px;
+    right: 48px;
+    cursor: pointer;
+  }
+
   a {
     text-decoration: none;
     color: #FFFFFF;
@@ -103,6 +110,11 @@
       margin: 0 15px;
       width: auto;
       -webkit-overflow-scrolling: touch;
+    }
+
+    .close-modal {
+      top: 20px;
+      right: 16px;
     }
   }
 

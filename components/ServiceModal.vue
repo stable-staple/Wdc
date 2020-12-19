@@ -228,13 +228,6 @@ export default {
   width: 100%;
 }
 
-.close-modal {
-  position: absolute;
-  top: 40px;
-  right: 48px;
-  cursor: pointer;
-}
-
 .margin-right-del {
     margin-right: -80px;
 }

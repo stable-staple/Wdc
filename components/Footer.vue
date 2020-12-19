@@ -15,7 +15,6 @@ footer
       p.map__navigation__invite West Dental Clinic
         .address-input
           div#geocoder-desktop
-          //- label.address-input__label(for="address_desktop") Введите адрес
           button.map__navigation__action(@click="routed") Проложить маршрут
         hr(style="margin: 0 -48px 26px -48px;")
         address.wdc-address.clinics-info__address: a Москва, ул. Крылатская, дом 19
@@ -33,13 +32,12 @@ footer
             br
             | воскресенье - выходной
   .address-input--mobile
-    input#address.address-input--mobile__field(type="text", name="address")
-    label.address-input--mobile__label(for="address") Введите адрес
-    button.address-input--mobile__btn(@click="routed") Проложите маршрут
+    div#geocoder-mobile
+    button.address-input--mobile__btn(@click="routedMobile") Проложить маршрут
   .footer
     .footer__nav
       img(src="~/assets/img/logo.svg")
-      a.footer__button.footer__nav__arrow-up(href="#")
+      a.footer__button.footer__nav__arrow-up(href="#top", v-smooth-scroll)
         svg(
           width="56",
           height="56",
@@ -121,7 +119,7 @@ footer
               stroke-opacity="0.48",
               stroke-width="1.4"
             )
-        a.footer__button(href="#")
+        a.footer__button(href="https://www.instagram.com/wdc_dental_clinic/")
           svg(
             width="56",
             height="56",
@@ -650,6 +648,10 @@ export default {
     routed() {
       let htmlGeocoderInput = document.querySelector('#geocoder-desktop > .mapboxgl-ctrl-geocoder > input');
       this.mapboxDirections.actions.queryOrigin(htmlGeocoderInput.value);
+    },
+    routedMobile() {
+      let htmlGeocoderInput = document.querySelector('#geocoder-mobile > .mapboxgl-ctrl-geocoder > input');
+      this.mapboxDirections.actions.queryOrigin(htmlGeocoderInput.value);
     }
   },
   mounted() {
@@ -704,10 +706,18 @@ export default {
         map.addControl(mapDirections, "top-left");
 
         let htmlGeocoder = document.querySelector('.mapboxgl-ctrl-geocoder');
-        document.querySelector('#geocoder-desktop').appendChild(htmlGeocoder);
-        let htmlGeocoderInput = document.querySelector('#geocoder-desktop > .mapboxgl-ctrl-geocoder > input');
-        htmlGeocoderInput.setAttribute('placeholder', 'Введите адрес');
-        htmlGeocoderInput.setAttribute('spellcheck', 'false');
+
+        if (window.matchMedia('(max-width: 768px)').matches) {
+          document.querySelector('#geocoder-mobile').appendChild(htmlGeocoder);
+          let htmlGeocoderInputMobile = document.querySelector('#geocoder-mobile > .mapboxgl-ctrl-geocoder > input');
+          htmlGeocoderInputMobile.setAttribute('spellcheck', 'false');
+          htmlGeocoderInputMobile.setAttribute('placeholder', 'Введите адрес');
+        } else {
+          document.querySelector('#geocoder-desktop').appendChild(htmlGeocoder);
+          let htmlGeocoderInput = document.querySelector('#geocoder-desktop > .mapboxgl-ctrl-geocoder > input');
+          htmlGeocoderInput.setAttribute('placeholder', 'Введите адрес');
+          htmlGeocoderInput.setAttribute('spellcheck', 'false');
+        }
 
         let mapButton = document.querySelector('.map__navigation__action');
 

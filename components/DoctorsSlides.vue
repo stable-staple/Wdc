@@ -332,13 +332,6 @@ export default {
   border-radius: 2px;
 }
 
-.close-modal {
-  position: absolute;
-  top: 40px;
-  right: 48px;
-  cursor: pointer;
-}
-
 .doctors__modal__img-container {
   display: inline-block;
   height: 100%;

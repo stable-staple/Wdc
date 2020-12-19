@@ -63,6 +63,9 @@ export default {
     },
     {
       src: '~/plugins/v-scroll-lock.js'
+    },
+    {
+      ssr: false, src: '~/plugins/vue2-smooth-scroll.js'
     }
   ],
   render: {

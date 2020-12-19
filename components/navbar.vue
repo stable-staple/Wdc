@@ -14,11 +14,11 @@ div
             to="/services/detskaya_stomatologiya"
           ) Услуги и цены
         .nav__elem: |
-          NuxtLink.nav__link.nav__link--underlined(:to="{ name: 'index', hash: '#about_us'}", @click.native="fyr") О клинике
+          NuxtLink.nav__link.nav__link--underlined(:to="{ name: 'index', hash: '#about_us'}", href="#about_us", v-smooth-scroll) О клинике
         .nav__elem: |
-          NuxtLink.nav__link.nav__link--underlined(:to="{ name: 'index', hash: '#doctors'}") Врачи
+          NuxtLink.nav__link.nav__link--underlined(:to="{ name: 'index', hash: '#doctors'}", href="#doctors", v-smooth-scroll) Врачи
         .nav__elem: |
-          NuxtLink.nav__link.nav__link--underlined(to="/services/detskaya_stomatologiya") Статьи
+          NuxtLink.nav__link.nav__link--underlined(:to="{ name: 'index', hash: '#reviews'}", href="#reviews", v-smooth-scroll) Отзывы
         .nav__elem: |
           NuxtLink.nav__link.nav__link--underlined(:to="{ name: 'index', hash: '#footer'}") Контакты
       .nav__container.medium_header.nav__mobile-actions
@@ -76,21 +76,25 @@ div
           to="/services/detskaya_stomatologiya",
           @click.native="toggleDropdown = false"
         ) Услуги и цены
-        a.nav__dropdown-menu__list-item(
+        NuxtLink.nav__dropdown-menu__list-item(
+          :to="{ name: 'index', hash: '#about_us'}",
           href="#",
-          @click="toggleDropdown = false"
+          @click.native="toggleDropdown = false"
         ) О клинике
-        a.nav__dropdown-menu__list-item(
-          href="#",
-          @click="toggleDropdown = false"
+        NuxtLink.nav__dropdown-menu__list-item(
+          :to="{ name: 'index', hash: '#doctors'}",
+          href="#doctors",
+          @click.native="toggleDropdown = false"
         ) Врачи
-        a.nav__dropdown-menu__list-item(
+        NuxtLink.nav__dropdown-menu__list-item(
+          :to="{ name: 'index', hash: '#reviews'}",
+          href="#reviews",
+          @click.native="toggleDropdown = false"
+        ) Отзывы
+        NuxtLink.nav__dropdown-menu__list-item(
+          :to="{ name: 'index', hash: '#about_us'}",
           href="#",
-          @click="toggleDropdown = false"
-        ) Статьи
-        a.nav__dropdown-menu__list-item(
-          href="#",
-          @click="toggleDropdown = false"
+          @click.native="toggleDropdown = false"
         ) Контакты
       hr(style="margin-bottom:24px;margin-top: 28px;")
       address.wdc-address: a(
