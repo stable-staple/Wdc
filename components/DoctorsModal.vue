@@ -2,10 +2,10 @@
 .doctors__modal(v-show="value", @click.self="close")
   .doctors__modal__inner(v-scroll-lock="isMobile && value")
     img.doctors__modal__img-container(
-      :src="require(`../assets/img/doctors/doctor1.jpg`)"
+      :src="doctorImgUrl"
     )
     .doctors__modal__content
-      h2.doctors__modal__content__title Иванчина Татьяна Александровна
+      h2.doctors__modal__content__title {{ doctorFullName }}
       h5.doctors__modal__content__desc Врач - стоматолог, терапевт
       ul.doctors__modal__list
         li.doctors__modal__list-item Ведение дентального фотопротокола
@@ -46,6 +46,7 @@
 export default {
   props: {
     doctorFullName: String,
+    doctorImgUrl: String,
     value: {
       required: true
     },

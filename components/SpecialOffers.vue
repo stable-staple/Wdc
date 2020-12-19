@@ -1,5 +1,6 @@
 <template lang="pug">
 .special-offers
+  ServiceModal(v-model="modalOpened" modalTitle="Акция на импланты" specialOfferSubtitle="Прицельный снимок бесплатно")
   .special-offers__textgroup--mobile
     span.special-offers__textgroup--mobile__title Акции
     .special-offers__controls
@@ -31,7 +32,7 @@
     swiper-slide.special-offer
       p.card_heading.special-offer__title Акция на импланты
       p.special-offer__desc.card_desc Прицельный снимок бесплатно
-      a.special-offer__more.card_desc(href="#") Подробнее
+      a.special-offer__more.card_desc(@click="modalOpened = true") Подробнее
       img.special-offer__backdrop(
         src="~assets/img/offers/offers_backdrop1.png"
       )
@@ -62,6 +63,8 @@ export default {
       isEnd: false,
       totalPages: 1,
       currSlide: 0,
+      selectedTitle: null,
+      modalOpened: false,
       swiperOptions: {
         slidesPerView: "auto",
         grab: true,

@@ -1,6 +1,6 @@
 <template lang="pug">
 .doctors
-  DoctorsModal(v-model="modalOpened", :doctorFullName="selectedDoctor")
+  DoctorsModal(v-model="modalOpened", :doctorFullName="selectedDoctor", :doctorImgUrl="selectedImg")
   .doctors__content(:class="{ 'doctors__content--hide': hideDoctors }")
     .textgroup--mobile-controls
       .textgroup--mobile__title Наша работа — ваше здоровье
@@ -68,7 +68,31 @@
     swiper-slide.doctors__slide
       img.doctors__slide__img(
         src="~assets/img/doctors/romantsov.png",
-        @click="modalOpened = true"
+        @click="selectedDoctor='Романцов Александр Валентинович'; selectedImg=require(`../assets/img/doctors/romantsov.png`); modalOpened =true;"
+      )
+      .doctors__slide__textgroup
+        p.doctors__slide__full-name.card_heading Романцов А.В.
+      img.doctors__slide__arrow(src="~assets/img/services/arrow_right.svg")
+    swiper-slide.doctors__slide
+      img.doctors__slide__img(
+        src="~assets/img/doctors/doctor2.png",
+        @click="selectedDoctor = 'Иваненко М.Д.';selectedImg=require(`../assets/img/doctors/doctor2.png`); modalOpened = true;"
+      )
+      .doctors__slide__textgroup
+        p.doctors__slide__full-name.card_heading Иваненко М.Д.
+      img.doctors__slide__arrow(src="~assets/img/services/arrow_right.svg")
+    swiper-slide.doctors__slide
+      img.doctors__slide__img(
+        src="~assets/img/doctors/doctor4.png",
+        @click="selectedDoctor = 'Дьячкова Яна Юрьевна';selectedImg=require(`../assets/img/doctors/doctor4.png`); modalOpened = true;"
+      )
+      .doctors__slide__textgroup
+        p.doctors__slide__full-name.card_heading Дьячкова Я.Ю.
+      img.doctors__slide__arrow(src="~assets/img/services/arrow_right.svg")
+    swiper-slide.doctors__slide
+      img.doctors__slide__img(
+        src="~assets/img/doctors/romantsov.png",
+        @click="selectedDoctor = 'Дьячкова Я.Ю.';selectedImg=require(`../assets/img/doctors/romantsov.png`); modalOpened = true;"
       )
       .doctors__slide__textgroup
         p.doctors__slide__full-name.card_heading Романцов А.В.
@@ -76,31 +100,7 @@
     swiper-slide.doctors__slide
       img.doctors__slide__img(
         src="~assets/img/doctors/romantsov.png",
-        @click="modalOpened = true"
-      )
-      .doctors__slide__textgroup
-        p.doctors__slide__full-name.card_heading Романцов А.В.
-      img.doctors__slide__arrow(src="~assets/img/services/arrow_right.svg")
-    swiper-slide.doctors__slide
-      img.doctors__slide__img(
-        src="~assets/img/doctors/romantsov.png",
-        @click="modalOpened = true"
-      )
-      .doctors__slide__textgroup
-        p.doctors__slide__full-name.card_heading Романцов А.В.
-      img.doctors__slide__arrow(src="~assets/img/services/arrow_right.svg")
-    swiper-slide.doctors__slide
-      img.doctors__slide__img(
-        src="~assets/img/doctors/romantsov.png",
-        @click="modalOpened = true"
-      )
-      .doctors__slide__textgroup
-        p.doctors__slide__full-name.card_heading Романцов А.В.
-      img.doctors__slide__arrow(src="~assets/img/services/arrow_right.svg")
-    swiper-slide.doctors__slide
-      img.doctors__slide__img(
-        src="~assets/img/doctors/romantsov.png",
-        @click="modalOpened = true"
+        @click="modalOpened = true; selectedImg=require(`../assets/img/doctors/romantsov.png`);"
       )
       .doctors__slide__textgroup
         p.doctors__slide__full-name.card_heading Романцов А.В.
@@ -124,7 +124,8 @@ export default {
       },
       hideDoctors: false,
       modalOpened: false,
-      selectedDoctor: null
+      selectedDoctor: null,
+      selectedImg: null
     };
   },
   computed: {
@@ -245,6 +246,8 @@ export default {
 .doctors__slide__img {
   display: block;
   margin: 48px auto 0;
+  height: 408px;
+  width: auto;
 }
 
 .doctors__slide__textgroup {
@@ -334,8 +337,8 @@ export default {
 
 .doctors__modal__img-container {
   display: inline-block;
-  height: 100%;
-  width: 359px;
+  height: 500px;
+  max-width: 100%;
   margin-right: 75px;
   background-color: #f4f4f9;
 }
@@ -455,7 +458,8 @@ export default {
     }
 
     &__img {
-      width: 151px;
+      max-width: 100%;
+      height: 200px;
       margin: 0 auto;
       margin-bottom: 12px;
     }

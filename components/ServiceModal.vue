@@ -27,7 +27,8 @@
         )
     div(v-if="modalTitle !== null")
       h3.services-block__modal__title {{ modalTitle }}
-      h3.services-block__modal__service-desc Записаться на прием, {{ serviceSectionTitle }}
+      h3.services-block__modal__service-desc(v-if="specialOfferSubtitle == null") Записаться на прием, {{ serviceSectionTitle }}
+      h3.services-block__modal__offer-title {{ specialOfferSubtitle }}
     h4.services-block__modal__desc(v-if="modalTitle == null") Запись на прием
     form(service-block__modal__form)
       div.services-block__modal__field-wrap(style="position: relative;")
@@ -76,6 +77,7 @@
 export default {
   props: {
     serviceSectionTitle: String,
+    specialOfferSubtitle: String,
     value: {
       required: true
     },
@@ -211,6 +213,15 @@ export default {
 
 .services-block__modal__service-desc {
   color: $primary-grey;
+  font-family: 'MontserratRegular';
+  font-weight: normal;
+  margin: 0 0 60px 0;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.services-block__modal__offer-title {
+  color: $primary-black;
   font-family: 'MontserratRegular';
   font-weight: normal;
   margin: 0 0 60px 0;

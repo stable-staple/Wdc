@@ -641,7 +641,9 @@ export default {
   data: function() {
     return {
       map: null,
-      mapboxDirections: null
+      mapboxDirections: null,
+      mobileViewQuery: null,
+      isMobile: true,
     }
   },
   methods: {
@@ -656,6 +658,11 @@ export default {
   },
   mounted() {
     var self = this;
+    this.mobileViewQuery = window.matchMedia("(max-width: 768px)");
+    this.isMobile = this.mobileViewQuery.matches;
+    this.mobileViewQuery.addListener(() => {
+      this.isMobile = this.mobileViewQuery.matches
+    });
     setTimeout(function () {
       let mapbox = document.createElement("script");
       let mapboxDirections = document.createElement("script");
@@ -707,7 +714,7 @@ export default {
 
         let htmlGeocoder = document.querySelector('.mapboxgl-ctrl-geocoder');
 
-        if (window.matchMedia('screen and (max-width:768px)').matches) {
+        if (self.isMobile === true) {
           document.querySelector('#geocoder-mobile').appendChild(htmlGeocoder);
           let htmlGeocoderInputMobile = document.querySelector('#geocoder-mobile > .mapboxgl-ctrl-geocoder > input');
           htmlGeocoderInputMobile.setAttribute('spellcheck', 'false');
