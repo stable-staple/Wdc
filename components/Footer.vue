@@ -707,7 +707,7 @@ export default {
 
         let htmlGeocoder = document.querySelector('.mapboxgl-ctrl-geocoder');
 
-        if (window.matchMedia('(max-width: 768px)').matches) {
+        if (window.matchMedia('screen and (max-width:768px)').matches) {
           document.querySelector('#geocoder-mobile').appendChild(htmlGeocoder);
           let htmlGeocoderInputMobile = document.querySelector('#geocoder-mobile > .mapboxgl-ctrl-geocoder > input');
           htmlGeocoderInputMobile.setAttribute('spellcheck', 'false');
