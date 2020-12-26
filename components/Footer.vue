@@ -666,6 +666,7 @@ export default {
     setTimeout(function () {
       let mapbox = document.createElement("script");
       let mapboxDirections = document.createElement("script");
+      mapboxDirections.setAttribute("async", true);
 
       mapbox.src = "https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js";
       mapboxDirections.src =
@@ -733,7 +734,7 @@ export default {
           .addTo(map);
         self.map = map;
       };
-    }, 4000);
+    }, 3500);
   },
 };
 </script>
