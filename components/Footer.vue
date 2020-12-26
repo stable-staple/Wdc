@@ -1,5 +1,5 @@
 <template lang="pug">
-footer
+footer(id="footer")
   .clinics-info--mobile
     h2.clinics-info--mobile__title West Dental Clinic
     address.wdc-address.clinics-info--mobile__address: a Москва, ул. Крылатская, дом 19

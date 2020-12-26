@@ -20,7 +20,7 @@ div
         .nav__elem: |
           NuxtLink.nav__link.nav__link--underlined(:to="{ name: 'index', hash: '#reviews'}", href="#reviews", v-smooth-scroll) Отзывы
         .nav__elem: |
-          NuxtLink.nav__link.nav__link--underlined(:to="{ name: 'index', hash: '#footer'}") Контакты
+          NuxtLink.nav__link.nav__link--underlined(:to="{ name: 'index', hash: '#footer'}", href="#footer" v-smooth-scroll) Контакты
       .nav__container.medium_header.nav__mobile-actions
         .nav__elem: |
           a.nav__link.nav__link--phone-icon(href="tel:+7 (499) 372-94-90") +7 (499) 372-94-90

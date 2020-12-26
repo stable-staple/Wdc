@@ -83,8 +83,8 @@
       img.doctors__slide__arrow(src="~assets/img/services/arrow_right.svg")
     swiper-slide.doctors__slide
       img.doctors__slide__img(
-        src="~assets/img/doctors/doctor4.png",
-        @click="selectedDoctor = 'Дьячкова Яна Юрьевна';selectedImg=require(`../assets/img/doctors/doctor4.png`); modalOpened = true;"
+        src="~assets/img/doctors/doctor2.png",
+        @click="selectedDoctor = 'Дьячкова Яна Юрьевна';selectedImg=require(`../assets/img/doctors/doctor2.png`); modalOpened = true;"
       )
       .doctors__slide__textgroup
         p.doctors__slide__full-name.card_heading Дьячкова Я.Ю.

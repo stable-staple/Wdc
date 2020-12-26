@@ -1,5 +1,5 @@
 <template lang="pug">
-  main(id="top")
+  main
     MainSlideshow
     .main__services
       .main__services-row
