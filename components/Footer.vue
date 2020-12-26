@@ -733,7 +733,7 @@ export default {
           .addTo(map);
         self.map = map;
       };
-    }, 3000);
+    }, 4000);
   },
 };
 </script>

@@ -100,7 +100,7 @@ div
       address.wdc-address: a(
         href="https://yandex.ru/maps/?rtext=~55.737923%2C37.424905"
       ) Москва, ул. Крылатская, дом 19
-    button.button--more.nav__appointment-btn--mobile.card_desc(@click="modalOpened = true;") Записаться на прием
+    button.button--more.nav__appointment-btn--mobile.card_desc(@click="toggleDropdown = false; modalOpened = true;") Записаться на прием
 </template>
 
 <script>
