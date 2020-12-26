@@ -377,6 +377,10 @@ export default {
     overflow: hidden;
   }
 
+  .doctors__modal__list-item {
+    line-height: 20px;
+  }
+
   .doctors__modal__inner {
     width: 100vw;
     height: 100vh;

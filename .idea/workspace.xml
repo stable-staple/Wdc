@@ -24,14 +24,11 @@
   <component name="ChangeListManager">
     <list default="true" id="0622c075-0869-456b-922f-7e44642bfdae" name="Default Changelist" comment="changed structure">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/doctors/doctor1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/doctors/doctor1__card.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/doctors/doctor2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/doctors/doctor4.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/components/DoctorsModal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/DoctorsModal.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/DoctorsSlides.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/DoctorsSlides.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Footer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/Footer.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/ServiceModal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/ServiceModal.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/SpecialOffers.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/SpecialOffers.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +56,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="full.screen.before.presentation.mode" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
     <property name="vuejs.nuxt.types-notification-shown" value="true" />
   </component>
@@ -104,7 +101,9 @@
       <workItem from="1608026398614" duration="148000" />
       <workItem from="1608115332264" duration="97000" />
       <workItem from="1608115441079" duration="10232000" />
-      <workItem from="1608380325756" duration="7000000" />
+      <workItem from="1608380325756" duration="11459000" />
+      <workItem from="1608453808126" duration="610000" />
+      <workItem from="1608810653741" duration="1815000" />
     </task>
     <task id="LOCAL-00001" summary="changed structure">
       <created>1604849235457</created>
@@ -134,5 +133,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="changed structure" />
     <option name="LAST_COMMIT_MESSAGE" value="changed structure" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

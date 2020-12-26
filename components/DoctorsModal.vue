@@ -15,7 +15,6 @@
         li.doctors__modal__list-item
           | Пломбирование корневых каналов зубов методом латеральной компакции гуттаперчи
         li.doctors__modal__list-item Профессиональная гигиена полости рта
-      button.doctors__modal__btn Записаться на прием
     .close-modal(@click="close")
       svg(
         width="24",
@@ -75,4 +74,17 @@ export default {
 </script>
 
 <style lang="scss">
+  @media only screen and (max-width: 768px) {
+    .doctors__modal__content {
+      width: auto;
+    }
+
+    .doctors__modal__content__title {
+      font-size: 22px;
+    }
+
+    .doctors__modal__btn {
+      width: 100%;
+    }
+  }
 </style>

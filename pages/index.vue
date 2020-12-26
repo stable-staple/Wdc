@@ -28,6 +28,7 @@
 <script>
 
 export default {
+  name: 'index',
   data: function() {
     return {
       navSizeObserver: null

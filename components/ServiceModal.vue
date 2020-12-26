@@ -214,7 +214,6 @@ export default {
 .services-block__modal__service-desc {
   color: $primary-grey;
   font-family: 'MontserratRegular';
-  font-weight: normal;
   margin: 0 0 60px 0;
   font-size: 16px;
   line-height: 24px;
@@ -223,7 +222,6 @@ export default {
 .services-block__modal__offer-title {
   color: $primary-black;
   font-family: 'MontserratRegular';
-  font-weight: normal;
   margin: 0 0 60px 0;
   font-size: 16px;
   line-height: 24px;
