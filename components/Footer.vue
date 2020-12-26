@@ -665,16 +665,14 @@ export default {
     });
     setTimeout(function () {
       let mapbox = document.createElement("script");
-      let mapboxDirections = document.createElement("script");
-      mapboxDirections.setAttribute("defer", "true");
-      mapbox.setAttribute("defer", "true");
+      // let mapboxDirections = document.createElement("script");
 
       mapbox.src = "https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js";
-      mapboxDirections.src =
-        "https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js";
+      // mapboxDirections.src =
+      //   "https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js";
 
       document.head.append(mapbox);
-      document.head.append(mapboxDirections);
+      // document.head.append(mapboxDirections);
 
       mapbox.onload = function () {
         mapboxgl.accessToken =
@@ -692,43 +690,51 @@ export default {
         var markerEl = document.createElement("div");
         markerEl.className = "map__marker";
 
-        var mapDirections = new MapboxDirections({
-          accessToken: mapboxgl.accessToken,
-          unit: "metric",
-          interactive: false,
-          controls: {
-            instructions: false,
-            profileSwitcher: false,
-          },
-          geocoder: {
-            language: "ru",
-            country: "ru",
-            bbox: ['33.495123','54.241851','40.570318','58.244515']
-          },
-        });
-        mapDirections.setDestination([37.424905, 55.737923]);
-        self.mapboxDirections = mapDirections;
+        let mapboxDirections = document.createElement("script");
+        mapboxDirections.src =
+            "https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js";
+        document.head.append(mapboxDirections);
 
-        self.mapControls = new mapboxgl.NavigationControl();
+        mapboxDirections.onload = function () {
 
-        map.addControl(self.mapControls);
-        map.addControl(mapDirections, "top-left");
+          var mapDirections = new MapboxDirections({
+            accessToken: mapboxgl.accessToken,
+            unit: "metric",
+            interactive: false,
+            controls: {
+              instructions: false,
+              profileSwitcher: false,
+            },
+            geocoder: {
+              language: "ru",
+              country: "ru",
+              bbox: ['33.495123','54.241851','40.570318','58.244515']
+            },
+          });
+          mapDirections.setDestination([37.424905, 55.737923]);
+          self.mapboxDirections = mapDirections;
 
-        let htmlGeocoder = document.querySelector('.mapboxgl-ctrl-geocoder');
+          self.mapControls = new mapboxgl.NavigationControl();
 
-        if (self.isMobile === true) {
-          document.querySelector('#geocoder-mobile').appendChild(htmlGeocoder);
-          let htmlGeocoderInputMobile = document.querySelector('#geocoder-mobile > .mapboxgl-ctrl-geocoder > input');
-          htmlGeocoderInputMobile.setAttribute('spellcheck', 'false');
-          htmlGeocoderInputMobile.setAttribute('placeholder', 'Введите адрес');
-        } else {
-          document.querySelector('#geocoder-desktop').appendChild(htmlGeocoder);
-          let htmlGeocoderInput = document.querySelector('#geocoder-desktop > .mapboxgl-ctrl-geocoder > input');
-          htmlGeocoderInput.setAttribute('placeholder', 'Введите адрес');
-          htmlGeocoderInput.setAttribute('spellcheck', 'false');
-        }
+          map.addControl(self.mapControls);
+          map.addControl(mapDirections, "top-left");
 
-        let mapButton = document.querySelector('.map__navigation__action');
+          let htmlGeocoder = document.querySelector('.mapboxgl-ctrl-geocoder');
+
+          if (self.isMobile === true) {
+            document.querySelector('#geocoder-mobile').appendChild(htmlGeocoder);
+            let htmlGeocoderInputMobile = document.querySelector('#geocoder-mobile > .mapboxgl-ctrl-geocoder > input');
+            htmlGeocoderInputMobile.setAttribute('spellcheck', 'false');
+            htmlGeocoderInputMobile.setAttribute('placeholder', 'Введите адрес');
+          } else {
+            document.querySelector('#geocoder-desktop').appendChild(htmlGeocoder);
+            let htmlGeocoderInput = document.querySelector('#geocoder-desktop > .mapboxgl-ctrl-geocoder > input');
+            htmlGeocoderInput.setAttribute('placeholder', 'Введите адрес');
+            htmlGeocoderInput.setAttribute('spellcheck', 'false');
+          }
+
+          let mapButton = document.querySelector('.map__navigation__action');
+        };
 
         var marker = new mapboxgl.Marker(markerEl)
           .setLngLat([37.424905, 55.737923])
