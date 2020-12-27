@@ -207,7 +207,7 @@ export default {
   &__img {
     margin: 0 0 32px 0;
     max-width: 100%;
-    height: 494px;
+    max-height: 494px;
   }
   &__more {
     display: inline-block;
