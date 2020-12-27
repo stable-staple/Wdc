@@ -7,17 +7,10 @@ div
       .services-sections-list
         .services-sections-list__elem(
           v-for="(section, ind) in this.filteredSidebar"
-          :class="{'services-sections-list__elem--active': currentSection == ind}"
           :key="section.title"
           )
             img.services-sections-list__elem__img(:src="section.img", width="36", height="36") 
             NuxtLink(:to="section.href" class="services-sections-list__elem__link") {{ section.title }}
-        //- NuxtLink.services-sections-list__elem(
-        //-   v-for="(section, ind) in this.filteredSidebar"
-        //-   :to="section.href"
-        //-   :class="{'services-sections-list__elem--active': currentSection == ind}"
-        //-   :key="section.title"
-        //-   ) {{ section.title }}
 </template>
 
 <script>
@@ -52,7 +45,7 @@ export default {
         {
           title: "Виниры и люминиры",
           href: "/services/viniry_i_luminiry",
-          img: '/img/services/otbelivanie.png'
+          img: '/img/services/viniry.png'
         },
         {
           title: "Отбеливание и гигиена",
@@ -84,31 +77,31 @@ export default {
           servicesList: [
             {
               name: "Психологическая адаптация к стоматологическому приему детей",
-              price: "1 500 руб"
+              price: "1 500 ₽"
             },
             {
               name: "Постановка пломбы светового отверждения (молочный зуб)",
-              price: "1 500 руб"
+              price: "1 500 ₽"
             },
             {
               name: "Постановка пломбы светового отверждения (коренной зуб)",
-              price: "1 500 руб"
+              price: "1 500 ₽"
             },
             {
               name: "Удаление зубных отложений щеткой с профилактической пастой",
-              price: "1 500 руб"
+              price: "1 500 ₽"
             },
             {
               name: "Неинвазивный метод лечения Icon",
-              price: "1 500 руб"
+              price: "1 500 ₽"
             },
             {
               name: "Удаление молочного зуба 2-3 степени подвижности",
-              price: "1 500 руб"
+              price: "1 500 ₽"
             },
             {
               name: "Удаление молочного зуба с сохраненными корнями",
-              price: "1 500 руб"
+              price: "1 500 ₽"
             }
           ]
         },
@@ -118,23 +111,23 @@ export default {
           servicesList: [
             {
               name: "Восстановление зуба пломбой с использованием материалов из фотоп.",
-              price: "4 900 руб"
+              price: "4 900 ₽"
             },
             {
               name: "Эндодонтическое лечение (лечение корневого канала зуба)",
-              price: "1 500 руб"
+              price: "1 500 ₽"
             },
             {
               name: "Лечение периодонтита",
-              price: "1 500 руб"
+              price: "1 500 ₽"
             },
             {
               name: "Эстетическая реставрация",
-              price: "1 500 руб"
+              price: "1 500 ₽"
             },
             {
               name: "Нехирургическое лечение при заболеваниях пародонта",
-              price: "1 500 руб"
+              price: "1 500 ₽"
             }
           ]
         },
@@ -144,23 +137,23 @@ export default {
           servicesList: [
             {
               name: "Установка имплантата Straumann",
-              price: "55 000 руб",
+              price: "55 000 ₽",
             },
             {
               name: "Установка мини-имплатата MDI",
-              price: "25 000 руб"
+              price: "25 000 ₽"
             },
             {
               name: "Операция направленной регенерации кости (НРК)",
-              price: "48 000 руб"
+              price: "48 000 ₽"
             },
             {
               name: "Операция открытого синус-лифтинга",
-              price: "47 000 руб"
+              price: "47 000 ₽"
             },
             {
               name: "Операция закрытого синус-лифтинга",
-              price: "22 000 руб"
+              price: "22 000 ₽"
             }
           ]
         },
@@ -220,7 +213,7 @@ export default {
     color: $primary-black;
     font-family: 'MontserratBold';
     height: 45px;
-    width: 100%;
+    width: 198px;
     border-radius: 2px;
     background-color: $primary-grey-light;
     font-size: 14px;
@@ -460,6 +453,10 @@ li {
   }
 
   .service-info {
+    width: 100%;
+  }
+
+  .service-info__more {
     width: 100%;
   }
 

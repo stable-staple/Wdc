@@ -34,13 +34,11 @@ div
     h1.service-info__title Об услуге
     div
       img.service-info__img(
-        src="~assets/img/services_page/child_dent1.jpg",
-        width="853px",
-        height="524px"
+        src="~assets/img/services_page/ispravlenie.jpg"
       )
       p.service-section__desc {{ description }}
-    button.service-info__more Читать полностью
-    hr.service-section__sep
+      p.service-section__desc(:class="{'service-section__desc--open': fullDesc }") {{ description }}
+    button.service-info__more(@click="fullDesc = !fullDesc") Читать полностью
 </template>
 
 <script>
@@ -52,6 +50,7 @@ export default {
       title: "Исправление прикуса",
       modalOpened: false,
       selectedService: null,
+      fullDesc: false,
       selected: this.$route.path,
       description:
         "Детская стоматология На молодежной (West Dental Clinic) специализируется на здоровье зубов \
@@ -61,13 +60,28 @@ export default {
                     и манипуляции, чтобы сделать посещение врача-стоматолога менее травмирующим для ребёнка.",
       services: [
         {
-          name: "Изготовление керамического винира E.max",
-          price: "39 000 руб",
+          name: "Сапфировая брекет-система inspire ice ormco 1 зубной ряд",
+          price: "40 000 ₽",
         },
         {
-          name:
-            "Изготовление композитного винира ультратонкого (на рефракторе)",
-          price: "49 000 руб",
+          name: "Комбинированная безлигатурная система Damon clear",
+          price: "60 000 ₽",
+        },
+        {
+          name: "Лечение на элайнерах",
+          price: "от 80 000 ₽",
+        },
+        {
+          name: "Изготовление пластинки",
+          price: "от 12 000 ₽",
+        },
+        {
+          name: "Изготовление и фиксация ретейнера на 1 зуб",
+          price: "1 500 ₽",
+        },
+        {
+          name: "Хранитель места под зуб",
+          price: "5 000 ₽",
         },
       ],
     };

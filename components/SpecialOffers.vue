@@ -1,6 +1,6 @@
 <template lang="pug">
 .special-offers
-  ServiceModal(v-model="modalOpened" modalTitle="Акция на импланты" specialOfferSubtitle="Прицельный снимок бесплатно")
+  ServiceModal(v-model="modalOpened", :modalTitle="selectedTitle", :specialOfferSubtitle="selectedSubtitle")
   .special-offers__textgroup--mobile
     span.special-offers__textgroup--mobile__title Акции
     .special-offers__controls
@@ -30,25 +30,27 @@
           path(d="M18 15L22 20.1429L18 25.2857", stroke-width="1.8")
   swiper.special-offers__list(ref="offersSwiper", :options="swiperOptions")
     swiper-slide.special-offer
-      p.card_heading.special-offer__title Акция на импланты
+      p.card_heading.special-offer__title Акция на установку имплантов
       p.special-offer__desc.card_desc Прицельный снимок бесплатно
-      a.special-offer__more.card_desc(@click="modalOpened = true") Подробнее
+      a.special-offer__more.card_desc(
+        @click="modalOpened=true;selectedTitle='Акция на установку имплантов';selectedSubtitle='Прицельный снимок бесплатно'"
+        ) Записаться на прием
       img.special-offer__backdrop(
         src="~assets/img/offers/offers_backdrop1.png"
       )
       img.special-offer__img(src="~assets/img/offers/offers_img1.png")
     swiper-slide.special-offer
       p.card_heading.special-offer__title Акция на удаление зуба
-      p.card_desc.special-offer__desc Компьютерная томография бесплатно
-      a.special-offer__more.card_desc(href="#") Подробнее
+      p.card_desc.special-offer__desc Компьютерная томография и удаление зуба бесплатно
+      a.special-offer__more.card_desc(@click="modalOpened = true; selectedTitle='Акция на удаление зуба';selectedSubtitle='Компьютерная томография и удаление зуба бесплатно'") Записаться на прием
       img.special-offer__backdrop(
         src="~assets/img/offers/offers_backdrop2.png"
       )
       img.special-offer__img(src="~assets/img/offers/offers_img2.png")
-    swiper-slide.special-offer
+    //swiper-slide.special-offer
       p.card_heading.special-offer__title Акция на удаление зуба
       p.card_desc.special-offer__desc Компьютерная томография бесплатно
-      a.special-offer__more.card_desc(href="#") Подробнее
+      a.special-offer__more.card_desc(href="#") Записаться на прием
       img.special-offer__backdrop(
         src="~assets/img/offers/offers_backdrop2.png"
       )
@@ -64,6 +66,7 @@ export default {
       totalPages: 1,
       currSlide: 0,
       selectedTitle: null,
+      selectedSubtitle: null,
       modalOpened: false,
       swiperOptions: {
         slidesPerView: "auto",
@@ -89,6 +92,8 @@ export default {
   },
   mounted() {
     this.swiper.on("transitionStart", () => this.onSwipe(this));
+    this.isStart = this.swiper.isBeginning;
+    this.isEnd = this.swiper.isEnd;
   },
 };
 </script>

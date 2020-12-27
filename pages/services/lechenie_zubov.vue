@@ -27,12 +27,10 @@ div
     h1.service-info__title Об услуге
     div
       img.service-info__img(
-      src="~assets/img/services_page/child_dent1.jpg"
-      width="853px"
-      height="524px"
+        src="~assets/img/services_page/lechenie.jpg"
       )
-      p.service-section__desc {{ description }}
-    button.service-info__more Читать полностью
+      p.service-section__desc(:class="{'service-section__desc--open': fullDesc }") {{ description }}
+    button.service-info__more(@click="fullDesc = !fullDesc") Читать полностью
     hr.service-section__sep
 </template>
 
@@ -46,6 +44,7 @@ export default {
       selected: this.$route.path,
       modalOpened: false,
       selectedService: null,
+      fullDesc: false,
       description: "Детская стоматология На молодежной (West Dental Clinic) специализируется на здоровье зубов \
                     детей от младенчества до подросткового возраста. Наши врачи прекрасно понимают \
                     различия структуры зубов и полости рта у детей и взрослых. Они имеют те же знания \
@@ -54,23 +53,23 @@ export default {
       services: [
         {
           name: "Восстановление зуба пломбой с использованием материалов из фотополимеров",
-          price: "4 900 руб"
+          price: "4 900 ₽"
         },
         {
           name: "Эндодонтическое лечение (лечение корневого канала зуба)",
-          price: "10 000 руб"
+          price: "10 000 ₽"
         },
         {
           name: "Лечение периодонтита",
-          price: "14 000 руб"
+          price: "14 000 ₽"
         },
         {
           name: "Эстетическая реставрация",
-          price: "19 000 руб"
+          price: "19 000 ₽"
         },
         {
           name: "Нехирургическое лечение при заболеваниях пародонта",
-          price: "4 900 руб"
+          price: "4 900 ₽"
         }
       ]
     }

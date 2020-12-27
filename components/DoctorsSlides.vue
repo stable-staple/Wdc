@@ -1,6 +1,7 @@
 <template lang="pug">
 .doctors
-  DoctorsModal(v-model="modalOpened", :doctorFullName="selectedDoctor", :doctorImgUrl="selectedImg")
+  DoctorsModal(v-model="modalOpened", :doctorFullName="selectedDoctor", :doctorImgUrl="selectedImg",
+    :skills="skills[0]")
   .doctors__content(:class="{ 'doctors__content--hide': hideDoctors }")
     .textgroup--mobile-controls
       .textgroup--mobile__title Наша работа — ваше здоровье
@@ -65,47 +66,38 @@
         circle(cx="20", cy="20", r="19.3", stroke-width="1.4")
         path(d="M18 15L22 20.1429L18 25.2857", stroke-width="1.8")
   swiper.doctors__slides(ref="doctorsSwiper", :options="swiperOptions")
-    swiper-slide.doctors__slide
+    swiper-slide.doctors__slide(@click.native="selectedDoctor='Романцов Александр Валентинович'; selectedImg=require(`../assets/img/doctors/romantsov.png`); modalOpened =true;")
       img.doctors__slide__img(
-        src="~assets/img/doctors/romantsov.png",
-        @click="selectedDoctor='Романцов Александр Валентинович'; selectedImg=require(`../assets/img/doctors/romantsov.png`); modalOpened =true;"
+        src="~assets/img/doctors/romantsov.png"
       )
       .doctors__slide__textgroup
         p.doctors__slide__full-name.card_heading Романцов А.В.
       img.doctors__slide__arrow(src="~assets/img/services/arrow_right.svg")
-    swiper-slide.doctors__slide
-      img.doctors__slide__img(
-        src="~assets/img/doctors/doctor2.png",
-        @click="selectedDoctor = 'Иваненко М.Д.';selectedImg=require(`../assets/img/doctors/doctor2.png`); modalOpened = true;"
-      )
+    swiper-slide.doctors__slide(@click.native="selectedDoctor = 'Иваненко Мария Дмитриевна';selectedImg=require(`../assets/img/doctors/doctor2.png`); modalOpened = true;")
+      img.doctors__slide__img(src="~assets/img/doctors/doctor2.png")
       .doctors__slide__textgroup
         p.doctors__slide__full-name.card_heading Иваненко М.Д.
       img.doctors__slide__arrow(src="~assets/img/services/arrow_right.svg")
-    swiper-slide.doctors__slide
-      img.doctors__slide__img(
-        src="~assets/img/doctors/doctor2.png",
-        @click="selectedDoctor = 'Дьячкова Яна Юрьевна';selectedImg=require(`../assets/img/doctors/doctor2.png`); modalOpened = true;"
-      )
+    swiper-slide.doctors__slide(@click.native="selectedDoctor = 'Иванчина Татьяна Александровна';selectedImg=require(`../assets/img/doctors/doctor3.png`); modalOpened = true;")
+      img.doctors__slide__img(src="~assets/img/doctors/doctor3.png")
+      .doctors__slide__textgroup
+        p.doctors__slide__full-name.card_heading Иванчина Т.А.
+      img.doctors__slide__arrow(src="~assets/img/services/arrow_right.svg")
+    swiper-slide.doctors__slide(@click.native="selectedDoctor = 'Дьячкова Яна Юрьевна';selectedImg=require(`../assets/img/doctors/doctor4.png`); modalOpened = true;")
+      img.doctors__slide__img(src="~assets/img/doctors/doctor4.png")
       .doctors__slide__textgroup
         p.doctors__slide__full-name.card_heading Дьячкова Я.Ю.
       img.doctors__slide__arrow(src="~assets/img/services/arrow_right.svg")
-    swiper-slide.doctors__slide
-      img.doctors__slide__img(
-        src="~assets/img/doctors/romantsov.png",
-        @click="selectedDoctor = 'Дьячкова Я.Ю.';selectedImg=require(`../assets/img/doctors/romantsov.png`); modalOpened = true;"
-      )
+    swiper-slide.doctors__slide(@click.native="selectedDoctor = 'Жидкова Александра Андреевна';selectedImg=require(`../assets/img/doctors/doctor6.png`); modalOpened = true;")
+      img.doctors__slide__img(src="~assets/img/doctors/doctor6.png")
       .doctors__slide__textgroup
-        p.doctors__slide__full-name.card_heading Романцов А.В.
+        p.doctors__slide__full-name.card_heading Жидкова А.А.
       img.doctors__slide__arrow(src="~assets/img/services/arrow_right.svg")
-    swiper-slide.doctors__slide
-      img.doctors__slide__img(
-        src="~assets/img/doctors/romantsov.png",
-        @click="modalOpened = true; selectedImg=require(`../assets/img/doctors/romantsov.png`);"
-      )
+    swiper-slide.doctors__slide(@click.native="selectedDoctor = 'Макиева Ингла Валерьевна';selectedImg=require(`../assets/img/doctors/doctor9.png`); modalOpened = true;")
+      img.doctors__slide__img(src="~assets/img/doctors/doctor9.png")
       .doctors__slide__textgroup
-        p.doctors__slide__full-name.card_heading Романцов А.В.
+        p.doctors__slide__full-name.card_heading Макиева И.В.
       img.doctors__slide__arrow(src="~assets/img/services/arrow_right.svg")
-    swiper-slide.doctors__slide
   p.doctors__text--mobile
     | У нас работают профессионалы своего дела. Врачи регулярно повышают квалификацию
     | и стажируются для того, чтобы наши пациенты всегда были довольны результатом
@@ -125,7 +117,17 @@ export default {
       hideDoctors: false,
       modalOpened: false,
       selectedDoctor: null,
-      selectedImg: null
+      selectedImg: null,
+      skills: [
+        [
+          {val: "Ведение дентального фотопротокола"},
+          {val: "Эстетические прямые реставрации зубов"},
+          {val: "Отбеливание зубов ZOOM"},
+          {val: "Эндодонтическое лечение зубов, работа с ротационными инструментами"},
+          {val: "Пломбирование корневых каналов зубов методом латеральной компакции гуттаперчи"},
+          {val: "Профессиональная гигиена полости"},
+        ]
+      ],
     };
   },
   computed: {

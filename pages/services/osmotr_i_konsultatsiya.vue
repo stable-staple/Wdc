@@ -27,12 +27,10 @@ div
     h1.service-info__title Об услуге
     div
       img.service-info__img(
-      src="~assets/img/services_page/child_dent1.jpg"
-      width="853px"
-      height="524px"
+      src="~assets/img/services_page/konsultation.jpg"
       )
-      p.service-section__desc {{ description }}
-    button.service-info__more Читать полностью
+      p.service-section__desc(:class="{'service-section__desc--open': fullDesc }") {{ description }}
+    button.service-info__more(@click="fullDesc = !fullDesc") Читать полностью
     hr.service-section__sep
 </template>
 
@@ -46,21 +44,39 @@ export default {
       selected: this.$route.path,
       modalOpened: false,
       selectedService: null,
+      fullDesc: false,
       modalTitle: null,
       description: "Детская стоматология На молодежной (West Dental Clinic) специализируется на здоровье зубов \
+                    детей от младенчества до подросткового возраста. Наши врачи прекрасно понимают \
                     детей от младенчества до подросткового возраста. Наши врачи прекрасно понимают \
                     различия структуры зубов и полости рта у детей и взрослых. Они имеют те же знания \
                     и навыки, что и традиционные врачи-стоматологи, но дополнительно изучили способы \
                     и манипуляции, чтобы сделать посещение врача-стоматолога менее травмирующим для ребёнка.",
       services: [
         {
-          name: "Изготовление керамического винира E.max",
-          price: "39 000 руб"
+          name: "Консультация врача ортодонта",
+          price: "3 000 ₽"
         },
         {
-          name: "Изготовление композитного винира ультратонкого (на рефракторе)",
-          price: "49 000 руб"
-        }
+          name: "Консультация врача ортодонта высшей категории, к.м.н.",
+          price: "5 000 ₽"
+        },
+        {
+          name: "Ортопантомография",
+          price: "1 500 ₽"
+        },
+        {
+          name: "Компьютерная томография челюстно-лицевой области",
+          price: "3 900 ₽"
+        },
+        {
+          name: "Снятие диагностических слепков (одна челюсть)",
+          price: "3 000 ₽"
+        },
+        {
+          name: "Диагностика пародонтологическая (с помощью аппарата Florida Probe)",
+          price: "5 000 ₽"
+        },
       ]
     }
   }

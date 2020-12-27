@@ -6,17 +6,11 @@
     )
     .doctors__modal__content
       h2.doctors__modal__content__title {{ doctorFullName }}
-      h5.doctors__modal__content__desc Врач - стоматолог, терапевт
+      h5.doctors__modal__content__desc Главный врач, имплантолог, стоматолог, стоматолог-ортопед, стоматолог-хирург
       ul.doctors__modal__list
-        li.doctors__modal__list-item Ведение дентального фотопротокола
-        li.doctors__modal__list-item Эстетические прямые реставрации зубов
-        li.doctors__modal__list-item Отбеливание зубов ZOOM
-        li.doctors__modal__list-item Эндодонтическое лечение зубов, работа с ротационными инструментами
-        li.doctors__modal__list-item
-          | Пломбирование корневых каналов зубов методом латеральной компакции гуттаперчи
-        li.doctors__modal__list-item Профессиональная гигиена полости рта
+        li.doctors__modal__list-item(v-for="(skill, ind) in skills") {{ skill.val }}
     .close-modal(@click="close")
-      svg(
+      svg(h
         width="24",
         height="24",
         viewbox="0 0 24 24",
@@ -50,7 +44,8 @@ export default {
       required: true
     },
     opened: Boolean,
-    modalTitle: String
+    modalTitle: String,
+    skills: Array,
   },
   data: function () {
     return {

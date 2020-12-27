@@ -78,28 +78,32 @@ div
         ) Услуги и цены
         NuxtLink.nav__dropdown-menu__list-item(
           :to="{ name: 'index', hash: '#about_us'}",
-          href="#",
-          @click.native="toggleDropdown = false"
+          href="#about_us",
+          @click.native="toggleDropdown = false",
+          v-smooth-scroll
         ) О клинике
         NuxtLink.nav__dropdown-menu__list-item(
           :to="{ name: 'index', hash: '#doctors'}",
           href="#doctors",
-          @click.native="toggleDropdown = false"
+          @click.native="toggleDropdown = false",
+          v-smooth-scroll
         ) Врачи
         NuxtLink.nav__dropdown-menu__list-item(
           :to="{ name: 'index', hash: '#reviews'}",
           href="#reviews",
-          @click.native="toggleDropdown = false"
+          @click.native="toggleDropdown = false",
+          v-smooth-scroll
         ) Отзывы
         NuxtLink.nav__dropdown-menu__list-item(
           :to="{ name: 'index', hash: '#about_us'}",
           href="#",
-          @click.native="toggleDropdown = false"
+          @click.native="toggleDropdown = false",
+          v-smooth-scroll
         ) Контакты
       hr(style="margin-bottom:24px;margin-top: 28px;")
       address.wdc-address: a(
         href="https://yandex.ru/maps/?rtext=~55.737923%2C37.424905"
-      ) Москва, ул. Крылатская, дом 19
+      ) Москва, ул. Ельнинская, дом 14
     button.button--more.nav__appointment-btn--mobile.card_desc(@click="toggleDropdown = false; modalOpened = true;") Записаться на прием
 </template>
 

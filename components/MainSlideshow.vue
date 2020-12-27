@@ -114,7 +114,7 @@
       )
         circle(cx="3", cy="3", r="3", fill="white")
     .main-slideshow__social
-      a.main-slideshow__social__link(href="#")
+      a.main-slideshow__social__link(href="https://www.instagram.com/wdc_dental_clinic/", target="_blank")
         svg(
           width="16",
           height="16",
@@ -138,7 +138,7 @@
           defs
             clippath#clip0
               rect(width="16", height="16", fill="white")
-      a.main-slideshow__social__link(href="#")
+      a.main-slideshow__social__link(href="https://www.youtube.com/channel/UCZMP6-6-J5t1thCW5y360ZQ", target="_blank")
         svg(
           width="16",
           height="16",

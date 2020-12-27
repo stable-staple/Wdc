@@ -2,7 +2,7 @@
 footer(id="footer")
   .clinics-info--mobile
     h2.clinics-info--mobile__title West Dental Clinic
-    address.wdc-address.clinics-info--mobile__address: a Москва, ул. Крылатская, дом 19
+    address.wdc-address.clinics-info--mobile__address: a Москва, ул. Ельнинская, дом 14
     .clinics-info--mobile__work-hours
       p.clinics-info--mobile__work-hours__title Время работы
       P.clinics-info--mobile__work-hours__content пн - пт 9:00 - 21:00
@@ -17,7 +17,7 @@ footer(id="footer")
           div#geocoder-desktop
           button.map__navigation__action(@click="routed") Проложить маршрут
         hr(style="margin: 0 -48px 26px -48px;")
-        address.wdc-address.clinics-info__address: a Москва, ул. Крылатская, дом 19
+        address.wdc-address.clinics-info__address: a Москва, ул. Ельнинская, дом 14
         .map__navigation__info
         p.clinics-info__work-hours__title Время работы
           p.map__navigation__info__text пн - пт&nbsp;
@@ -92,7 +92,7 @@ footer(id="footer")
               stroke-opacity="0.48",
               stroke-width="1.4"
             )
-        a.footer__button(href="#")
+        a.footer__button(href="https://www.youtube.com/channel/UCZMP6-6-J5t1thCW5y360ZQ", target="_blank")
           svg(
             width="56",
             height="56",
@@ -119,7 +119,7 @@ footer(id="footer")
               stroke-opacity="0.48",
               stroke-width="1.4"
             )
-        a.footer__button(href="https://www.instagram.com/wdc_dental_clinic/")
+        a.footer__button(href="https://www.instagram.com/wdc_dental_clinic/", target="_blank")
           svg(
             width="56",
             height="56",
@@ -181,10 +181,10 @@ footer(id="footer")
       .footer__links
         .footer__links__nav
           NuxtLink(to="/services/detskaya_stomatologiya") Услуги и цены
-          a(href="#") О клинике
-          a(href="#") Наши врачи
-          a(href="#") Статьи
-          a(href="#") Контакты
+          NuxtLink(:to="{ name: 'index', hash: '#about_us'}", href="#about_us", v-smooth-scroll) О клинике
+          NuxtLink(:to="{ name: 'index', hash: '#doctors'}", href="#doctors", v-smooth-scroll) Наши врачи
+          NuxtLink(:to="{ name: 'index', hash: '#reviews'}", href="#reviews", v-smooth-scroll) Отзывы
+          NuxtLink(:to="{ name: 'index', hash: '#footer'}", href="#footer", v-smooth-scroll) Контакты
         hr.footer__separate.footer__separate--mobile
         .footer__links__policy
           a(href="#") Политика конфиденциальности
