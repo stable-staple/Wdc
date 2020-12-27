@@ -37,6 +37,11 @@ div
 <script>
 export default {
   name: "detskaya_stomatologiya",
+  head() {
+    return {
+      title: "Детская стоматология"
+    };
+  },
   transition: 'slide-bottom',
   data: function () {
     return {

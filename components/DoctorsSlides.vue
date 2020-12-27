@@ -1,7 +1,7 @@
 <template lang="pug">
 .doctors
   DoctorsModal(v-model="modalOpened", :doctorFullName="selectedDoctor", :doctorImgUrl="selectedImg",
-    :skills="skills[0]")
+    :skills="skills[selectedSkillset]", :subTitle="titles[selectedSkillset].val")
   .doctors__content(:class="{ 'doctors__content--hide': hideDoctors }")
     .textgroup--mobile-controls
       .textgroup--mobile__title Наша работа — ваше здоровье
@@ -66,19 +66,19 @@
         circle(cx="20", cy="20", r="19.3", stroke-width="1.4")
         path(d="M18 15L22 20.1429L18 25.2857", stroke-width="1.8")
   swiper.doctors__slides(ref="doctorsSwiper", :options="swiperOptions")
-    swiper-slide.doctors__slide(@click.native="selectedDoctor='Романцов Александр Валентинович'; selectedImg=require(`../assets/img/doctors/romantsov.png`); modalOpened =true;")
+    swiper-slide.doctors__slide(@click.native="selectedDoctor='Романцов Александр Валентинович'; selectedImg=require(`../assets/img/doctors/romantsov.png`); selectedSkillset = 0; modalOpened =true;")
       img.doctors__slide__img(
         src="~assets/img/doctors/romantsov.png"
       )
       .doctors__slide__textgroup
         p.doctors__slide__full-name.card_heading Романцов А.В.
       img.doctors__slide__arrow(src="~assets/img/services/arrow_right.svg")
-    swiper-slide.doctors__slide(@click.native="selectedDoctor = 'Иваненко Мария Дмитриевна';selectedImg=require(`../assets/img/doctors/doctor2.png`); modalOpened = true;")
+    swiper-slide.doctors__slide(@click.native="selectedDoctor = 'Иваненко Мария Дмитриевна';selectedImg=require(`../assets/img/doctors/doctor2.png`); selectedSkillset = 1; modalOpened = true;")
       img.doctors__slide__img(src="~assets/img/doctors/doctor2.png")
       .doctors__slide__textgroup
         p.doctors__slide__full-name.card_heading Иваненко М.Д.
       img.doctors__slide__arrow(src="~assets/img/services/arrow_right.svg")
-    swiper-slide.doctors__slide(@click.native="selectedDoctor = 'Иванчина Татьяна Александровна';selectedImg=require(`../assets/img/doctors/doctor3.png`); modalOpened = true;")
+    swiper-slide.doctors__slide(@click.native="selectedDoctor = 'Иванчина Татьяна Александровна';selectedImg=require(`../assets/img/doctors/doctor3.png`); selectedSkillset = 2;  modalOpened = true;")
       img.doctors__slide__img(src="~assets/img/doctors/doctor3.png")
       .doctors__slide__textgroup
         p.doctors__slide__full-name.card_heading Иванчина Т.А.
@@ -118,15 +118,51 @@ export default {
       modalOpened: false,
       selectedDoctor: null,
       selectedImg: null,
+      selectedSkillset: 0,
+      titles: [
+        {val: "Главный врач, имплантолог, стоматолог, стоматолог-ортопед, стоматолог-хирург"},
+        {val: "Врач стоматолог-терапевт, эндодонтист-микроскопист"},
+        {val: "Врач-стоматолог, терапевт"},
+        {val: "Врач стоматолог-ортодонт"},
+        {val: "Главный врач, имплантолог, стоматолог, стоматолог-ортопед, стоматолог-хирург"},
+        {val: "Главный врач, имплантолог, стоматолог, стоматолог-ортопед, стоматолог-хирург"},
+        {val: "Главный врач, имплантолог, стоматолог, стоматолог-ортопед, стоматолог-хирург"},
+        {val: "Главный врач, имплантолог, стоматолог, стоматолог-ортопед, стоматолог-хирург"},
+        {val: "Главный врач, имплантолог, стоматолог, стоматолог-ортопед, стоматолог-хирург"},
+        {val: "Главный врач, имплантолог, стоматолог, стоматолог-ортопед, стоматолог-хирург"},
+      ],
       skills: [
         [
-          {val: "Ведение дентального фотопротокола"},
-          {val: "Эстетические прямые реставрации зубов"},
-          {val: "Отбеливание зубов ZOOM"},
-          {val: "Эндодонтическое лечение зубов, работа с ротационными инструментами"},
-          {val: "Пломбирование корневых каналов зубов методом латеральной компакции гуттаперчи"},
-          {val: "Профессиональная гигиена полости"},
-        ]
+          {val: "Несъемное протезирование на имплантатах (в том числе сложное протезирование на имплантах)"},
+          {val: "Съемное протезирование при отсутствии зубов с опорой на имплантаты."},
+          {val: "Сложное протезирование при стирании зубов со снижением высоты прикуса."},
+          {val: "Гнатологическое лечение при дисфункции височно-нижнечелюстного сустава (боль в суставе, щелканье, ограниченное открывание рта, смещение челюсти, снижение слуха).\n" +
+                "\n"},
+          {val: "Работа с аксиографией, лицевой дугой и артикулятором системы Amann Girrbach для изготовления точных, функциональных и удобных протезов."},
+          {val: "Эстетическое восстановление передних зубов с помощью виниров, люминиров. Применение подхода минимального препарирования (обточки) зубов. Восстановление эстетики и улыбки. При разрушении передних зубов или при наличии множественных пломб."},
+          {val: "Восстановление разрушенных зубов цельно-керамическими коронками, мостовидными протезами, E.max , цирконий."},
+          {val: "Микро-протезирование цельно-керамическими вкладками, накладками (E.max, цирконий)."},
+          {val: "Все виды съёмного протезирования (бюгельное протезирование, протезирование частичными и полными съёмными протезами)."},
+          {val: "Удаление зубов (в том числе сложные случаи)."},
+          {val: "Имплантация зубов (навигационная имплантация по хирургическим шаблонам)."},
+          {val: "Работа с мягкими тканями."},
+        ],
+        [
+          {val: "Диагностика состояния зубов"},
+          {val: "Лечение кариеса"},
+        ],
+        [
+          { val: "Ведение дентального фотопротокола"},
+          { val: "Эстетические прямые реставрации зубов"},
+          { val: "Отбеливание зубов ZOOM"},
+          { val: "Эндодонтическое лечение зубов, работа с ротационными инструментами"},
+          { val: "Пломбирование корневых каналов зубов методом латеральной компакции гуттаперчи"},
+          { val: "Профессиональная гигиена полости рта"},
+        ],
+        [
+          {val: "Исправление прикуса"},
+          {val: "Исправление прикуса у детей"},
+        ],
       ],
     };
   },
@@ -310,7 +346,9 @@ export default {
   padding-left: 16px;
   font-family: "MontserratRegular";
   font-size: 14px;
+  overflow: auto;
   line-height: 24px;
+  height: 60%;
   margin: 0;
 
   & > * + * {

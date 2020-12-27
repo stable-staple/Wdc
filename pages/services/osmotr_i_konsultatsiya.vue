@@ -38,6 +38,11 @@ div
 export default {
   name: "osmotr_i_konsultatsiya",
   transition: 'slide-bottom',
+  head() {
+    return {
+      title: "Осмотр и консультация"
+    };
+  },
   data: function () {
     return {
       title: "Осмотр и консультация",

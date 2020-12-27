@@ -38,6 +38,11 @@ div
 export default {
   name: "otbelivanie_i_gigiena",
   transition: 'slide-bottom',
+  head() {
+    return {
+      title: "Отбеливание и гигиена"
+    };
+  },
   data: function () {
     return {
       title: "Отбеливание и гигиена",

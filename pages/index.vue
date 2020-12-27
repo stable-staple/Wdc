@@ -29,6 +29,11 @@
 
 export default {
   name: 'index',
+  head() {
+    return {
+      title: "Центр стоматологии и имплантологии в Москве"
+    };
+  },
   data: function() {
     return {
       navSizeObserver: null

@@ -38,6 +38,11 @@ div
 export default {
   name: "viniry_i_luminiry",
   transition: 'slide-bottom',
+  head() {
+    return {
+      title: "Виниры и люминиры"
+    };
+  },
   data: function () {
     return {
       title: "Виниры и люминиры",

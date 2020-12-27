@@ -38,6 +38,11 @@ div
 export default {
   name: "lechenie_zubov",
   transition: 'slide-bottom',
+  head() {
+    return {
+      title: "Лечение зубов"
+    };
+  },
   data: function () {
     return {
       title: "Лечение зубов",

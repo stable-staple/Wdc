@@ -1,12 +1,12 @@
 <template lang="pug">
 .doctors__modal(v-show="value", @click.self="close")
-  .doctors__modal__inner(v-scroll-lock="isMobile && value")
+  .doctors__modal__inner(v-scroll-lock="value && isMobile")
     img.doctors__modal__img-container(
       :src="doctorImgUrl"
     )
     .doctors__modal__content
       h2.doctors__modal__content__title {{ doctorFullName }}
-      h5.doctors__modal__content__desc Главный врач, имплантолог, стоматолог, стоматолог-ортопед, стоматолог-хирург
+      h5.doctors__modal__content__desc {{ subTitle }}
       ul.doctors__modal__list
         li.doctors__modal__list-item(v-for="(skill, ind) in skills") {{ skill.val }}
     .close-modal(@click="close")
@@ -46,6 +46,7 @@ export default {
     opened: Boolean,
     modalTitle: String,
     skills: Array,
+    subTitle: String,
   },
   data: function () {
     return {

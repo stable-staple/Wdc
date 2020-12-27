@@ -22,19 +22,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0622c075-0869-456b-922f-7e44642bfdae" name="Default Changelist" comment="changed structure">
+    <list default="true" id="0622c075-0869-456b-922f-7e44642bfdae" name="Default Changelist" comment="general improvements">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/fonts/Montserrat-Bold.woff" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/Montserrat-Bold.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/fonts/Montserrat-Bold.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/Montserrat-Bold.woff2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/fonts/Montserrat-Regular.woff" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/Montserrat-Regular.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/fonts/Montserrat-Regular.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/Montserrat-Regular.woff2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/doctors/wdc_03297 1.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/components/DoctorsModal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/DoctorsModal.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/DoctorsSlides.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/DoctorsSlides.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Footer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/Footer.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/MainSlideshow.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/MainSlideshow.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/SpecialOffers.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/SpecialOffers.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/navbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/navbar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Reviews.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/Reviews.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/services.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/services.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/services/detskaya_stomatologiya.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/services/detskaya_stomatologiya.vue" afterDir="false" />
@@ -119,7 +111,7 @@
       <workItem from="1608115441079" duration="10232000" />
       <workItem from="1608380325756" duration="11459000" />
       <workItem from="1608453808126" duration="610000" />
-      <workItem from="1608810653741" duration="28858000" />
+      <workItem from="1608810653741" duration="35086000" />
     </task>
     <task id="LOCAL-00001" summary="changed structure">
       <created>1604849235457</created>
@@ -128,7 +120,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604849235457</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="general improvements">
+      <created>1609078233566</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1609078233566</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -148,7 +147,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="changed structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed structure" />
+    <MESSAGE value="general improvements" />
+    <option name="LAST_COMMIT_MESSAGE" value="general improvements" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

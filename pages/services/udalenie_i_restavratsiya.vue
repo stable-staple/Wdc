@@ -38,6 +38,11 @@ div
 export default {
   transition: 'slide-bottom',
   name: "lechenie_zubov",
+  head() {
+    return {
+      title: "Удаление и реставрация"
+    };
+  },
   data: function () {
     return {
       title: "Удаление и реставрация",

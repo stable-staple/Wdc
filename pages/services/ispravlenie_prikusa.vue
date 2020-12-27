@@ -45,6 +45,11 @@ div
 export default {
   name: "ispravlenie_prikusa",
   transition: 'slide-bottom',
+  head() {
+    return {
+      title: "Исправление прикуса"
+    };
+  },
   data: function () {
     return {
       title: "Исправление прикуса",

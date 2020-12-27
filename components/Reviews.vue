@@ -29,7 +29,7 @@
       p.reviews__content__text.card_desc 
         | Действия представителей оппозиции представляют собой
         | не что иное, как квинтэссенцию победы
-  .reviews__img
+  .reviews__img(@click="gallery.open()")
     .play-button
       svg(
         width="64",
@@ -47,7 +47,29 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      gallery: null,
+    }
+  },
+  mounted() {
+    const Gallery = require("glightbox");
+
+    this.gallery = new Gallery({
+      elements: [
+        {
+          href: "/reviews/review1.mp4",
+          type: "video",
+        },
+        {
+          href: "/reviews/review2.mp4",
+          type: "video",
+        },
+      ],
+    });
+  }
+};
 </script>
 
 <style lang="scss">
