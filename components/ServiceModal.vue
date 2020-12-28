@@ -1,7 +1,7 @@
 <template lang="pug">
-.services-block__modal(v-show="value", @click.self="close")
+.services-block__modal(v-show="value", @click.self="isSubmitted = false; close()")
   .services-block__modal__inner(v-scroll-lock="isMobile && value")
-    .close-modal(@click="close")
+    .close-modal(@click="isSubmitted = false; close()")
       svg(
         width="24",
         height="24",
@@ -25,52 +25,59 @@
           transform="rotate(45 21.9641 0.75)",
           fill="#272727"
         )
-    div(v-if="modalTitle !== null")
-      h3.services-block__modal__title {{ modalTitle }}
-      h3.services-block__modal__service-desc(v-if="specialOfferSubtitle == null") Записаться на прием, {{ serviceSectionTitle }}
-      h3.services-block__modal__offer-title {{ specialOfferSubtitle }}
-    h4.services-block__modal__desc(v-if="modalTitle == null") Запись на прием
-    form(service-block__modal__form)
-      div.services-block__modal__field-wrap(style="position: relative;")
-        input.services-block__modal__field(
-          type="text",
-          name="name",
-          spellcheck="false",
-          autocomplete="off",
-          placeholder=" ",
-          v-model="letter.name"
-          required
-        )
-        label.services-block__modal__label(for="name") Имя
-      div.services-block__modal__field-wrap(style="position: relative;")
-        input.services-block__modal__field.margin-right-del(
-          type="text",
-          name="phone",
-          placeholder=" ",
-          v-model="letter.phone"
-          required
-        )
-        label.services-block__modal__label(for="phone") Телефон
-      div.services-block__modal__field-wrap(style="position: relative;")
-        input.services-block__modal__field(type="date", name="date", v-model="letter.date" required)
-        label.services-block__modal__label(for="date") Дата
-      div.services-block__modal__field-wrap.services__field__time(style="position: relative;")
-        input.services-block__modal__field.margin-right-del(type="time", name="time", v-model="letter.time" required)
-        label.services-block__modal__label(for="time") Время
-      div.services-block__modal__field-wrap.services-block__modal__field__message(style="position: relative; width: 100%;")
-        input(
-          class='services-block__modal__field',
-          type="text",
-          name="message",
-          placeholder=" ",
-          autocomplete="off",
-          v-model="letter.message",
-          style="width: 100%; margin-bottom: 56px;"
-        )
-        label.services-block__modal__label(for="message") Ваше сообщение
-      button.services-block__modal__apply-btn(@click="sendLetter") Записаться на прием
-      p.services-block__modal__confidential
-        | Нажимая кнопку «Записаться на прием», вы соглашаетесь с #[u конфиденциальностью персональной информации]
+
+    div(v-if="isSubmitted === false")
+      div(v-if="modalTitle !== null")
+        h3.services-block__modal__title {{ modalTitle }}
+        h3.services-block__modal__service-desc(v-if="specialOfferSubtitle == null") Записаться на прием, {{ serviceSectionTitle }}
+        h3.services-block__modal__offer-title {{ specialOfferSubtitle }}
+      h4.services-block__modal__desc(v-if="modalTitle == null") Запись на прием
+      form(@submit.prevent)
+        div.services-block__modal__field-wrap(style="position: relative;")
+          input.services-block__modal__field(
+            type="text",
+            name="name",
+            spellcheck="false",
+            autocomplete="off",
+            placeholder=" ",
+            v-model="letter.name"
+            required
+          )
+          label.services-block__modal__label(for="name") Имя
+        div.services-block__modal__field-wrap(style="position: relative;")
+          input.services-block__modal__field.margin-right-del(
+            type="text",
+            name="phone",
+            placeholder=" ",
+            v-model="letter.phone"
+            required
+          )
+          label.services-block__modal__label(for="phone") Телефон
+        div.services-block__modal__field-wrap(style="position: relative;")
+          input.services-block__modal__field(type="date", name="date", v-model="letter.date" required)
+          label.services-block__modal__label(for="date") Дата
+        div.services-block__modal__field-wrap.services__field__time(style="position: relative;")
+          input.services-block__modal__field.margin-right-del(type="time", name="time", v-model="letter.time" required)
+          label.services-block__modal__label(for="time") Время
+        div.services-block__modal__field-wrap.services-block__modal__field__message(style="position: relative; width: 100%;")
+          input(
+            class='services-block__modal__field',
+            type="text",
+            name="message",
+            placeholder=" ",
+            autocomplete="off",
+            v-model="letter.message",
+            style="width: 100%; margin-bottom: 56px;"
+          )
+          label.services-block__modal__label(for="message") Ваше сообщение
+        button.services-block__modal__apply-btn(@click="sendLetter") Записаться на прием
+        p.services-block__modal__confidential
+          | Нажимая кнопку «Записаться на прием», вы соглашаетесь с #[u конфиденциальностью персональной информации]
+    div(v-else)
+      h2.apply-success__title Заявка успешно отправлена
+      h3.apply-success__subtitle Мы скоро вам перезвоним
+      img.apply-success__img(src="/img/services/implanty.png")
+      button.apply-success__btn Вернуться на главную
 </template>
 
 <script>
@@ -88,6 +95,7 @@ export default {
     return {
       mobileViewQuery: null,
       isMobile: false,
+      isSubmitted: false,
       letter: {
         name: null,
         phone: null,
@@ -103,6 +111,7 @@ export default {
     },
     sendLetter() {
       this.$axios.$post('/api/appointment', this.letter);
+      this.isSubmitted = true;
     }
   },
   mounted () {
@@ -116,6 +125,38 @@ export default {
 </script>
 
 <style lang="scss">
+
+.apply-success__title {
+  font-family: 'MontserratSemiBold', serif;
+  font-size: 22px;
+  line-height: 28px;
+  color: $primary-black;
+  margin: 0 0 12px 0;
+}
+
+.apply-success__subtitle {
+  font-family: 'MontserratMedium', sans-serif;
+  font-size: 14px;
+  color: $primary-grey;
+}
+
+.apply-success__btn {
+  background: #272727;
+  border-radius: 4px;
+  height: 53px;
+  font-family: 'MontserratSemiBold';
+  color: #FFFFFF;
+  cursor: pointer;
+  width: 100%;
+}
+
+.apply-success__img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  margin-bottom: 32px;
+}
+
 .services-block__modal {
   position: fixed;
   z-index: 5;

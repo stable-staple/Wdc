@@ -29,7 +29,6 @@ div
       img.service-info__img(
       src="~assets/img/services_page/child_dent1.jpg"
       )
-      p.service-section__desc {{ description }}
       p.service-section__desc(:class="{'service-section__desc--open': fullDesc }") {{ description }}
     button.service-info__more(@click="fullDesc = !fullDesc") Читать полностью
 </template>
