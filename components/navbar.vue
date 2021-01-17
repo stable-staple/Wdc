@@ -11,7 +11,7 @@ div
         )
         .nav__elem: |
           NuxtLink.nav__link.nav__link--underlined(
-            to="/services/detskaya_stomatologiya"
+            to="/services/detskaya-stomatologiya"
           ) Услуги и цены
         .nav__elem: |
           NuxtLink.nav__link.nav__link--underlined(:to="{ name: 'index', hash: '#about_us'}", href="#about_us", v-smooth-scroll) О клинике
@@ -73,7 +73,7 @@ div
     .nav__dropdown-menu__inner
       ul.nav__dropdown-menu__list
         NuxtLink.nav__dropdown-menu__list-item(
-          to="/services/detskaya_stomatologiya",
+          to="/services/detskaya-stomatologiya",
           @click.native="toggleDropdown = false"
         ) Услуги и цены
         NuxtLink.nav__dropdown-menu__list-item(

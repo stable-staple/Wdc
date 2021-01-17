@@ -24,153 +24,43 @@ export default {
       sidebar: [
         {
           title: "Импланты и протезы",
-          href: "/services/implanty_i_protezy",
+          href: "/services/implanty-i-protezy",
           img: '/img/services/implanty.png'
         },
         {
           title: "Детская стоматология",
-          href: "/services/detskaya_stomatologiya",
+          href: "/services/detskaya-stomatologiya",
           img: '/img/services/children_dent.png'
         },
         {
           title: "Лечение зубов",
-          href: "/services/lechenie_zubov",
+          href: "/services/lechenie-zubov",
           img: '/img/services/treatment.png'
         },
         {
           title: "Удаление и реставрация",
-          href: "/services/udalenie_i_restavratsiya",
+          href: "/services/udalenie-i-restavratsiya",
           img: '/img/services/udalenie.png'
         },
         {
           title: "Виниры и люминиры",
-          href: "/services/viniry_i_luminiry",
+          href: "/services/viniry-i-luminiry",
           img: '/img/services/viniry.png'
         },
         {
           title: "Отбеливание и гигиена",
-          href: "/services/otbelivanie_i_gigiena",
+          href: "/services/otbelivanie-i-gigiena",
           img: '/img/services/otbelivanie.png'
         },
         {
           title: "Исправление прикуса",
-          href: "/services/ispravlenie_prikusa",
+          href: "/services/ispravlenie-prikusa",
           img: '/img/services/overbite_fix.png'
         },
         {
           title: "Осмотр и консультация",
-          href: "/services/osmotr_i_konsultatsiya",
+          href: "/services/osmotr-i-konsultatsiya",
           img: '/img/services/consulting.png'
-        }
-      ],
-      servicesSection: [
-        {
-          name: "Детская стоматология",
-          description: "Детская стоматология На молодежной (West Dental Clinic) специализируется на здоровье зубов \
-                        детей от младенчества до подросткового возраста. Наши врачи прекрасно понимают \
-                        различия структуры зубов и полости рта у детей и взрослых. Они имеют те же знания \
-                        и навыки, что и традиционные врачи-стоматологи, но дополнительно изучили способы \
-                        и навыки, что и традиционные врачи-стоматологи, но дополнительно изучили способы \
-                        и навыки, что и традиционные врачи-стоматологи, но дополнительно изучили способы \
-                        и навыки, что и традиционные врачи-стоматологи, но дополнительно изучили способы \
-                        и манипуляции, чтобы сделать посещение врача-стоматолога менее травмирующим для ребёнка.",
-          servicesList: [
-            {
-              name: "Психологическая адаптация к стоматологическому приему детей",
-              price: "1 500 ₽"
-            },
-            {
-              name: "Постановка пломбы светового отверждения (молочный зуб)",
-              price: "1 500 ₽"
-            },
-            {
-              name: "Постановка пломбы светового отверждения (коренной зуб)",
-              price: "1 500 ₽"
-            },
-            {
-              name: "Удаление зубных отложений щеткой с профилактической пастой",
-              price: "1 500 ₽"
-            },
-            {
-              name: "Неинвазивный метод лечения Icon",
-              price: "1 500 ₽"
-            },
-            {
-              name: "Удаление молочного зуба 2-3 степени подвижности",
-              price: "1 500 ₽"
-            },
-            {
-              name: "Удаление молочного зуба с сохраненными корнями",
-              price: "1 500 ₽"
-            }
-          ]
-        },
-        {
-          name: "Лечение зубов",
-          description: "",
-          servicesList: [
-            {
-              name: "Восстановление зуба пломбой с использованием материалов из фотоп.",
-              price: "4 900 ₽"
-            },
-            {
-              name: "Эндодонтическое лечение (лечение корневого канала зуба)",
-              price: "1 500 ₽"
-            },
-            {
-              name: "Лечение периодонтита",
-              price: "1 500 ₽"
-            },
-            {
-              name: "Эстетическая реставрация",
-              price: "1 500 ₽"
-            },
-            {
-              name: "Нехирургическое лечение при заболеваниях пародонта",
-              price: "1 500 ₽"
-            }
-          ]
-        },
-        {
-          name: "Импланты и протезы",
-          description: "",
-          servicesList: [
-            {
-              name: "Установка имплантата Straumann",
-              price: "55 000 ₽",
-            },
-            {
-              name: "Установка мини-имплатата MDI",
-              price: "25 000 ₽"
-            },
-            {
-              name: "Операция направленной регенерации кости (НРК)",
-              price: "48 000 ₽"
-            },
-            {
-              name: "Операция открытого синус-лифтинга",
-              price: "47 000 ₽"
-            },
-            {
-              name: "Операция закрытого синус-лифтинга",
-              price: "22 000 ₽"
-            }
-          ]
-        },
-        {
-          name: "Удаление и реставрация"
-        },
-        {
-          name: "Виниры и люминиры"
-        },
-        {
-          name: "Отбеливание и гигиена"
-        },
-        {
-          name: "Исправление прикуса"
-        },
-        {
-          name: "Осмотр и консультация"
         }
       ]
     }
@@ -319,14 +209,8 @@ li {
   font-family: 'MontserratRegular';
   font-size: 16px;
   line-height: 32px;
-  max-height: 159px;
-  transition: max-height 300ms;
   overflow: hidden;
   color: $primary-black;
-}
-
-.service-section__desc--open {
-  max-height: 320px;
 }
 
 .service-section__sep {
@@ -439,9 +323,7 @@ li {
     font-size: 13px;
     line-height: 24px;
     opacity: 0.72;
-    max-height: 69px;
     overflow: hidden;
-    transition: max-height 300ms;
   }
 
   .service-section__desc--open {

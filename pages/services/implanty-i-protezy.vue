@@ -35,7 +35,7 @@ div
 
 <script>
 export default {
-  name: "implanty_i_protezy",
+  name: "implanty-i-protezy",
   transition: 'slide-bottom',
   head() {
     return {
@@ -48,7 +48,7 @@ export default {
       modalOpened: false,
       selectedService: null,
       fullDesc: false,
-      selected: '/services/implanty_i_protezy',
+      selected: '/services/implanty-i-protezy',
       description: "Детская стоматология На молодежной (West Dental Clinic) специализируется на здоровье зубов \
                     детей от младенчества до подросткового возраста. Наши врачи прекрасно понимают \
                     различия структуры зубов и полости рта у детей и взрослых. Они имеют те же знания \

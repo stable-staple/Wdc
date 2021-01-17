@@ -43,7 +43,7 @@ div
 
 <script>
 export default {
-  name: "ispravlenie_prikusa",
+  name: "ispravlenie-prikusa",
   transition: 'slide-bottom',
   head() {
     return {

@@ -180,7 +180,7 @@ footer(id="footer")
     .footer__info
       .footer__links
         .footer__links__nav
-          NuxtLink(to="/services/detskaya_stomatologiya") Услуги и цены
+          NuxtLink(to="/services/detskaya-stomatologiya") Услуги и цены
           NuxtLink(:to="{ name: 'index', hash: '#about_us'}", href="#about_us", v-smooth-scroll) О клинике
           NuxtLink(:to="{ name: 'index', hash: '#doctors'}", href="#doctors", v-smooth-scroll) Наши врачи
           NuxtLink(:to="{ name: 'index', hash: '#reviews'}", href="#reviews", v-smooth-scroll) Отзывы
@@ -190,7 +190,7 @@ footer(id="footer")
           a(href="#") Политика конфиденциальности
       .footer__copyright
         span West Dental Clinic
-        span Copyright &copy; 2017-2020
+        span Copyright &copy; 2017-{{ currentYear }}
 </template>
 
 <style lang="scss">
@@ -644,6 +644,7 @@ export default {
       mapboxDirections: null,
       mobileViewQuery: null,
       isMobile: true,
+      currentYear: new Date().getFullYear()
     }
   },
   methods: {

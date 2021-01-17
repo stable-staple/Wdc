@@ -23,9 +23,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0622c075-0869-456b-922f-7e44642bfdae" name="Default Changelist" comment="general improvements">
+      <change afterPath="$PROJECT_DIR$/layouts/services-layout.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ServiceModal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/ServiceModal.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/services/implanty_i_protezy.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/services/implanty_i_protezy.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Footer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/Footer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/navbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/navbar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nuxt.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/nuxt.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/services.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/services.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/services/detskaya_stomatologiya.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/services/detskaya-stomatologiya.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/services/implanty_i_protezy.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/services/implanty-i-protezy.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/services/ispravlenie_prikusa.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/services/ispravlenie-prikusa.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/services/lechenie_zubov.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/services/lechenie-zubov.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/services/osmotr_i_konsultatsiya.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/services/osmotr-i-konsultatsiya.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/services/otbelivanie_i_gigiena.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/services/otbelivanie-i-gigiena.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/services/udalenie_i_restavratsiya.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/services/udalenie-i-restavratsiya.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/services/viniry_i_luminiry.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/services/viniry-i-luminiry.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +55,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="ProjectId" id="1jygW1iAspDz387cwUuF9vwEB6n" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -50,10 +70,12 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="full.screen.before.presentation.mode" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
     <property name="vuejs.nuxt.types-notification-shown" value="true" />
   </component>
@@ -100,7 +122,10 @@
       <workItem from="1608115441079" duration="10232000" />
       <workItem from="1608380325756" duration="11459000" />
       <workItem from="1608453808126" duration="610000" />
-      <workItem from="1608810653741" duration="40967000" />
+      <workItem from="1608810653741" duration="41402000" />
+      <workItem from="1610740731262" duration="299000" />
+      <workItem from="1610741079935" duration="74000" />
+      <workItem from="1610901063857" duration="4123000" />
     </task>
     <task id="LOCAL-00001" summary="changed structure">
       <created>1604849235457</created>
@@ -130,7 +155,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609088988471</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="general improvements">
+      <created>1609145336320</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1609145336320</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
