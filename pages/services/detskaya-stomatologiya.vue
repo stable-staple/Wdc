@@ -1,7 +1,8 @@
 <template lang="pug">
   services-layout(
     sectionName="Детская стоматология",
-    :servicesList="servicesList"
+    :servicesList="servicesList",
+    :imgUrl="require(`../../assets/img/services_page/child_dent1.jpg`)"
     ) Фырфырфырфыр
 </template>
 
@@ -10,6 +11,7 @@ import ServicesLayout from "@/layouts/services-layout";
 
 export default {
   components: {ServicesLayout},
+  transition: 'slide-bottom',
   data: function () {
     return {
       servicesList: [

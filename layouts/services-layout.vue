@@ -5,11 +5,11 @@ div
     span.service-info__breadcrumbs
       NuxtLink.breadcrumbs__link(to="/") Главная&nbsp;&nbsp;
       | / &nbsp;Детская стоматология
-    h1.services-block__title Детская стоматология
+    h1.services-block__title {{ sectionName }}
     .services-block__title-wrapper
       select.services-block__select(v-model="selected" :onchange="this.$router.push({ path: selected })")
         option(:value="selected" selected="selected") {{ sectionName }}
-        option(v-for="(section, ind) in this.$parent.filteredSidebar" :value="section.href") {{ section.title }}
+        option(v-for="(section, ind) in this.filteredSidebar" :value="section.href") {{ section.title }}
     ul.services-list
       li.services-list__elem(
         v-for="service in this.servicesList"
@@ -26,12 +26,14 @@ div
     hr.service-section__sep
     h1.service-info__title Об услуге
     div
-      img.service-info__img(src="~assets/img/services_page/child_dent1.jpg")
+      img.service-info__img(:src="this.imgUrl")
       p.service-section__desc: slot
     hr.service-section__sep
 </template>
 
 <script>
+import ServicesMixins from '@/mixins/servicesMixins'
+
 export default {
   name: "services-layout",
   head() {
@@ -39,17 +41,27 @@ export default {
       title: this.sectionName
     };
   },
+  computed: {
+    filteredSidebar: function() {
+      let self = this;
+      return this.sidebar.filter(function (obj) {
+        return obj.href !== self.$route.path;
+      });
+    }
+  },
   data: function () {
     return {
       selectedService: null,
       modalOpened: false,
       selected: this.$route.path,
+      sidebar: (this.getSidebar()).sidebar
     }
   },
-  transition: 'slide-bottom',
+  mixins: [ServicesMixins],
   props: {
     sectionName: String,
     servicesList: Array,
+    imgUrl: String,
   }
 }
 </script>
