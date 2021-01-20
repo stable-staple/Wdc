@@ -1,5 +1,4 @@
 export default {
-  target: 'static',
   router: {
     scrollBehavior(to, from, savedPosition) {
       if (to.hash[0] === '#') {
