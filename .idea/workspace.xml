@@ -23,17 +23,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0622c075-0869-456b-922f-7e44642bfdae" name="Default Changelist" comment="general improvements">
-      <change afterPath="$PROJECT_DIR$/mixins/servicesMixins.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/services-layout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/services-layout.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/services/detskaya-stomatologiya.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/services/detskaya-stomatologiya.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/services/implanty-i-protezy.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/services/implanty-i-protezy.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/services/ispravlenie-prikusa.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/services/ispravlenie-prikusa.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/services/lechenie-zubov.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/services/lechenie-zubov.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/services/otbelivanie-i-gigiena.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/services/otbelivanie-i-gigiena.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/services/osmotr-i-konsultatsiya.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/services/osmotr-i-konsultatsiya.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/services/udalenie-i-restavratsiya.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/services/udalenie-i-restavratsiya.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/services/viniry-i-luminiry.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/services/viniry-i-luminiry.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -124,6 +116,8 @@
       <workItem from="1610740731262" duration="299000" />
       <workItem from="1610741079935" duration="74000" />
       <workItem from="1610901063857" duration="12478000" />
+      <workItem from="1610989747060" duration="2249000" />
+      <workItem from="1611098820000" duration="2402000" />
     </task>
     <task id="LOCAL-00001" summary="changed structure">
       <created>1604849235457</created>
