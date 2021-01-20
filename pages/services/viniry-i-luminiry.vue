@@ -10,7 +10,9 @@
 </template>
 
 <script>
+import ServicesLayout from "@/layouts/services-layout";
 export default {
+  components: {ServicesLayout},
   transition: 'slide-bottom',
   data: function () {
     return {
