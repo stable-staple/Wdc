@@ -283,7 +283,7 @@ footer {
   background-image: url("~assets/img/map_marker_big.svg");
   background-size: cover;
   width: 80px;
-  height: 87px;
+  height: 85px;
 }
 
 .footer {
@@ -558,7 +558,7 @@ footer {
 
   .map__marker {
     width: 41px;
-    height: 45px;
+    height: 44px;
   }
 
   .footer {

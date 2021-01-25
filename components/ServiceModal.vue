@@ -188,7 +188,6 @@ export default {
     font-family: 'MontserratMedium';
     font-weight: 500;
     font-size: 22px;
-    white-space: nowrap;
     line-height: 48px;
   }
   &__desc {

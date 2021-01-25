@@ -23,8 +23,8 @@ export default {
       currentSection: 0,
       sidebar: [
         {
-          title: "Импланты и протезы",
-          href: "/services/implanty-i-protezy",
+          title: "Имплантация",
+          href: "/services/implantacija",
           img: '/img/services/implanty.png'
         },
         {
@@ -38,9 +38,9 @@ export default {
           img: '/img/services/treatment.png'
         },
         {
-          title: "Удаление и реставрация",
-          href: "/services/udalenie-i-restavratsiya",
-          img: '/img/services/udalenie.png'
+          title: "Реставрация зубов",
+          href: "/services/restavracija-zubov",
+          img: '/img/services/restavracija.png'
         },
         {
           title: "Виниры и люминиры",
@@ -61,7 +61,17 @@ export default {
           title: "Осмотр и консультация",
           href: "/services/osmotr-i-konsultatsiya",
           img: '/img/services/consulting.png'
-        }
+        },
+        {
+          title: "Удаление зубов",
+          href: "/services/udalenie-zubov",
+          img: '/img/services/udalenie_zubov.png'
+        },
+        {
+          title: "Протезирование",
+          href: "/services/protezirovanie",
+          img: '/img/services/protezirovanie.png'
+        },
       ]
     }
   },
@@ -88,7 +98,7 @@ export default {
   margin-right: 65px;
   &__breadcrumbs {
     display: block;
-    margin-bottom: 48px;
+    margin-bottom: 40px;
     color: $primary-black;
     font-family: 'MontserratRegular';
     font-size: 14px;
@@ -135,11 +145,11 @@ export default {
 }
 
 .services-block__title {
-  font-family: 'MontserratRegular';
-  font-size: 48px;
-  line-height: 56px;
+  font-family: 'MontserratSemiBold';
+  font-size: 40px;
+  line-height: 48px;
   color: $primary-black;
-  margin: 0 0 24px 0;
+  margin: 0 0 18px 0;
 
   &__img {
     position: relative;
@@ -154,17 +164,21 @@ export default {
 
 .services-list__elem {
   font-family: 'MontserratRegular';
-  padding-right: 49px;
   cursor: pointer;
-  height: 72px;
+  min-height: 24px;
+  max-height: 84px;
+  padding: 20px 32px 20px 24px;
   border-radius: 6px;
   display: flex;
+  justify-content: space-between;
 
   & > span {
     color: $primary-black;
-    width: 100%;
     align-self: center;
-    font-size: 16px;
+    line-height: 24px;
+  }
+  & > .service__desc {
+    font-size: 14px;
   }
   &:hover {
     background: #F8F8F8;
@@ -174,31 +188,48 @@ export default {
   }
 }
 
+.service-desc--sleep {
+  &:before {
+    position: relative;
+    top: 3.5px;
+    content: url('~assets/img/services/vo_sne.svg');
+    fill: $primary-black;
+    margin-right: 4px;
+    vertical-align: middle;
+  }
+  line-height: 24px;
+}
+
 li {
   position: relative;
 }
 
 .service__price {
-  float: right;
-  font-family: 'MontserratBold';
+  font-size: 16px;
+  font-family: 'MontserratBold', cursive;
   font-style: normal;
   &:after {
     content: url('~assets/img/arrow_right_black.svg');
     fill: $primary-black;
-    margin-left: 16px;
+    margin-left: 24px;
     transition: opacity 300ms ease-in-out;
     opacity: 0;
   }
 }
 
+.service__landing-more {
+  font-family: 'MontserratSemiBold', serif;
+  font-size: 14px;
+}
+
 .services__right {
   position: sticky;
   align-self: flex-start;
-  top: 80px;
+  top: 35px;
 }
 
 .services__right__title {
-  font-family: 'MontserratSemiBold';
+  font-family: 'MontserratSemiBold', serif;
   font-size: 20px;
   margin-bottom: 20px;
   color: $primary-black;
@@ -223,7 +254,7 @@ li {
   top: 140px;
   list-style: none;
   min-width: 394px;
-  font-size: 14px;
+  font-size: 13px;
   margin: 0 0 32px 0;
   border-radius: 10px;
   & > * + * {
@@ -246,7 +277,6 @@ li {
               0 0 1px rgba(0, 0, 0, 0.04);
   border-radius: 6px;
   &:hover {
-    background: #F8F8F8;
     &:after {
       opacity: 1;
     }
@@ -289,7 +319,7 @@ li {
 .services-sections-apply {
  background: $primary-grey-light;
  border-radius: 2px;
- padding: 14px 20px;
+ padding: 14px 60px;
  margin-top: 48px;
 
  &__desc {
@@ -313,7 +343,14 @@ li {
   margin-right: -80px;
 }
 
+.service__desc {
+  width: 80%;
+}
+
 @media only screen and (max-width: 768px) {
+  .services-sections-apply {
+    padding: 16px;
+  }
   .service-section__sep {
     margin: 40px 0;
   }
@@ -375,6 +412,7 @@ li {
     border-top-color: rgba(39, 39, 39, 0.08);
     margin: 10px -12px 0;
     padding: 10px 12px 0;
+    font-size: 12px !important;
     &:after {
       float: right;
       opacity: 1;
@@ -391,15 +429,23 @@ li {
     font-family: 'MontserratMedium';
     height: auto;
     padding: 12px;
+    min-height: initial;
+    max-height: initial;
+    display: block;
     line-height: 18px;
     & > span {
       font-size: 12px;
+      display: block;
+      line-height: 18px;
     }
     box-shadow: 0px -10px 10px rgba(0, 0, 0, 0.01),
                 0px 10px 40px rgba(0, 0, 0, 0.04), 
                 0px -2px 6px rgba(0, 0, 0, 0.02), 
                 0px 0px 1px rgba(0, 0, 0, 0.04);
     border-radius: 10px;
+    & > .service__desc {
+      font-size: 12px;
+    }
   }
 
   .services-block__title-wrapper {
@@ -425,6 +471,11 @@ li {
   .service-info__title {
     font-size: 22px;
     line-height: 28px;
+  }
+
+  .service__desc {
+    width: auto;
+    font-size: 12px;
   }
 }
 

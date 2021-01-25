@@ -166,7 +166,6 @@ export default {
   opacity: 1;
   padding-right: 129px;
   max-width: 459px;
-  overflow: hidden;
   height: 100%;
 }
 
@@ -220,7 +219,7 @@ export default {
   }
   to {
     transform-origin: bottom;
-    transform: scale3d(1, 0 1);
+    transform: scale3d(1, 0, 1);
   }
 }
 
@@ -259,6 +258,7 @@ export default {
   .about-us__content {
     max-width: initial;
     width: 100%;
+    overflow: hidden;
   }
 
   .about-us__img__inner {

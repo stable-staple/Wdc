@@ -11,16 +11,19 @@ div
         option(:value="selected" selected="selected") {{ sectionName }}
         option(v-for="(section, ind) in this.filteredSidebar" :value="section.href") {{ section.title }}
     ul.services-list
+      li.services-list__landing-link
+        span(class="service__desc service-desc--sleep") &nbsp;–&nbsp;&nbsp;Данную процедуру можно провести во сне
+        span(class="service__price service__landing-more") Подробнее
       li.services-list__elem(
         v-for="service in this.servicesList"
         @click="modalOpened = true; selectedService = service.name;"
       )
-        span {{ service.name }}
-          span(class="service__price") {{ service.price }}
+        span(class="service__desc") {{ service.name }}
+        span(class="service__price") {{ service.price }}
     .services-sections-apply
       p.services-sections-apply__desc
         | Вы можете записаться на прием конкретной услуги или же просто оставить заявку.
-        | Мы с Вами свяжемся для уточнения деталей. Также Вы можете позвонить по номеру
+        | Мы с Вами свяжемся для уточнения деталей. Также Вы можете позвонить по номеру&nbsp;
         a(href="tel:+7(499) 372 94 90") +7 499 372 94 90
         |  для записи.
     hr.service-section__sep
@@ -67,6 +70,57 @@ export default {
 </script>
 
 
-<style scoped>
+<style lang="scss">
+.services-list__landing-link {
+  font-family: 'MontserratRegular', serif;
+  cursor: pointer;
+  min-height: 24px;
+  max-height: 84px;
+  padding: 20px 32px 20px 20px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(17, 80, 125, 0.04);
+
+  & > span {
+    color: $primary-black;
+    align-self: center;
+    line-height: 24px;
+  }
+
+  .service__price:after {
+    opacity: 1;
+  }
+}
+
+.service__desc {
+  font-size: 14px;
+}
+
+@media only screen and (max-width: 768px) {
+  .services-list__landing-link {
+    font-family: 'MontserratMedium',serif;
+    height: auto;
+    padding: 12px;
+    min-height: initial;
+    max-height: initial;
+    display: block;
+    line-height: 18px;
+    & > span {
+      font-size: 12px;
+      display: block;
+      line-height: 18px;
+    }
+    box-shadow: 0px -10px 10px rgba(0, 0, 0, 0.01),
+    0px 10px 40px rgba(0, 0, 0, 0.04),
+    0px -2px 6px rgba(0, 0, 0, 0.02),
+    0px 0px 1px rgba(0, 0, 0, 0.04);
+    border-radius: 10px;
+
+    & > .service__desc {
+      font-size: 12px;
+    }
+  }
+}
 
 </style>

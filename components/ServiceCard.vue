@@ -49,6 +49,7 @@ export default {
 .service-card__price {
   margin: 0;
   color: $primary-color;
+  font-family: 'MontserratMedium', serif;
   opacity: 0.64;
 }
 
@@ -81,6 +82,9 @@ export default {
     &:hover {
       transform: translateY(0);
     }
+  }
+
+  .service-card__price {
   }
 
   .service-card__img {

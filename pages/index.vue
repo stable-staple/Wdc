@@ -3,17 +3,18 @@
     MainSlideshow
     .main__services
       .main__services-row
-        ServiceCard(desc="Импланты и протезы" price="от 25 000 ₽" img="/img/services/implanty.png" route="implanty-i-protezy")
+        ServiceCard(desc="Имплантация" price="от 25 000 ₽" img="/img/services/implanty.png" route="implantacija")
         ServiceCard(desc="Лечение зубов" price="от 8 000 ₽" img="/img/services/treatment.png" route="lechenie-zubov")
-        ServiceCard(desc="Удаление и реставрация" price="от 2 500 ₽" img="/img/services/udalenie.png" route="udalenie-i-restavratsiya")
+        ServiceCard(desc="Реставрация зубов" price="от 2 500 ₽" img="/img/services/restavracija.png" route="restavracija-zubov")
         ServiceCard(desc="Виниры и люминиры" price="от 39 000 ₽" img="/img/services/viniry.png" route="viniry-i-luminiry")
       .main__services-row
         ServiceCard(desc="Отбеливание и гигиена" price="от 2 000 ₽" img="/img/services/otbelivanie.png" route="otbelivanie-i-gigiena")
         ServiceCard(desc="Исправление прикуса" price="от 40 000 ₽" img="/img/services/overbite_fix.png" route="ispravlenie-prikusa")
-        ServiceCard(desc="Осмотр и консультация" price="от 2 500 ₽" img="/img/services/consulting.png" route="osmotr-i-konsultatsiya")
+        ServiceCard(desc="Осмотр и диагностика" price="от 2 500 ₽" img="/img/services/consulting.png" route="osmotr-i-konsultatsiya")
         ServiceCard(desc="Детская стоматология" price="от 1 500 ₽" img="/img/services/children_dent.png" route="detskaya-stomatologiya")
-    hr.full-bleed
-    SpecialOffers
+      .main__services-row
+        ServiceCard(desc="Удаление зубов" price="от 2 500 ₽" img="/img/services/consulting.png" route="udalenie-zubov")
+        ServiceCard(desc="Протезирование" price="от 25 000 ₽" img="/img/services/protezirovanie.png" route="osmotr-i-konsultatsiya")
     hr.full-bleed
     AboutUsSlideshow(id="about_us")
     hr.full-bleed
@@ -65,7 +66,6 @@ export default {
     position: relative;
     bottom: 37px;
     display: flex;
-    justify-content: center;
     margin-bottom: 24px;
     z-index: 1;
 

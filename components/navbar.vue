@@ -271,11 +271,13 @@ export default {
   width: 212px;
   height: 37px;
   border-radius: 2px;
-  border: 1px solid #ffffff;
+  //border: 1px solid $primary-green;
   color: white;
+  background-color: $primary-green;
   transition: background-color 180ms;
   &:hover {
     color: $primary-black;
+    //border: 1px solid #ffffff;
     background-color: white;
     cursor: pointer;
   }

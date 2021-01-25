@@ -23,9 +23,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0622c075-0869-456b-922f-7e44642bfdae" name="Default Changelist" comment="general improvements">
+      <change afterPath="$PROJECT_DIR$/pages/services/protezirovanie.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/services/udalenie-zubov.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/services/protezirovanie.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/services/udalenie_zubov.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/services/udalenie-i-restavratsiya.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/services/udalenie-i-restavratsiya.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/services/viniry-i-luminiry.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/services/viniry-i-luminiry.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/Montserrat-Medium.woff" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/Montserrat-Medium.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/Montserrat-Medium.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fonts/Montserrat-Medium.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/map_marker_big.svg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/map_marker_big.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/AboutUsSlideshow.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/AboutUsSlideshow.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/DoctorsSlides.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/DoctorsSlides.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Footer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/Footer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ServiceCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/ServiceCard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ServiceModal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/ServiceModal.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/navbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/navbar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layouts/services-layout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/services-layout.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mixins/servicesMixins.js" beforeDir="false" afterPath="$PROJECT_DIR$/mixins/servicesMixins.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/services.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/services.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/services/detskaya-stomatologiya.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/services/detskaya-stomatologiya.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/services/implanty-i-protezy.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/services/implantacija.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/services/udalenie-i-restavratsiya.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/services/restavracija-zubov.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/services/udalenie.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/services/restavracija.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,8 +55,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Vue Single File Component" />
         <option value="JavaScript File" />
+        <option value="Vue Single File Component" />
       </list>
     </option>
   </component>
@@ -61,6 +81,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="full.screen.before.presentation.mode" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/static/img/services" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
@@ -68,6 +89,9 @@
     <property name="vuejs.nuxt.types-notification-shown" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Кирилл\WebstormProjects\Wdc\static\img\services" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Кирилл\WebstormProjects\Wdc\mixins" />
       <recent name="C:\Users\Кирилл\WebstormProjects\Wdc\assets\img" />
@@ -117,7 +141,7 @@
       <workItem from="1610901063857" duration="12478000" />
       <workItem from="1610989747060" duration="2249000" />
       <workItem from="1611098820000" duration="4031000" />
-      <workItem from="1611164079550" duration="308000" />
+      <workItem from="1611164079550" duration="29203000" />
     </task>
     <task id="LOCAL-00001" summary="changed structure">
       <created>1604849235457</created>
@@ -175,7 +199,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611103995695</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="general improvements">
+      <created>1611164420608</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1611164420608</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

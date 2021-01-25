@@ -1,9 +1,12 @@
-<template lang="pug">
-  services-layout(
-    sectionName="Детская стоматология",
-    :servicesList="servicesList",
-    :imgUrl="require(`../../assets/img/services_page/child_dent1.jpg`)"
-    ) Фырфырфырфыр
+<template>
+  <services-layout section-name="Детская стоматология" :services-list="servicesList"
+                   :imgUrl="require(`../../assets/img/services_page/child_dent1.jpg`)">
+    Детская стоматология На молодежной (West Dental Clinic) специализируется на здоровье зубов
+    детей от младенчества до подросткового возраста. Наши врачи прекрасно понимают
+    различия структуры зубов и полости рта у детей и взрослых. Они имеют те же знания
+    и навыки, что и традиционные врачи-стоматологи, но дополнительно изучили способы
+    и манипуляции, чтобы сделать посещение врача-стоматолога менее травмирующим для ребёнка.
+  </services-layout>
 </template>
 
 <script>

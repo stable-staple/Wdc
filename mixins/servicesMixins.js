@@ -5,8 +5,8 @@ export default {
       return {
         sidebar: [
           {
-            title: "Импланты и протезы",
-            href: "/services/implanty-i-protezy",
+            title: "Имплантация",
+            href: "/services/implantacija",
             img: '/img/services/implanty.png'
           },
           {
@@ -20,9 +20,9 @@ export default {
             img: '/img/services/treatment.png'
           },
           {
-            title: "Удаление и реставрация",
-            href: "/services/udalenie-i-restavratsiya",
-            img: '/img/services/udalenie.png'
+            title: "Реставрация зубов",
+            href: "/services/restavracija-zubov",
+            img: '/img/services/restavracija.png'
           },
           {
             title: "Виниры и люминиры",

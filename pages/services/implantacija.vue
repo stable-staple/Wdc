@@ -1,5 +1,5 @@
 <template>
-  <services-layout section-name="Импланты и протезы" :services-list="servicesList"
+  <services-layout section-name="Имплантация" :services-list="servicesList"
                    :imgUrl="require(`../../assets/img/services_page/lechenie.jpg`)">
     Детская стоматология На молодежной (West Dental Clinic) специализируется на здоровье зубов
     детей от младенчества до подросткового возраста. Наши врачи прекрасно понимают
@@ -13,12 +13,16 @@
 import ServicesLayout from "@/layouts/services-layout";
 
 export default {
-  name: "implanty-i-protezy",
+  name: "implantacija",
   components: {ServicesLayout},
   transition: 'slide-bottom',
   data: function () {
     return {
       servicesList: [
+        {
+          name: "Установка имплантата Implantium",
+          price: "39 000 ₽",
+        },
         {
           name: "Установка имплантата Straumann",
           price: "55 000 ₽",
@@ -39,30 +43,30 @@ export default {
           name: "Операция закрытого синус-лифтинга",
           price: "22 000 ₽"
         },
-        {
-          name: "Изготовление коронки из диоксида циркония",
-          price: "от 32 000 ₽"
-        },
-        {
-          name: "Изготовление керамического винира E.max",
-          price: "от 32 000 ₽"
-        },
-        {
-          name: "Изготовление металлокерамической коронки на имплантат",
-          price: "от 30 000 ₽"
-        },
-        {
-          name: "Изготовление полного съемного протеза",
-          price: "от 55 000 ₽"
-        },
-        {
-          name: "Изготовление частичного съемного протеза",
-          price: "от 45 000 ₽"
-        },
-        {
-          name: "Изготовление бюгельного протеза",
-          price: "от 60 000 ₽"
-        },
+        // {
+        //   name: "Изготовление коронки из диоксида циркония",
+        //   price: "от 32 000 ₽"
+        // },
+        // {
+        //   name: "Изготовление керамического винира E.max",
+        //   price: "от 32 000 ₽"
+        // },
+        // {
+        //   name: "Изготовление металлокерамической коронки на имплантат",
+        //   price: "от 30 000 ₽"
+        // },
+        // {
+        //   name: "Изготовление полного съемного протеза",
+        //   price: "от 55 000 ₽"
+        // },
+        // {
+        //   name: "Изготовление частичного съемного протеза",
+        //   price: "от 45 000 ₽"
+        // },
+        // {
+        //   name: "Изготовление бюгельного протеза",
+        //   price: "от 60 000 ₽"
+        // },
       ]
     }
   }
